@@ -15,7 +15,7 @@ abstract class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 
 	@NotNull(message = "{not.null.attribute}")
 	@NotEmpty(message = "{not.empty.attribute}")
@@ -26,10 +26,8 @@ abstract class Usuario {
 	@NotNull(message = "{not.null.attribute}")
 	@NotEmpty(message = "{not.empty.attribute}")
 	@NotBlank(message = "{not.blank.attribute}")
-	private long matricula;
+	private Long matricula;
 	
-	
-
 	public Usuario() {
 	}
 
@@ -42,7 +40,7 @@ abstract class Usuario {
 		return nome;
 	}
 
-	public long getMatricula() {
+	public Long getMatricula() {
 		return matricula;
 	}
 
