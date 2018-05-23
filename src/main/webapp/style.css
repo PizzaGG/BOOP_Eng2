@@ -1,0 +1,29 @@
+/* COLORS */
+.text-black {
+  color: #424242;
+}
+
+.bg-dark-1 {
+  background-color: #E0E0E0;
+}
+
+.text-black:hover {
+  color: black;
+}
+
+/* NAVBAR */
+/* Navbar Profile */
+.navbar-profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CADASTRO LIVRO */
+/* Capa */
+.capa {
+  min-height: 200px;
+}
