@@ -1,15 +1,17 @@
 package br.com.boop.model;
 
+import br.com.caelum.vraptor.validator.Severity;
+
 public class BoopMessage {
 
 	private String category;
 	private String message;
-	private String type;
+	private Severity type;
 	
-	public BoopMessage(String _category, String _message, String _type) {
+	public BoopMessage(String _category, String _message, Severity success) {
 		this.category = _category;
 		this.message = _message;
-		this.type = _type;
+		this.type = success;
 	}
 
 	public String getCategory() {
@@ -20,7 +22,7 @@ public class BoopMessage {
 		return message;
 	}
 
-	public String getType() {
+	public Severity getType() {
 		return type;
 	}
 	
