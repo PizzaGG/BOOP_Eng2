@@ -39,11 +39,12 @@ public class CadastroController {
 	@Post("/cadastrar")
 	public void cadastrar(@Valid Livro livro,@Valid Integer idUsuario) {
 		if (validator.hasErrors()) {
+			validator.onErrorForwardTo(this).index();
 			for (Message msg : validator.getErrors()) {
 				MessagesController.addMessage(new BoopMessage("book.register.error", msg.getMessage(), msg.getSeverity()));
 			}
+			return;
 		}
-		validator.onErrorForwardTo(this).index();
 		livroDao.salvar(livro);
 		MessagesController.addMessage(new BoopMessage("book.register.sucess", "book.register.sucess.message", Severity.SUCCESS));
 		result.redirectTo(HomeController.class).index();
