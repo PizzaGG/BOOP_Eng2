@@ -1,0 +1,121 @@
+/* COLORS */
+.text-black {
+  color: #424242;
+}
+
+.bg-dark-1 {
+  background-color: #E0E0E0;
+}
+
+.text-black:hover {
+  color: black;
+}
+
+/* NAVBAR */
+/* Navbar Profile */
+.navbar-profile-pic-div {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.navbar-profile-pic {
+  height: 35px;
+}
+
+
+.nav-logo {
+  max-height: 35px;
+}
+
+.logo {
+  -webkit-mask: url("img/boop.svg") no-repeat center;
+  mask: url("img/boop.svg") no-repeat center;
+  width: 234px;
+  height: 150px;
+}
+@media (min-width: 576px) {
+  #hidden-menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* SIDEBAR */
+/* Sidebar Profile */
+.sidebar-profile-pic-div {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.sidebar-profile-pic {
+  height: 120px;
+}
+
+/* Sidebar Nav */
+.side-item:hover {
+  background: #ffd1cc;
+}
+
+/* CADASTRO LIVRO */
+/* Capa */
+.capa {
+  min-height: 200px;
+}
+
+/* CARD */
+/* Livro */
+.capa-livro-card {
+  height: 200px;
+  overflow: hidden;
+}
+
+.capa-livro-card-img {
+  width: auto;
+  height: 100%;
+}
+
+/* BG ANIMATION */
+/* Inspired in https://codepen.io/colinkeany/pen/NPVZGw */
+.animating-bg {
+  background-image: url("img/bg-dinamico.png");
+  background-repeat: repeat;
+  height: 100%;
+  width: 100%;
+  animation-name: animate-bg;
+  -webkit-animation-name: animate-bg;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-play-state: running;
+  -webkit-animation-duration: 15s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  -webkit-animation-play-state: running;
+}
+@keyframes animate-bg {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 300%;
+  }
+}
+@-webkit-keyframes animate-bg {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 300%;
+  }
+}
