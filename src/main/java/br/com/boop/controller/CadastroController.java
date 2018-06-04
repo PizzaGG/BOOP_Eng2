@@ -1,13 +1,11 @@
 package br.com.boop.controller;
 
 import javax.inject.Inject;
-import javax.validation.Valid;
 
 import br.com.boop.dao.LivroDao;
 import br.com.boop.model.BoopMessage;
 import br.com.boop.model.Livro;
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.validator.Message;
@@ -32,14 +30,10 @@ public class CadastroController {
 		this.livroDao = _livroDao;
 	}
 	
-	@Get("/")
-	public void index() {
-	}
-	
 	@Post("/cadastrar")
-	public void cadastrar(@Valid Livro livro,@Valid Integer idUsuario) {
+	public void cadastrar(Livro livro) {
 		if (validator.hasErrors()) {
-			validator.onErrorForwardTo(this).index();
+			validator.onErrorForwardTo(HomeController.class).index();
 			for (Message msg : validator.getErrors()) {
 				MessagesController.addMessage(new BoopMessage("book.register.error", msg.getMessage(), msg.getSeverity()));
 			}
