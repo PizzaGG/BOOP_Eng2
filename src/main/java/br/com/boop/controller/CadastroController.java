@@ -35,12 +35,12 @@ public class CadastroController {
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(HomeController.class).index();
 			for (Message msg : validator.getErrors()) {
-				MessagesController.addMessage(new BoopMessage("book.register.error", msg.getMessage(), msg.getSeverity()));
+				MessagesController.addMessage(new BoopMessage("book.register.error.title", msg.getMessage(), msg.getSeverity()));
 			}
 			return;
 		}
 		livroDao.salvar(livro);
-		MessagesController.addMessage(new BoopMessage("book.register.sucess", "book.register.sucess.message", Severity.SUCCESS));
+		MessagesController.addMessage(new BoopMessage("book.register.sucess.title", "book.register.sucess.message", Severity.SUCCESS));
 		result.redirectTo(HomeController.class).index();
 	}
 }
