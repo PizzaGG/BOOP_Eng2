@@ -3,6 +3,7 @@ package br.com.boop.controller;
 import javax.inject.Inject;
 
 import br.com.boop.dao.UsuarioDao;
+import br.com.boop.model.Usuario;
 import br.com.boop.model.UsuarioLogado;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Post;
@@ -32,7 +33,7 @@ public class LoginController {
 	}
 
 	@Post("/auth")
-	public void autentica(UsuarioLogado usuario) {
+	public void autentica(Usuario usuario) {
 		if (!dao.existe(usuario)) {
 			validator.add(new I18nMessage("login", "login.invalido"));
 			validator.onErrorUsePageOf(HomeController.class).index();

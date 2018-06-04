@@ -10,13 +10,13 @@ public class UsuarioLogado implements Serializable{
 
 
 	private static final long serialVersionUID = 1552280536327897862L;
-	private UsuarioLogado usuario;
+	private Usuario usuario;
 
-	public UsuarioLogado getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(UsuarioLogado usuario2) {
+	public void setUsuario(Usuario usuario2) {
 		this.usuario = usuario2;
 	}	
 }
