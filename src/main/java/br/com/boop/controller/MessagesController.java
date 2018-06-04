@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
-import javax.validation.Valid;
 
 import br.com.boop.model.BoopMessage;
 
@@ -27,7 +26,7 @@ public class MessagesController implements Serializable {
 	}
 
 
-	public static void addMessage(@Valid BoopMessage boopMessage) {
+	public static void addMessage(BoopMessage boopMessage) {
 		messagesList.add(boopMessage);
 	}
 	
