@@ -30,5 +30,9 @@ public class UsuarioDao {
 	public void salva(Usuario usuario) {
 		manager.persist(usuario);
 	}
+	
+	public void atualizar(Usuario usuario) {
+		//TODO fazer o corpo
+	}
 
 }
