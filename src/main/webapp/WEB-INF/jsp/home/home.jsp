@@ -30,7 +30,7 @@
 
       <div class="collapse navbar-collapse" id="hidden-menu">
         <ul class="navbar-nav mt-1">
-          <li class="nav-item rounded">
+          <li class="nav-item">
             <a class="nav-link text-primary" href="#">
               <i class="fas fa-user mr-2"></i> Meu perfil</a>
           </li>
@@ -148,16 +148,16 @@
                 <a class="nav-link" href="#">
                   <i class="fas fa-user mr-2"></i> Meu perfil</a>
               </li>
-              <li class="nav-item side-item">
+              <li class="nav-item side-item rounded">
                 <a class="nav-link" href="#">
                   <i class="fas fa-book mr-2"></i> Livros</a>
               </li>
-              <li class="nav-item side-item">
+              <li class="nav-item side-item rounded">
                 <a class="nav-link" href="#">
                   <i class="fas fa-exchange-alt mr-2"></i> Trocas</a>
               </li>
               <div class="dropdown-divider"></div>
-              <li class="nav-item side-item">
+              <li class="nav-item side-item rounded">
                 <a class="nav-link" href="#">
                   <i class="fas fa-sign-out-alt mr-2"></i> Sair</a>
               </li>
