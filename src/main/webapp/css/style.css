@@ -32,8 +32,8 @@
 }
 
 .logo {
-  -webkit-mask: url("img/boop.svg") no-repeat center;
-  mask: url("img/boop.svg") no-repeat center;
+  -webkit-mask: url("../img/boop.svg") no-repeat center;
+  mask: url("../img/boop.svg") no-repeat center;
   width: 234px;
   height: 150px;
 }
@@ -82,7 +82,7 @@
 /* BG ANIMATION */
 /* Inspired in https://codepen.io/colinkeany/pen/NPVZGw */
 .animating-bg {
-  background-image: url("img/bg-dinamico.png");
+  background-image: url("../img/bg-dinamico.png");
   background-repeat: repeat;
   height: 100%;
   width: 100%;
