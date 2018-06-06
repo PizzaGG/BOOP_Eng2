@@ -45,7 +45,7 @@ public class UsuarioController {
 			return;
 		}
 		usuarioDao.atualizar(usuario);
-		MessagesController.addMessage(new BoopMessage("user.update.sucess.title", "user.update.sucess.message", Severity.SUCCESS));
+		MessagesController.addMessage(new BoopMessage("user.update.sucess.title", "user.update.sucess.message", Severity.INFO));
 		result.redirectTo(this).index();
 	}
 }

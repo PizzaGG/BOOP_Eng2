@@ -56,6 +56,23 @@ public class Livro {
 	@NotNull(message = "{not.null.attribute}")
 	private @Valid Autor autor;
 	
+	public Livro() {
+	}
+	
+	public Livro(Long id, String titulo, String subtitulo, Integer ano, Short edicao, String isbn, Usuario proprietario,
+			Autor autor) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.subtitulo = subtitulo;
+		this.ano = ano;
+		this.edicao = edicao;
+		this.isbn = isbn;
+		this.proprietario = proprietario;
+		this.autor = autor;
+	}
+
+
 	public Long getId() {
 		return id;
 	}

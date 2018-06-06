@@ -1,5 +1,6 @@
 package br.com.boop.controller;
 
+
 import javax.inject.Inject;
 
 import br.com.boop.dao.UsuarioDao;

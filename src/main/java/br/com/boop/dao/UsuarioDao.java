@@ -1,5 +1,6 @@
 package br.com.boop.dao;
 
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
