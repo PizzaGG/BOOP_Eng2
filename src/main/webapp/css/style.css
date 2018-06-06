@@ -37,6 +37,14 @@
   width: 234px;
   height: 150px;
 }
+
+.logo-xl {
+  -webkit-mask: url("../img/boop.svg") no-repeat center;
+  mask: url("../img/boop.svg") no-repeat center;
+  width: 200px;
+  height: 100px;
+}
+
 @media (min-width: 576px) {
   #hidden-menu {
     display: flex;
