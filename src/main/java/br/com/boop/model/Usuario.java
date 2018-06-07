@@ -29,6 +29,9 @@ public class Usuario {
 	@NotBlank(message = "{not.blank.attribute}")
 	private Long matricula;
 	
+	@NotNull(message = "{not.null.attribute}")
+	private UserType tipoUsuario;
+	
 	public Usuario() {
 	}
 

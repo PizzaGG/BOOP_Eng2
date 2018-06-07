@@ -7,6 +7,6 @@ import br.com.caelum.vraptor.Get;
 public class HomeController {
 
 	@Get("/index")
-	public void index() {
+	public void home() {
 	}
 }
