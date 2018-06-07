@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.boop.model.Usuario;
+import br.com.boop.model.UsuarioLogado;
 
 @RequestScoped
 public class UsuarioDao  {
@@ -36,6 +37,22 @@ public class UsuarioDao  {
 
 	public void atualizar(Usuario usuario) {
 		// TODO fazer o corpo
+	}
+
+	
+	private boolean checkLogin(String user, String string) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean hasUser(String user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public UsuarioLogado login(String user, String hashSha256Pass) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
