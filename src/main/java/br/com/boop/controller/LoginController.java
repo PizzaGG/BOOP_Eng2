@@ -36,18 +36,18 @@ public class LoginController {
 	public void autentica(String user, String pass) {
 		if (usuarioLogado != null) {
 			MessagesController
-					.addMessage(new BoopMessage("has.logged.user.tittle", "has.loggued.user.message", Severity.WARN));
+					.addMessage(new BoopMessage("has.logged.user.title", "has.logged.user.message", Severity.WARN));
 			result.redirectTo(HomeController.class).home();
 			return;
 		}
 		if (usuarioDao.hasUser(user)) {
 			 usuarioLogado = usuarioDao.login(user,HashPasswordGenerator.getHashSha256(pass));
 			 if (usuarioLogado==null) {
-				 MessagesController.addMessage(new BoopMessage("error.tittle","user.or.password.invalid",Severity.ERROR));
+				 MessagesController.addMessage(new BoopMessage("error.title","user.or.password.invalid",Severity.ERROR));
 				 result.redirectTo(this).login();
 				 return;
 			 } else {
-				 MessagesController.addMessage(new BoopMessage("sucess.tittle","sucess.login.tittle",Severity.SUCCESS));
+				 MessagesController.addMessage(new BoopMessage("sucess.title","sucess.login.title",Severity.SUCCESS));
 				 result.redirectTo(HomeController.class).home();
 				 return;
 			 }
