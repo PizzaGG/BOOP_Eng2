@@ -1,5 +1,6 @@
 package br.com.boop.controller;
 
+import javax.inject.Inject;
 import javax.validation.Valid;
 
 import br.com.boop.dao.UsuarioDao;
@@ -25,6 +26,7 @@ public class UsuarioController {
 		this(null, null, null);
 	}
 
+	@Inject
 	public UsuarioController(Result _result, Validator _validator, UsuarioDao _usuarioDao) {
 		this.validator = _validator;
 		this.result = _result;
