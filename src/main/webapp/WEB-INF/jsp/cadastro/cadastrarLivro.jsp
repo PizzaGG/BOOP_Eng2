@@ -97,8 +97,12 @@
               </fieldset>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
-          <button type="button" class="btn btn-secondary mr-2 float-right">Cancelar</button>
+          <a href="../BOOP_Eng2/cadastrar">
+            <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
+          </a>
+          <a href="../BOOP_Eng2/index">
+          	<button type="button" class="btn btn-secondary mr-2 float-right">Cancelar</button>
+          </a>
           </fieldset>
         </form>
       </div>
