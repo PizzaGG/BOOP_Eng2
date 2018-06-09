@@ -1,6 +1,6 @@
 package br.com.boop.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,13 +28,13 @@ public class Autor {
 
 	@NotNull(message = "{not.null.attribute}")
 	@OneToMany
-	private ArrayList<Livro> producoes;
+	private List<Livro> producoes;
 
 	public Long getId() {
 		return id;
 	}
 	
-	public ArrayList<Livro> getProducoes() {
+	public List<Livro> getProducoes() {
 		return producoes;
 	}
 	

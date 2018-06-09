@@ -1,7 +1,9 @@
 package br.com.boop.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
@@ -10,9 +12,9 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Trocador extends Usuario{
 	
-	@OneToMany
+	@OneToMany (cascade=CascadeType.ALL, targetEntity=Livro.class)
 	@NotNull
-	private @Valid ArrayList<Livro> livros;
+	private @Valid List<Livro> livros;
 
 	public Trocador(){
 	}
@@ -21,7 +23,7 @@ public class Trocador extends Usuario{
 		this.livros=_livros;
 	}
 	
-	public ArrayList<Livro> getLivros() {
+	public List<Livro> getLivros() {
 		return livros;
 	} 
 	
