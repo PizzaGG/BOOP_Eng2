@@ -27,7 +27,7 @@
           </div>
           <li class="nav-item dropdown">
             <button type="button" class="btn btn-link text-black">
-              Jo√£o Silva
+              Jo„o Silva
             </button>
             <a class="text-black" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-caret-down"></i>
@@ -54,7 +54,7 @@
   <div class="container">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="#">In√≠cio</a>
+        <a href="#">InÌ≠cio</a>
       </li>
       <li class="breadcrumb-item active">Cadastrar livro</li>
     </ol>

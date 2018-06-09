@@ -24,11 +24,11 @@
       <div class="col-md-7 col-lg-5 col-xl-4">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Autentica√ß√£o</h4>
+            <h4 class="card-title">AutenticaÁ„o</h4>
             <form action="login" class="mt-3">
               <div class="form-group">
-                <label for="usuario">Usu√°rio</label>
-                <input type="text" class="form-control" id="usuario" placeholder="Digite seu usu√°rio">
+                <label for="usuario">Usu·rio</label>
+                <input type="text" class="form-control" id="usuario" placeholder="Digite seu usu·rio">
               </div>
               <div class="form-group">
                 <label for="senha">Senha</label>
