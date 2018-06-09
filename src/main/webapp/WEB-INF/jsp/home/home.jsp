@@ -119,7 +119,7 @@
               </div>
             </div>
             <div class="card-body d-flex justify-content-end">
-              <a href="../cadastro/cadastrarLivro.jsp">
+              <a href="../BOOP_Eng2/cadastro">
                 <button type="button" class="btn btn-secondary mr-2">Cadastrar livro</button>
               </a>
               <button type="button" class="btn btn-primary">Todos os livros</button>
