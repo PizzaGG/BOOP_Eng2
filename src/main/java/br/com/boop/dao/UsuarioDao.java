@@ -36,7 +36,7 @@ public class UsuarioDao  {
 	}
 
 	public void atualizar(Usuario usuario) {
-		// TODO fazer o corpo
+		manager.merge(usuario);
 	}
 
 	
