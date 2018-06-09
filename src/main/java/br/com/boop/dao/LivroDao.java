@@ -33,5 +33,17 @@ public class LivroDao {
 		return em.find(Livro.class, livro.getId());
 	}
 	
+	public Livro busca(Long id) {
+		return em.find(Livro.class, id);
+	}
+
+	public void atualizar(Livro livro) {
+		em.merge(livro);
+	}
+	
+	public void deletar(Long idLivro) {
+		em.remove(busca(idLivro));
+	}
+	
 	
 }
