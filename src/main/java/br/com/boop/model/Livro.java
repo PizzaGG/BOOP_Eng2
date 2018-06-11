@@ -74,6 +74,38 @@ public class Livro {
 	public Long getId() {
 		return id;
 	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public void setSubtitulo(String subtitulo) {
+		this.subtitulo = subtitulo;
+	}
+
+	public void setAno(Integer ano) {
+		this.ano = ano;
+	}
+
+	public void setEdicao(Short edicao) {
+		this.edicao = edicao;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public void setProprietario(Usuario proprietario) {
+		this.proprietario = proprietario;
+	}
+
+	public void setAutor(Autor autor) {
+		this.autor = autor;
+	}
+
 	public String getTitulo() {
 		return titulo;
 	}

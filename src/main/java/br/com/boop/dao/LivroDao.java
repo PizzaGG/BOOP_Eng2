@@ -1,11 +1,13 @@
 package br.com.boop.dao;
 
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.boop.model.Livro;
 
+@RequestScoped
 public class LivroDao {
 	
 	private final EntityManager em;
@@ -15,17 +17,23 @@ public class LivroDao {
 		this.em=em;
 	}
 	
-	@Deprecated
 	protected LivroDao () {
 		this(null);
 	}
 	
 	public void salvar (Livro livro) {
-		em.persist(livro);		
+		//em.getTransaction().begin();
+		if(em==null) {
+			System.out.println("lol");
+		}
+		em.persist(livro);
+		//em.getTransaction().commit();
 	}
 	
 	public void remove(Livro livro) {
+		//em.getTransaction().begin();
 		em.remove(busca(livro));
+		//em.getTransaction().commit();
 	}
 	
 
