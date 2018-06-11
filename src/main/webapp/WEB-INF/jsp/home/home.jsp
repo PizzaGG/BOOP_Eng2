@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 
 <head>
@@ -10,16 +11,18 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="<c:url value="/css/style.css"/>">
 </head>
-
 <body>
+
+<%-- 					<img src="<c:url value="/img/perfil.jpg"/>" alt="..."> --%>
+					
   <nav class="navbar navbar-expand-sm navbar-light bg-light d-lg-none">
     <div class="container">
       <div class="d-flex align-items-center">
         <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
           <!-- <h5 class="m-0">F</h5> -->
-          <img src="../../../img/perfil.jpg" class="navbar-profile-pic rounded-circle" alt="JoÃ£o Silva">
+          <img src="<c:url value="/img/perfil.jpg"/>" class="navbar-profile-pic rounded-circle" alt="João Silva">
         </div>
         <a class="navbar-brand ml-3" href="#">João Silva</a>
       </div>
@@ -74,7 +77,7 @@
                 <div class="col-md-4 col-sm-6 py-2">
                   <div class="card shadow-sm">
                     <div class="capa-livro-card">
-                      <img class="card-img-top capa-livro-card-img" src="../../../img/book1.jpg" alt="Card image cap">
+                      <img class="card-img-top capa-livro-card-img" src="<c:url value="/img/book1.jpg"/>" alt="Card image cap">
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">Livro Um</h5>
@@ -89,7 +92,7 @@
                 <div class="col-md-4 col-sm-6 py-2">
                   <div class="card shadow-sm">
                     <div class="capa-livro-card">
-                      <img class="card-img-top capa-livro-card-img" src="../../../img/book2.jpg" alt="Card image cap">
+                      <img class="card-img-top capa-livro-card-img" src="<c:url value="/img/book2.jpg"/>" alt="Card image cap">
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">Livro Dois</h5>
@@ -104,7 +107,7 @@
                 <div class="col-md-4 col-sm-6 py-2">
                   <div class="card shadow-sm">
                     <div class="capa-livro-card">
-                      <img class="card-img-top capa-livro-card-img" src="../../../img/book3.jpg" alt="Card image cap">
+                      <img class="card-img-top capa-livro-card-img" src="<c:url value="/img/book3.jpg"/>" alt="Card image cap">
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">Livro Três</h5>
@@ -133,7 +136,7 @@
             <!-- SIDEBAR PROFILE PIC -->
             <div class="sidebar-profile-pic-div rounded-circle mb-4 bg-dark- d-flex justify-content-center">
               <!-- <h5 class="m-0">F</h5> -->
-              <img src="../../../img/perfil.jpg" class="sidebar-profile-pic" alt="JoÃ£o Silva">
+              <img src="<c:url value="/img/perfil.jpg"/>" class="sidebar-profile-pic" alt="JoÃ£o Silva">
             </div>
 
             <!-- SIDEBAR PROFILE NAME -->
@@ -176,7 +179,7 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
-  <script src="../../../js/app.js"></script>
+  <script src="<c:url value="/js/app.js"/>"></script>
 
 </body>
 
