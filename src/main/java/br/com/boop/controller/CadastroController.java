@@ -1,5 +1,6 @@
 package br.com.boop.controller;
 
+import javax.annotation.Resource;
 import javax.inject.Inject;
 import javax.validation.Valid;
 
@@ -15,6 +16,7 @@ import br.com.caelum.vraptor.validator.Severity;
 import br.com.caelum.vraptor.validator.Validator;
 
 @Controller
+@Resource
 public class CadastroController {
 
 	private final LivroDao livroDao;

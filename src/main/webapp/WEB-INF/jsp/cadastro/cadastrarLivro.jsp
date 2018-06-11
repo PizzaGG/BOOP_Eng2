@@ -54,7 +54,7 @@
   <div class="container">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="#">Iní­cio</a>
+        <a href="../BOOP_Eng2/index">Iní­cio</a>
       </li>
       <li class="breadcrumb-item active">Cadastrar livro</li>
     </ol>
@@ -62,7 +62,7 @@
       <div class="card-body">
         <h4 class="card-title">Cadastrar livro</h4>
 
-        <form class="mt-4">
+        <form action="../BOOP_Eng2/cadastrar" method="post" class="mt-4">
           <!-- <div class="alert alert-dismissible alert-success">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <p class="mb-0">Livro adicionado com sucesso</p>
@@ -84,22 +84,20 @@
               <fieldset>
                 <div class="form-group">
                   <label class="col-form-label" for="nomeLivro">Nome do livro</label>
-                  <input type="text" class="form-control" placeholder="Nome do livro" id="nomeLivro">
+                  <input type="text" name="${livro.titulo}" class="form-control" placeholder="Nome do livro" id="nomeLivro">
                 </div>
                 <div class="form-group">
                   <label class="col-form-label" for="autorLivro">Autor</label>
-                  <input type="text" class="form-control" placeholder="Autor" id="autorLivro">
+                  <input type="text" name="${livro.autor}" class="form-control" placeholder="Autor" id="autorLivro">
                 </div>
                 <div class="form-group">
                   <label class="col-form-label" for="isbnLivro">ISBN</label>
-                  <input type="text" class="form-control" placeholder="ISBN" id="isbnLivro">
+                  <input type="text" name="${livro.isbn}" class="form-control" placeholder="ISBN" id="isbnLivro">
                 </div>
               </fieldset>
             </div>
           </div>
-          <a href="../BOOP_Eng2/cadastrar">
-            <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
-          </a>
+          <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
           <a href="../BOOP_Eng2/index">
           	<button type="button" class="btn btn-secondary mr-2 float-right">Cancelar</button>
           </a>

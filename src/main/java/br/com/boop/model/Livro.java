@@ -34,13 +34,11 @@ public class Livro {
 	@NotNull(message = "{not.null.attribute}")
 	@NotEmpty(message = "{not.empty.attribute}")
 	@NotBlank(message = "{not.blank.attribute}")
-	@Size(min = 100, max = 2018, message = "{invalid.size.attribute}")
 	private Integer ano;
 	
 	@NotNull(message = "{not.null.attribute}")
 	@NotEmpty(message = "{not.empty.attribute}")
 	@NotBlank(message = "{not.blank.attribute}")
-	@Size(min = 1, max = 100, message = "{invalid.size.attribute}")
 	private Short edicao;
 	
 	@NotNull(message = "{not.null.attribute}")
