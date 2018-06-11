@@ -14,11 +14,9 @@ public class MessagesController implements Serializable {
 
 	private static final long serialVersionUID = 5767500124744267839L;
 	
-	private static ArrayList<BoopMessage> messagesList;
+	private static ArrayList<BoopMessage> messagesList = new ArrayList<BoopMessage>();
 	
-	public MessagesController() {
-		messagesList = new ArrayList<BoopMessage>();
-	}
+	
 
 	
 	public ArrayList<BoopMessage> getMessagesList() {
