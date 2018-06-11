@@ -33,7 +33,7 @@ public class UsuarioController {
 		this.usuarioDao = _usuarioDao;
 	}
 	
-	@Get("/")
+	@Get("/user")
 	public void index() {
 	}
 	

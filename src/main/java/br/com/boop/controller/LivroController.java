@@ -50,6 +50,7 @@ public class LivroController {
 		result.redirectTo(HomeController.class).home();
 	}
 	
+	@Get("/delete")
 	public void deletar(Long idLivro) {
 		livroDao.deletar(idLivro);
 		MessagesController.addMessage(new BoopMessage("book.register.sucess.title", "book.register.sucess.message", Severity.INFO));
