@@ -2,7 +2,6 @@ package br.com.boop.controller;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
-import javax.validation.Valid;
 
 import br.com.boop.dao.LivroDao;
 import br.com.boop.model.BoopMessage;
@@ -41,11 +40,12 @@ public class CadastroController {
 	}
 	
 	@Post("/cadastrar")
-	public void cadastrar(@Valid Livro livro) {
+	public void cadastrar(Livro livro) {
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(this).cadastrarLivro();
 			for (Message msg : validator.getErrors()) {
 				MessagesController.addMessage(new BoopMessage("user.update.error.title", msg.getMessage(), msg.getSeverity()));
+				result.redirectTo(LoginController.class).login();
 			}
 			return;
 		}
