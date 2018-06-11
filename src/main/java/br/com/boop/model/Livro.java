@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -50,15 +49,15 @@ public class Livro {
 	@NotNull(message = "{not.null.attribute}")
 	private @Valid Usuario proprietario;
 	
-	@ManyToOne
+	//@ManyToOne
 	@NotNull(message = "{not.null.attribute}")
-	private @Valid Autor autor;
+	private @Valid String autor;
 	
 	public Livro() {
 	}
 	
 	public Livro(Long id, String titulo, String subtitulo, Integer ano, Short edicao, String isbn, Usuario proprietario,
-			Autor autor) {
+			String autor) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -102,7 +101,7 @@ public class Livro {
 		this.proprietario = proprietario;
 	}
 
-	public void setAutor(Autor autor) {
+	public void setAutor(String autor) {
 		this.autor = autor;
 	}
 
@@ -121,7 +120,7 @@ public class Livro {
 	public String getIsbn() {
 		return isbn;
 	}
-	public Autor getAutor() {
+	public String getAutor() {
 		return autor;
 	}
 	public Usuario getProprietario() {
