@@ -22,9 +22,9 @@
       <div class="d-flex align-items-center">
         <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
           <!-- <h5 class="m-0">F</h5> -->
-          <img src="<c:url value="/img/perfil.jpg"/>" class="navbar-profile-pic rounded-circle" alt="João Silva">
+          <img src="<c:url value="/img/perfil.jpg"/>" class="navbar-profile-pic rounded-circle" alt="Joï¿½o Silva">
         </div>
-        <a class="navbar-brand ml-3" href="#">João Silva</a>
+        <a class="navbar-brand ml-3" href="#">Joï¿½o Silva</a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hidden-menu" aria-controls="hidden-menu"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -110,7 +110,7 @@
                       <img class="card-img-top capa-livro-card-img" src="<c:url value="/img/book3.jpg"/>" alt="Card image cap">
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Livro Três</h5>
+                      <h5 class="card-title">Livro Trï¿½s</h5>
                       <p class="card-text">
                         Autor: Sicraninho
                         <br> ISBN: 0000000000000
@@ -141,7 +141,7 @@
 
             <!-- SIDEBAR PROFILE NAME -->
             <h3>
-              <strong>João Silva</strong>
+              <strong>JoÃ£o Silva</strong>
             </h3>
             <h6 class="text-muted text-uppercase">Trocador</h6>
 

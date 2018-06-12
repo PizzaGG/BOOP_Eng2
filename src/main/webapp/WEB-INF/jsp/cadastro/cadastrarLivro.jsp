@@ -27,7 +27,7 @@
           </div>
           <li class="nav-item dropdown">
             <button type="button" class="btn btn-link text-black">
-              João Silva
+              Joao Silva
             </button>
             <a class="text-black" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-caret-down"></i>
@@ -54,7 +54,7 @@
   <div class="container">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="../BOOP_Eng2/index">Iní­cio</a>
+        <a href="../BOOP_Eng2/index">Inicio</a>
       </li>
       <li class="breadcrumb-item active">Cadastrar livro</li>
     </ol>
@@ -82,17 +82,33 @@
             </div>
             <div class="col-md-9">
               <fieldset>
-                <div class="form-group">
-                  <label class="col-form-label" for="nomeLivro">Nome do livro</label>
-                  <input type="text" name="${livro.titulo}" class="form-control" placeholder="Nome do livro" id="nomeLivro">
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label class="col-form-label" for="tituloLivro">Titulo do livro</label>
+                    <input type="text" class="form-control" placeholder="Titulo do livro" id="tituloLivro">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="col-form-label" for="subtituloLivro">Subtitulo do livro</label>
+                    <input type="text" class="form-control" placeholder="Subtitulo do livro" id="subtituloLivro">
+                  </div>
                 </div>
                 <div class="form-group">
                   <label class="col-form-label" for="autorLivro">Autor</label>
-                  <input type="text" name="${livro.autor}" class="form-control" placeholder="Autor" id="autorLivro">
+                  <input type="text" class="form-control" placeholder="Autor" id="autorLivro">
                 </div>
-                <div class="form-group">
-                  <label class="col-form-label" for="isbnLivro">ISBN</label>
-                  <input type="text" name="${livro.isbn}" class="form-control" placeholder="ISBN" id="isbnLivro">
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <label class="col-form-label" for="anoLivro">Ano</label>
+                    <input type="text" class="form-control" placeholder="Ano" id="anoLivro">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label class="col-form-label" for="edicaoLivro">Edicao</label>
+                    <input type="text" class="form-control" placeholder="Edicao" id="edicaoLivro">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label class="col-form-label" for="isbnLivro">ISBN</label>
+                    <input type="text" class="form-control" placeholder="ISBN" id="isbnLivro">
+                  </div>
                 </div>
               </fieldset>
             </div>

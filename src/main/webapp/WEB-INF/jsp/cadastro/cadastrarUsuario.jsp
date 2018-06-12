@@ -26,23 +26,32 @@
         <div class="col-md-7 col-lg-5 col-xl-4">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Autentica��o</h4>
-              <form action="login" class="mt-3">
+              <h4 class="card-title">Cadastro</h4>
+              <form action="cadastroUsuario" class="mt-3">
                 <div class="form-group">
-                  <label for="usuario">Usu�rio</label>
-                  <input type="text" class="form-control" id="usuario" placeholder="Digite seu usu�rio">
+                  <label for="usuario">Usuário</label>
+                  <input type="text" class="form-control" id="usuario" placeholder="Digite seu usuário">
                 </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                </div>
+                <div class="form-group">
+                  <label for="matricula">Matricula</label>
+                  <input type="text" class="form-control" id="matricula" placeholder="Digite sua matricula">
+                </div>  
                 <div class="form-group">
                   <label for="senha">Senha</label>
                   <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
                 </div>
-                <button type="button" class="px-0 btn btn-link">Esqueci minha senha</button>
-                <button type="submit" class="btn btn-primary float-right">Entrar</button>
+                <div class="form-group">
+                  <label for="senhaConfirmacao">Confirme sua senha</label>
+                  <input type="password" class="form-control" id="senhaConfirmacao" placeholder="Digite sua senha novamente">
+                </div>
+                <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
               </form>
             </div>
           </div>
-          <hr>
-          <a href="../BOOP_Eng2/cadastroUsuario"><button type="button" class="btn btn-outline-primary btn-lg btn-block">Cadastrar</button></a>
         </div>
       </div>
     </div>
