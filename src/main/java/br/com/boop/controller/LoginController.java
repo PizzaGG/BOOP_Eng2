@@ -17,30 +17,32 @@ public class LoginController {
 
 	private final Result result;
 	private final UsuarioDao usuarioDao;
+	private final UsuarioLogado usuarioLogado;
 
 	@Inject
 	public LoginController(Result result,
-			UsuarioDao usuarioDao) {
+			UsuarioDao usuarioDao, UsuarioLogado usuarioLogado) {
 		this.result = result;
 		this.usuarioDao = usuarioDao;
+		this.usuarioLogado = usuarioLogado;
 	}
 
 	@Deprecated
 	public LoginController() {
-		this(null, null);
+		this(null, null, null);
 	}
 
 	@Post("/auth")
-	public void autentica(Long usuario, String senha) {
-		if (UsuarioLogado.getUsuario() != null) {
+	public void autentica(String usuario, String senha) {
+		if (usuarioLogado.getUsuario() != null) {
 			MessagesController
 					.addMessage(new BoopMessage("has.logged.user.title", "has.logged.user.message", Severity.WARN));
 			result.redirectTo(HomeController.class).home();
 			return;
 		}
 		if (usuarioDao.existe(usuario)) {
-			 UsuarioLogado.setUsuario(usuarioDao.login(usuario, HashPasswordGenerator.getHashSha256(senha)));
-			 if (UsuarioLogado.getUsuario()==null) {
+			 usuarioLogado.setUsuario(usuarioDao.login(usuario, HashPasswordGenerator.getHashSha256(senha)));
+			 if (usuarioLogado.getUsuario()==null) {
 				 MessagesController.addMessage(new BoopMessage("error.title","user.or.password.invalid",Severity.ERROR));
 				 result.redirectTo(this).login();
 				 return;

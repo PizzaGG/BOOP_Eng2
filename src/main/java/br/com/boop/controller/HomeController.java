@@ -11,15 +11,17 @@ import br.com.caelum.vraptor.Result;
 public class HomeController {
 	
 	private Result result;
+	private final UsuarioLogado usuarioLogado;
 
 	@Inject
-	public HomeController(Result result) {
+	public HomeController(Result result, UsuarioLogado usuarioLogado) {
 		this.result = result;
+		this.usuarioLogado = usuarioLogado;
 	}
 	
 	@Deprecated
 	public HomeController() {
-		this(null);
+		this(null, null);
 	}
 
 	@Get("/home")
@@ -28,7 +30,7 @@ public class HomeController {
 	
 	@Get("/sair")
 	public void sair() {
-		UsuarioLogado.setUsuario(null);
+		//usuarioLogado.setUsuario(null);
 		result.redirectTo(LoginController.class).login();
 	}
 }

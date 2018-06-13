@@ -61,9 +61,9 @@
 						<h4 class="card-title">Autenticação</h4>
 						<form action="auth" method="post" class="mt-3">
 							<div class="form-group">
-								<label for="usuario">Matricula</label> <input type="text"
+								<label for="usuario">Usuario</label> <input type="text"
 									name="usuario" class="form-control" id="usuario"
-									placeholder="Digite sua matricula">
+									placeholder="Digite seu usuario">
 							</div>
 							<div class="form-group">
 								<label for="senha">Senha</label> <input type="password"
