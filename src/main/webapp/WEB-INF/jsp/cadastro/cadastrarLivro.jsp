@@ -85,30 +85,31 @@
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label class="col-form-label" for="tituloLivro">Titulo do livro</label>
-                    <input type="text" class="form-control" placeholder="Titulo do livro" id="tituloLivro">
+                    <input type="text" name="livro.titulo" class="form-control" placeholder="Titulo do livro" id="tituloLivro">
                   </div>
                   <div class="form-group col-md-6">
                     <label class="col-form-label" for="subtituloLivro">Subtitulo do livro</label>
-                    <input type="text" class="form-control" placeholder="Subtitulo do livro" id="subtituloLivro">
+                    <input type="text" name="livro.subtitulo" class="form-control" placeholder="Subtitulo do livro" id="subtituloLivro">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-form-label" for="autorLivro">Autor</label>
-                  <input type="text" class="form-control" placeholder="Autor" id="autorLivro">
+                  <input type="text" name="livro.autor" class="form-control" placeholder="Autor" id="autorLivro">
                 </div>
                 <div class="row">
                   <div class="form-group col-md-4">
                     <label class="col-form-label" for="anoLivro">Ano</label>
-                    <input type="text" class="form-control" placeholder="Ano" id="anoLivro">
+                    <input type="text" name="livro.ano" class="form-control" placeholder="Ano" id="anoLivro">
                   </div>
                   <div class="form-group col-md-4">
                     <label class="col-form-label" for="edicaoLivro">Edicao</label>
-                    <input type="text" class="form-control" placeholder="Edicao" id="edicaoLivro">
+                    <input type="text" name="livro.edicao" class="form-control" placeholder="Edicao" id="edicaoLivro">
                   </div>
                   <div class="form-group col-md-4">
                     <label class="col-form-label" for="isbnLivro">ISBN</label>
-                    <input type="text" class="form-control" placeholder="ISBN" id="isbnLivro">
+                    <input type="text" name="livro.isbn" class="form-control" placeholder="ISBN" id="isbnLivro">
                   </div>
+                  	<input type="hidden" name="livro.proprietario" value="aloha" id="proprietarioLivro"> <!-- teste -->
                 </div>
               </fieldset>
             </div>
