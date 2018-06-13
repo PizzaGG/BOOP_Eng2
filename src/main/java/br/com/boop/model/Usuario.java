@@ -25,19 +25,35 @@ public class Usuario {
 	private String nome;
 
 	@NotNull(message = "{not.null.attribute}")
-	@NotEmpty(message = "{not.empty.attribute}")
-	@NotBlank(message = "{not.blank.attribute}")
 	private Long matricula;
 	
 	@NotNull(message = "{not.null.attribute}")
 	private UserType tipoUsuario;
 	
+	@NotNull(message = "{not.null.attribute}")
+	@NotEmpty(message = "{not.empty.attribute}")
+	@NotBlank(message = "{not.blank.attribute}")
+	private String hashSenha;
+	
 	public Usuario() {
 	}
 
-	public Usuario(String _nome, long _matricula) {
+	public Usuario(String _nome, long _matricula, String _hashSenha) {
 		this.nome = _nome;
 		this.matricula = _matricula;
+		this.hashSenha = _hashSenha;
+	}	
+
+	public void setTipoUsuario(UserType tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setMatricula(Long matricula) {
+		this.matricula = matricula;
 	}
 
 	public String getNome() {
@@ -46,6 +62,14 @@ public class Usuario {
 
 	public Long getMatricula() {
 		return matricula;
+	}
+	
+	public String getHashSenha() {
+		return hashSenha;
+	}
+	
+	public void setHashSenha(String _hashSenha) {
+		this.hashSenha = _hashSenha;
 	}
 
 }
