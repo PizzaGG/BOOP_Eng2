@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
       crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
-    <link rel="stylesheet" href="<c:url value=" /css/style.css "/>">
+    <link rel="stylesheet" href="<c:url value="/css/style.css"/>">
   </head>
 
   <body>
@@ -26,15 +26,15 @@
         <div class="col-md-7 col-lg-5 col-xl-4">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Autenticaï¿½ï¿½o</h4>
-              <form action="login" class="mt-3">
+              <h4 class="card-title">Autenticação</h4>
+              <form action="auth" method="post" class="mt-3">
                 <div class="form-group">
-                  <label for="usuario">Usuï¿½rio</label>
-                  <input type="text" class="form-control" id="usuario" placeholder="Digite seu usuï¿½rio">
+                  <label for="usuario">Matricula</label>
+                  <input type="text" name="usuario" class="form-control" id="usuario" placeholder="Digite sua matricula">
                 </div>
                 <div class="form-group">
                   <label for="senha">Senha</label>
-                  <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+                  <input type="password" name="senha" class="form-control" id="senha" placeholder="Digite sua senha">
                 </div>
                 <button type="button" class="px-0 btn btn-link">Esqueci minha senha</button>
                 <button type="submit" class="btn btn-primary float-right">Entrar</button>
@@ -54,7 +54,7 @@
     crossorigin="anonymous"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
       crossorigin="anonymous"></script>
-    <script src="<c:url value=" /js/app.js "/>"></script>
+    <script src="<c:url value="/js/app.js"/>"></script>
 
   </body>
 
