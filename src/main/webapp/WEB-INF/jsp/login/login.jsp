@@ -1,6 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
-<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="en">
 
@@ -21,25 +21,23 @@
 
 <body>
 
-
-	<!-- CODIGO QUE GERA MENSAGEM NA VIEW -->
-
+	<!-- CODIGO QUE GERA MENSAGEM NA VIEW -->	
 	<div class="container" style="padding-left: 30px !important;">
 		<div class="row">
 			<div class="col-md-9 mx-auto" style="padding-top: 22px;">
-				<c:if test="${msg.getMessage().size() > 0}">
-					<c:forEach var="mensagem" items="${msg.getMessage()}">
-						<div class="${mensagem.getClasse()}" role="alert">
+				<c:if test="${msg.getMessagesList().size() > 0}">
+					<c:forEach var="mensagem" items="${msg.getMessagesList()}">
+						<div class="alert alert-warning" role="alert">
 							<button type="button" class="close" data-dismiss="alert"
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 							<strong> <fmt:message key="${mensagem.category}" /></strong>
-							<fmt:message key="${mensagem.value}" />
-						</div>
+							<fmt:message key="${mensagem.message}" />
+						</div> 
 					</c:forEach>
 				</c:if>
-				${msg.clean()}
+				${msg.clear()}
 			</div>
 		</div>
 	</div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%><html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,26 @@
   </head>
 
   <body>
+  <!-- CODIGO QUE GERA MENSAGEM NA VIEW -->
+	<div class="container" style="padding-left: 30px !important;">
+		<div class="row">
+			<div class="col-md-9 mx-auto" style="padding-top: 22px;">
+				<c:if test="${msg.getMessagesList().size() > 0}">
+					<c:forEach var="mensagem" items="${msg.getMessagesList()}">
+						<div class="alert alert-warning" role="alert">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<strong> <fmt:message key="${mensagem.category}" /></strong>
+							<fmt:message key="${mensagem.message}" />
+						</div>
+					</c:forEach>
+				</c:if>
+				${msg.clear()}
+			</div>
+		</div>
+	</div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <!-- <a class="navbar-brand" href="#">Boop</a> -->
