@@ -160,9 +160,9 @@
 
                 <!-- SIDEBAR PROFILE NAME -->
                 <h3>
-                  <strong>Joao Silva</strong>
+                  <strong>${usuarioLog.getUsuario().nome} </strong>
                 </h3>
-                <h6 class="text-muted text-uppercase">Trocador</h6>
+                <h6 class="text-muted text-uppercase">${usuarioLog.tipoUsuario}</h6>
 
                 <form class="mt-3">
                   <div class="input-group">

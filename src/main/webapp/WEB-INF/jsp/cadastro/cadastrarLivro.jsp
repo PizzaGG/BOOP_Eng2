@@ -33,7 +33,7 @@
           </form>
         </div>
 
-        <div class="col-7 pesquisa-medio">
+        <!--<div class="col-7 pesquisa-medio">
           <form>
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Digite o nome de um livro">
@@ -45,7 +45,7 @@
               </div>
             </div>
           </form>
-        </div>
+        </div> -->
 
         <div class="navbar-profile d-flex">
           <ul class="nav nav-pills">
@@ -55,7 +55,7 @@
             </div>
             <li class="nav-item dropdown">
               <button type="button" class="btn btn-link text-black">
-                João Silva
+                ${usuarioLog.getUsuario().nome}
               </button>
               <a class="text-black" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-caret-down"></i>
@@ -77,7 +77,7 @@
       </div>
     </nav>
 
-    <nav class="navbar navbar-light bg-light pesquisa-pequeno">
+    <!-- <nav class="navbar navbar-light bg-light pesquisa-pequeno">
       <div class="container w-100 p-0">
         <div class="py-2 w-100">
           <form>
@@ -93,14 +93,14 @@
           </form>
         </div>
       </div>
-    </nav>
+    </nav>  -->
 
     <div class="my-4"></div>
 
     <div class="container">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="../BOOP_Eng2/index">Inicio</a>
+          <a href="../BOOP_Eng2/home">Inicio</a>
         </li>
         <li class="breadcrumb-item active">Cadastrar livro</li>
       </ol>

@@ -30,7 +30,7 @@
               <form action="cadastrarUsuario" method="post" class="mt-3">
                 <div class="form-group">
                   <label for="usuario">Usuario</label>
-                  <input type="text" class="form-control" id="usuario" placeholder="Digite seu usuario">
+                  <input type="text" name="usuario.username" class="form-control" id="usuario" placeholder="Digite seu usuario">
                 </div>
                 <div class="form-group">
                   <label for="nome">Nome</label>
@@ -52,7 +52,7 @@
                   <label for="senhaConfirmacao">Confirme sua senha</label>
                   <input type="password" class="form-control" id="senhaConfirmacao" placeholder="Digite sua senha novamente">
                 </div>
-                <input type="hidden" name="usuario.tipoUsuario" value=0 placeholder="Digite sua senha novamente">
+                <input type="hidden" name="usuario.tipoUsuario" value=0 >
                 <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
               </form>
             </div>

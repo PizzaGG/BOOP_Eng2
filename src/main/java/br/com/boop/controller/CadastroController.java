@@ -53,13 +53,13 @@ public class CadastroController {
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(this).cadastrarLivro();
 			for (Message msg : validator.getErrors()) {
-				MessagesController.addMessage(new BoopMessage("book.create.error.title", msg.getMessage(), msg.getSeverity()));
-				result.redirectTo(LoginController.class).login();
+				MessagesController.addMessage(new BoopMessage("error.title", msg.getMessage(), msg.getSeverity()));
+				result.redirectTo(CadastroController.class).cadastrarLivro();
 			}
 			return;
 		}
 		livroDao.salvar(livro);
-		MessagesController.addMessage(new BoopMessage("book.create.sucess.title", "book.create.sucess.message", Severity.INFO));
+		MessagesController.addMessage(new BoopMessage("sucess.title", "book.register.sucess.message", Severity.SUCCESS));
 		result.redirectTo(HomeController.class).home();
 		return;
 	}
@@ -69,15 +69,15 @@ public class CadastroController {
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(this).cadastrarLivro();
 			for (Message msg : validator.getErrors()) {
-				MessagesController.addMessage(new BoopMessage("user.create.error.title", msg.getMessage(), msg.getSeverity()));
+				MessagesController.addMessage(new BoopMessage("error.title", msg.getMessage(), msg.getSeverity()));
 				result.redirectTo(LoginController.class).login();
 			}
 			return;
 		}
 		usuario.setHashSenha(HashPasswordGenerator.getHashSha256(usuario.getHashSenha()));
 		usuarioDao.salvar(usuario);
-		MessagesController.addMessage(new BoopMessage("user.create.sucess.title", "user.create.sucess.message", Severity.INFO));
-		result.redirectTo(HomeController.class).home();
+		MessagesController.addMessage(new BoopMessage("success.title", "user.create.sucess.message", Severity.SUCCESS));
+		result.redirectTo(LoginController.class).login();
 		return;
 	}
 	
