@@ -8,7 +8,7 @@ import javax.inject.Named;
 
 import br.com.boop.model.BoopMessage;
 
-@Named
+@Named("msg")
 @SessionScoped
 public class MessagesController implements Serializable {
 
@@ -16,13 +16,9 @@ public class MessagesController implements Serializable {
 	
 	private static ArrayList<BoopMessage> messagesList = new ArrayList<BoopMessage>();
 	
-	
-
-	
-	public ArrayList<BoopMessage> getMessagesList() {
+	public static ArrayList<BoopMessage> getMessagesList() {
 		return messagesList;
 	}
-
 
 	public static void addMessage(BoopMessage boopMessage) {
 		messagesList.add(boopMessage);
@@ -31,7 +27,5 @@ public class MessagesController implements Serializable {
 	public static void clear() {
 		messagesList.clear();
 	}
-	
-	
 	
 }
