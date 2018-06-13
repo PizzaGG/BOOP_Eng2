@@ -1,12 +1,13 @@
 package br.com.boop.dao;
 
 
+import java.util.List;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.boop.model.Usuario;
-import br.com.boop.model.UsuarioLogado;
 
 @RequestScoped
 public class UsuarioDao  {
@@ -23,15 +24,14 @@ public class UsuarioDao  {
 		this(null);
 	}
 
-	public boolean existe(Usuario usuario) {
-		return !manager
-				.createQuery("select u from Usuario u where u.nome = " + ":nome and u.matricula = :matricula",
-						Usuario.class)
-				.setParameter("nome", usuario.getNome()).setParameter("matricula", usuario.getMatricula())
+	public boolean existe(Long matricula) {
+		  return !manager
+				.createQuery("select u from Usuario u where u.matricula = :matricula",
+						Usuario.class).setParameter("matricula", matricula)
 				.getResultList().isEmpty();
 	}
 
-	public void salva(Usuario usuario) {
+	public void salvar(Usuario usuario) {
 		manager.persist(usuario);
 	}
 
@@ -50,9 +50,16 @@ public class UsuarioDao  {
 		return false;
 	}
 
-	public UsuarioLogado login(String user, String hashSha256Pass) {
-		// TODO Auto-generated method stub
-		return null;
+	public Usuario login(Long matricula, String hashSha256Pass) {
+		List<Usuario> res = manager
+				.createQuery("select u from Usuario u where u.matricula = :matricula and u.hashSenha = :hash",
+				Usuario.class).setParameter("matricula", matricula).setParameter("hash", hashSha256Pass)
+				.getResultList();
+		if(!res.isEmpty()) {
+			return res.get(0);
+		} else {
+			return null;
+		}
 	}
 
 }
