@@ -16,33 +16,31 @@ import br.com.caelum.vraptor.validator.Severity;
 public class LoginController {
 
 	private final Result result;
-	private UsuarioLogado usuarioLogado;
 	private final UsuarioDao usuarioDao;
 
 	@Inject
-	public LoginController(Result result, UsuarioLogado usuarioLogado,
+	public LoginController(Result result,
 			UsuarioDao usuarioDao) {
 		this.result = result;
-		this.usuarioLogado = usuarioLogado;
 		this.usuarioDao = usuarioDao;
 	}
 
 	@Deprecated
 	public LoginController() {
-		this(null, null, null);
+		this(null, null);
 	}
 
 	@Post("/auth")
-	public void autentica(String user, String pass) {
-		if (usuarioLogado != null) {
+	public void autentica(Long usuario, String senha) {
+		if (UsuarioLogado.getUsuario() != null) {
 			MessagesController
 					.addMessage(new BoopMessage("has.logged.user.title", "has.logged.user.message", Severity.WARN));
 			result.redirectTo(HomeController.class).home();
 			return;
 		}
-		if (usuarioDao.hasUser(user)) {
-			 usuarioLogado = usuarioDao.login(user,HashPasswordGenerator.getHashSha256(pass));
-			 if (usuarioLogado==null) {
+		if (usuarioDao.existe(usuario)) {
+			 UsuarioLogado.setUsuario(usuarioDao.login(usuario, HashPasswordGenerator.getHashSha256(senha)));
+			 if (UsuarioLogado.getUsuario()==null) {
 				 MessagesController.addMessage(new BoopMessage("error.title","user.or.password.invalid",Severity.ERROR));
 				 result.redirectTo(this).login();
 				 return;
@@ -51,6 +49,10 @@ public class LoginController {
 				 result.redirectTo(HomeController.class).home();
 				 return;
 			 }
+		} else {
+			MessagesController.addMessage(new BoopMessage("error.title","user.inexistent",Severity.ERROR));
+			result.redirectTo(this).login();
+			return;
 		}
 	}
 
