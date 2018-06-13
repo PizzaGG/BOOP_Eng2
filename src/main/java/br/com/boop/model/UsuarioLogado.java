@@ -10,15 +10,14 @@ import javax.inject.Named;
 @SessionScoped @Named
 public class UsuarioLogado implements Serializable{
 
-
 	private static final long serialVersionUID = 1552280536327897862L;
-	private Usuario usuario;
+	private static Usuario usuario;
 
-	public Usuario getUsuario() {
+	public static Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public static void setUsuario(Usuario _usuario) {
+		usuario = _usuario;
 	}	
 }
