@@ -24,7 +24,7 @@
           <!-- <h5 class="m-0">F</h5> -->
           <img src="<c:url value="/img/perfil.jpg"/>" class="navbar-profile-pic rounded-circle" alt="Jo�o Silva">
         </div>
-        <a class="navbar-brand ml-3" href="#">Jo�o Silva</a>
+        <a class="navbar-brand ml-3" href="#">Joao Silva</a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hidden-menu" aria-controls="hidden-menu"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@
           </li>
           <div class="dropdown-divider"></div>
           <li class="nav-item">
-            <a class="nav-link text-primary" href="#">
+            <a class="nav-link text-primary" href="../BOOP_Eng2/sair">
               <i class="fas fa-sign-out-alt mr-2"></i> Sair</a>
           </li>
         </ul>
@@ -110,7 +110,7 @@
                       <img class="card-img-top capa-livro-card-img" src="<c:url value="/img/book3.jpg"/>" alt="Card image cap">
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Livro Tr�s</h5>
+                      <h5 class="card-title">Livro Tres</h5>
                       <p class="card-text">
                         Autor: Sicraninho
                         <br> ISBN: 0000000000000
@@ -141,14 +141,14 @@
 
             <!-- SIDEBAR PROFILE NAME -->
             <h3>
-              <strong>João Silva</strong>
+              <strong>Joao Silva</strong>
             </h3>
             <h6 class="text-muted text-uppercase">Trocador</h6>
 
             <!-- SIDEBAR NAV -->
             <ul class="nav nav-pills flex-column w-100 mt-4">
               <li class="nav-item side-item rounded">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="../BOOP_Eng2/user">
                   <i class="fas fa-user mr-2"></i> Meu perfil</a>
               </li>
               <li class="nav-item side-item rounded">
@@ -161,7 +161,7 @@
               </li>
               <div class="dropdown-divider"></div>
               <li class="nav-item side-item rounded">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="../BOOP_Eng2/sair">
                   <i class="fas fa-sign-out-alt mr-2"></i> Sair</a>
               </li>
             </ul>
