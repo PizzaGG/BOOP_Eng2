@@ -102,49 +102,63 @@
         <li class="breadcrumb-item">
           <a href="#">Início</a>
         </li>
-        <li class="breadcrumb-item active">Perfil</li>
+        <li class="breadcrumb-item active">Resultado da pesquisa</li>
       </ol>
       <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Perfil</h4>
-
-          <form class="mt-4" action="editarPerfil">
-            <div class="row">
-              <div class="col-md-3">
-                <img src="<c:url value="/img/perfil.jpg "/>" class="img-fluid rounded" alt="Joao Silva">
-              </div>
-              <div class="col-md-9">
-                <fieldset>
-                  <div class="row">
-                    <div class="form-group col-md-6">
-                      <label class="col-form-label" for="usuario">Usuario</label>
-                      <input type="text" class="form-control" placeholder="Nome do usuario" id="usuario" disabled>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label class="col-form-label" for="matricula">Matricula</label>
-                      <input type="text" class="form-control" placeholder="Matricula do usuario" id="matricula" disabled>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-form-label" for="nome">Nome</label>
-                    <input type="text" class="form-control" placeholder="Nome do usuario" id="nome" disabled>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-form-label" for="email">Email</label>
-                    <input type="text" class="form-control" placeholder="Email do usuario" id="email" disabled>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-form-label" for="senha">Senha</label>
-                    <input type="password" class="form-control" placeholder="********" id="senha" disabled>
-                  </div>
-                </fieldset>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary float-right">Editar dados</button>
-            <!-- <button type="button" class="btn btn-secondary mr-2 float-right">Cancelar</button> -->
-            </fieldset>
-          </form>
-        </div>
+        <table class="table table-hover">
+          <thead>
+            <tr class="table-primary">
+              <th scope="col">Nome do livro</th>
+              <th scope="col">Autor</th>
+              <th scope="col">ISBN</th>
+              <th scope="col">Usuario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 

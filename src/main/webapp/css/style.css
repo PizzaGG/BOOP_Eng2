@@ -52,6 +52,36 @@
   }
 }
 
+@media (max-width: 767px) {
+  .pesquisa-grande {
+    display: none;
+  }
+  .pesquisa-medio {
+    display: block;
+  }
+  .pesquisa-pequeno {
+    display: none;
+  }
+}
+
+@media (min-width: 766px) {
+  .pesquisa-medio {
+    display: none;
+  }
+  .pesquisa-pequeno {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .pesquisa-medio {
+    display: none;
+  }
+  .pesquisa-pequeno {
+    display: block;
+  }
+}
+
 /* SIDEBAR */
 /* Sidebar Profile */
 .sidebar-profile-pic-div {
