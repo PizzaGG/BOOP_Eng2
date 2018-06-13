@@ -21,7 +21,7 @@ public class Usuario {
 	@NotNull(message = "{not.null.attribute}")
 	@NotEmpty(message = "{not.empty.attribute}")
 	@NotBlank(message = "{not.blank.attribute}")
-	@Size(min = 10, max = 100, message = "{invalid.size}")
+	@Size(min = 1, max = 100, message = "{invalid.size}")
 	private String nome;
 
 	@NotNull(message = "{not.null.attribute}")
@@ -33,16 +33,48 @@ public class Usuario {
 	@NotNull(message = "{not.null.attribute}")
 	@NotEmpty(message = "{not.empty.attribute}")
 	@NotBlank(message = "{not.blank.attribute}")
+	private String email;
+	
+	@NotNull(message = "{not.null.attribute}")
+	@NotEmpty(message = "{not.empty.attribute}")
+	@NotBlank(message = "{not.blank.attribute}")
 	private String hashSenha;
+	
+	@NotNull(message = "{not.null.attribute}")
+	@NotEmpty(message = "{not.empty.attribute}")
+	@NotBlank(message = "{not.blank.attribute}")
+	private String username;
 	
 	public Usuario() {
 	}
 
-	public Usuario(String _nome, long _matricula, String _hashSenha) {
+	public Usuario(String _nome, long _matricula, String _hashSenha, String _email, String _username) {
 		this.nome = _nome;
 		this.matricula = _matricula;
 		this.hashSenha = _hashSenha;
+		this.email = _email;
+		this.username = _username;
 	}	
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public UserType getTipoUsuario() {
+		return tipoUsuario;
+	}
 
 	public void setTipoUsuario(UserType tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;

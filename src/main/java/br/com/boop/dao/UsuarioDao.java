@@ -24,10 +24,10 @@ public class UsuarioDao  {
 		this(null);
 	}
 
-	public boolean existe(Long matricula) {
+	public boolean existe(String usuario) {
 		  return !manager
-				.createQuery("select u from Usuario u where u.matricula = :matricula",
-						Usuario.class).setParameter("matricula", matricula)
+				.createQuery("select u from Usuario u where u.username = :usuario",
+						Usuario.class).setParameter("usuario", usuario)
 				.getResultList().isEmpty();
 	}
 
@@ -44,10 +44,10 @@ public class UsuarioDao  {
 		return false;
 	}
 
-	public Usuario login(Long matricula, String hashSha256Pass) {
+	public Usuario login(String usuario, String hashSha256Pass) {
 		List<Usuario> res = manager
-				.createQuery("select u from Usuario u where u.matricula = :matricula and u.hashSenha = :hash",
-				Usuario.class).setParameter("matricula", matricula).setParameter("hash", hashSha256Pass)
+				.createQuery("select u from Usuario u where u.username = :usuario and u.hashSenha = :hash",
+				Usuario.class).setParameter("usuario", usuario).setParameter("hash", hashSha256Pass)
 				.getResultList();
 		if(!res.isEmpty()) {
 			return res.get(0);

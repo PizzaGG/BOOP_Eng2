@@ -33,7 +33,7 @@
           </form>
         </div>
 
-        <div class="col-7 pesquisa-medio">
+        <!-- <div class="col-7 pesquisa-medio">
           <form>
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Digite o nome de um livro">
@@ -45,7 +45,7 @@
               </div>
             </div>
           </form>
-        </div>
+        </div> -->
 
         <div class="navbar-profile d-flex">
           <ul class="nav nav-pills">
@@ -55,7 +55,7 @@
             </div>
             <li class="nav-item dropdown">
               <button type="button" class="btn btn-link text-black">
-                João Silva
+                ${usuarioLog.getUsuario().nome}
               </button>
               <a class="text-black" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-caret-down"></i>
@@ -77,7 +77,7 @@
       </div>
     </nav>
 
-    <nav class="navbar navbar-light bg-light pesquisa-pequeno">
+    <!-- <nav class="navbar navbar-light bg-light pesquisa-pequeno">
       <div class="container w-100 p-0">
         <div class="py-2 w-100">
           <form>
@@ -93,14 +93,14 @@
           </form>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
     <div class="my-4"></div>
 
     <div class="container">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Início</a>
+          <a href="../BOOP_Eng2/home">Inicio</a>
         </li>
         <li class="breadcrumb-item active">Perfil</li>
       </ol>
@@ -118,24 +118,24 @@
                   <div class="row">
                     <div class="form-group col-md-6">
                       <label class="col-form-label" for="usuario">Usuario</label>
-                      <input type="text" class="form-control" placeholder="Nome do usuario" id="usuario" disabled>
+                      <input type="text" class="form-control" value="${usuarioLog.getUsuario().username}" id="usuario" >
                     </div>
                     <div class="form-group col-md-6">
                       <label class="col-form-label" for="matricula">Matricula</label>
-                      <input type="text" class="form-control" placeholder="Matricula do usuario" id="matricula" disabled>
+                      <input type="text" class="form-control" value="${usuarioLog.getUsuario().matricula}" id="matricula" >
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-form-label" for="nome">Nome</label>
-                    <input type="text" class="form-control" placeholder="Nome do usuario" id="nome" disabled>
+                    <input type="text" class="form-control" value="${usuarioLog.getUsuario().nome}" id="nome" >
                   </div>
                   <div class="form-group">
                     <label class="col-form-label" for="email">Email</label>
-                    <input type="text" class="form-control" placeholder="Email do usuario" id="email" disabled>
+                    <input type="text" class="form-control" value="${usuarioLog.getUsuario().email}" id="email" >
                   </div>
                   <div class="form-group">
                     <label class="col-form-label" for="senha">Senha</label>
-                    <input type="password" class="form-control" placeholder="********" id="senha" disabled>
+                    <input type="password" class="form-control" placeholder="********" id="senha" >
                   </div>
                 </fieldset>
               </div>
