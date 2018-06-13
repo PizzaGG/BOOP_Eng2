@@ -39,12 +39,6 @@ public class UsuarioDao  {
 		manager.merge(usuario);
 	}
 
-	
-	private boolean checkLogin(String user, String string) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 	public boolean hasUser(String user) {
 		// TODO Auto-generated method stub
 		return false;
