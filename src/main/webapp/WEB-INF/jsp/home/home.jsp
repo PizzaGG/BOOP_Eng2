@@ -35,7 +35,7 @@
           <div class="collapse navbar-collapse" id="hidden-menu">
             <ul class="navbar-nav mt-1">
               <li class="nav-item">
-                <a class="nav-link text-primary" href="#">
+                <a class="nav-link" href="../BOOP_Eng2/user">
                   <i class="fas fa-user mr-2"></i> Meu perfil</a>
               </li>
               <li class="nav-item">
