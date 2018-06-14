@@ -42,13 +42,6 @@
 		</div>
 	</div>
 
-
-
-
-
-
-
-	<!-- BG ANIMATION -->
 	<div class="container py-5">
 		<div class="row w-100 justify-content-center">
 			<!-- LOGO -->
@@ -58,7 +51,7 @@
 			<div class="col-md-7 col-lg-5 col-xl-4">
 				<div class="card">
 					<div class="card-body">
-						<h4 class="card-title">Autenticação</h4>
+						<h4 class="card-title">Entrar</h4>
 						<form action="auth" method="post" class="mt-3">
 							<div class="form-group">
 								<label for="usuario">Usuario</label> <input type="text"
@@ -70,8 +63,8 @@
 									name="senha" class="form-control" id="senha"
 									placeholder="Digite sua senha">
 							</div>
-							<button type="button" class="px-0 btn btn-link">Esqueci
-								minha senha</button>
+							<!-- <button type="button" class="px-0 btn btn-link">Esqueci
+								minha senha</button> -->
 							<button type="submit" class="btn btn-primary float-right">Entrar</button>
 						</form>
 					</div>

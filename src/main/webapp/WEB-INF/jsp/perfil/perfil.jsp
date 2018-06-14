@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
       crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
-    <link rel="stylesheet" href="<c:url value=" /css/style.css "/>">
+    <link rel="stylesheet" href="<c:url value="/css/style.css "/>">
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <!-- <a class="navbar-brand" href="#">Boop</a> -->
-        <img src="<c:url value=" /img/boop.svg "/>" class="nav-logo my-1 mr-3" alt="">
+        <img src="<c:url value="/img/boop.svg "/>" class="nav-logo my-1 mr-3" alt="">
 
         <div class="col-8 pesquisa-grande">
           <form>
@@ -157,7 +157,7 @@
       crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
       crossorigin="anonymous"></script>
-    <script src="<c:url value=" /js/app.js "/>"></script>
+    <script src="<c:url value="/js/app.js "/>"></script>
 
   </body>
 
