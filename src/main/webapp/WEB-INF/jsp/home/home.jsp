@@ -22,8 +22,7 @@
         <div class="container">
           <div class="d-flex align-items-center">
             <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
-              <!-- <h5 class="m-0">F</h5> -->
-              <img src="<c:url value="/img/perfil.jpg "/>" class="navbar-profile-pic rounded-circle">
+              <img src="<c:url value="/img/perfil.jpg"/>" class="navbar-profile-pic rounded-circle">
             </div>
             <a class="navbar-brand ml-3" href="#">Joao Silva</a>
           </div>
