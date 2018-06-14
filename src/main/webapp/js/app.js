@@ -37,6 +37,8 @@ jQuery('img.svg').each(function(){
 
 const editarBtn = document.getElementById('editarBtn');
 const cancelarBtn = document.getElementById('cancelarBtn');
+const excluirBtn = document.getElementById('excluirBtn');
+const inputFile = document.querySelector('.inputFile');
 const inputEdit = document.querySelectorAll('.inputEdit');
 
 editarBtn.addEventListener('click', () => {
@@ -46,6 +48,10 @@ editarBtn.addEventListener('click', () => {
     cancelarBtn.classList.add('d-block');
     cancelarBtn.previousElementSibling.classList.remove('d-none');
     cancelarBtn.previousElementSibling.classList.add('d-block');
+    excluirBtn.classList.remove('d-none');
+    excluirBtn.classList.add('d-block');
+    inputFile.classList.add('d-block');
+    inputFile.classList.remove('d-none');
     inputEdit.forEach((input) => {
         input.disabled = false;
     }); 
@@ -58,7 +64,11 @@ cancelarBtn.addEventListener('click', () => {
     cancelarBtn.classList.add('d-none');
     cancelarBtn.previousElementSibling.classList.remove('d-block');
     cancelarBtn.previousElementSibling.classList.add('d-none');
+    excluirBtn.classList.remove('d-block');
+    excluirBtn.classList.add('d-none');
+    inputFile.classList.add('d-none');
+    inputFile.classList.remove('d-block');
     inputEdit.forEach((input) => {
         input.disabled = true;
     });
-});
+});s

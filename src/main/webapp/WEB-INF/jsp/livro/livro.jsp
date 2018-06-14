@@ -6,19 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BOOP: Cadastro livro</title>
+    <title>BOOP: Livro</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
       crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
-    <link rel="stylesheet" href="<c:url value="/css/style.css "/>">
+    <link rel="stylesheet" href="<c:url value=" /css/style.css "/>">
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a href="../BOOP_Eng2/home">
-          <img src="<c:url value="/img/boop.svg "/>" class="nav-logo my-1 mr-3" alt="Boop">
+          <img src="<c:url value=" /img/boop.svg "/>" class="nav-logo my-1 mr-3" alt="Boop">
         </a>
 
         <div class="col-7 pesquisa-grande">
@@ -27,7 +27,9 @@
               <input type="text" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary d-flex align-items-center" type="submit">
-                  <i class="fas fa-search"></i> <span class="pesquisa-nome ml-2">Pesquisar</span></a>
+                  <i class="fas fa-search"></i>
+                  <span class="pesquisa-nome ml-2">Pesquisar</span>
+                  </a>
                 </button>
               </div>
             </div>
@@ -37,7 +39,7 @@
         <div class="navbar-profile d-flex">
           <ul class="nav nav-pills">
             <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
-              <img src="<c:url value="/img/perfil.jpg "/>" class="navbar-profile-pic">
+              <img src="<c:url value=" /img/perfil.jpg "/>" class="navbar-profile-pic" alt="João Silva">
             </div>
             <li class="nav-item dropdown">
               <button type="button" class="btn btn-link text-black">
@@ -79,7 +81,7 @@
           </form>
         </div>
       </div>
-    </nav> 
+    </nav>
 
     <div class="my-4"></div>
 
@@ -88,20 +90,22 @@
         <li class="breadcrumb-item">
           <a href="../BOOP_Eng2/home">Inicio</a>
         </li>
-        <li class="breadcrumb-item active">Cadastrar livro</li>
+        <li class="breadcrumb-item">
+          <a href="#">Todos os livros</a>
+        </li>
+        <li class="breadcrumb-item active">Livro</li>
       </ol>
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Cadastrar livro</h4>
-
-          <form action="../BOOP_Eng2/cadastrar" method="post" class="mt-4">
+          <h4 class="card-title">Livro</h4>
+          <form class="mt-4">
             <div class="row">
               <div class="col-md-3">
                 <fieldset>
                   <div class="form-group">
                     <div class="mr-auto bg-dark-1 capa mb-3 rounded "></div>
                     <label for="capaLivro">Capa do livro</label>
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3 inputFile d-none">
                       <input type="file" class="custom-file-input" id="capaLivro">
                       <label class="custom-file-label" for="capaLivro">Escolher arquivo</label>
                     </div>
@@ -113,40 +117,38 @@
                   <div class="row">
                     <div class="form-group col-md-6">
                       <label class="col-form-label" for="tituloLivro">Titulo do livro</label>
-                      <input type="text" name="livro.titulo" class="form-control" placeholder="Titulo do livro" id="tituloLivro">
+                      <input type="text" class="form-control inputEdit" placeholder="Titulo do livro" id="tituloLivro" disabled>
                     </div>
                     <div class="form-group col-md-6">
                       <label class="col-form-label" for="subtituloLivro">Subtitulo do livro</label>
-                      <input type="text" name="livro.subtitulo" class="form-control" placeholder="Subtitulo do livro" id="subtituloLivro">
+                      <input type="text" class="form-control inputEdit" placeholder="Subtitulo do livro" id="subtituloLivro" disabled>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-form-label" for="autorLivro">Autor</label>
-                    <input type="text" name="livro.autor" class="form-control" placeholder="Autor" id="autorLivro">
+                    <input type="text" class="form-control inputEdit" placeholder="Autor" id="autorLivro" disabled>
                   </div>
                   <div class="row">
                     <div class="form-group col-md-4">
                       <label class="col-form-label" for="anoLivro">Ano</label>
-                      <input type="text" name="livro.ano" class="form-control" placeholder="Ano" id="anoLivro">
+                      <input type="text" class="form-control inputEdit" placeholder="Ano" id="anoLivro" disabled>
                     </div>
                     <div class="form-group col-md-4">
                       <label class="col-form-label" for="edicaoLivro">Edicao</label>
-                      <input type="text" name="livro.edicao" class="form-control" placeholder="Edicao" id="edicaoLivro">
+                      <input type="text" class="form-control inputEdit" placeholder="Edicao" id="edicaoLivro" disabled>
                     </div>
                     <div class="form-group col-md-4">
                       <label class="col-form-label" for="isbnLivro">ISBN</label>
-                      <input type="text" name="livro.isbn" class="form-control" placeholder="ISBN" id="isbnLivro">
+                      <input type="text" class="form-control inputEdit" placeholder="ISBN" id="isbnLivro" disabled>
                     </div>
-                    <input type="hidden" name="livro.proprietario" value="aloha" id="proprietarioLivro">
-                    <!-- teste -->
                   </div>
                 </fieldset>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
-            <a href="../BOOP_Eng2/index">
-              <button type="button" class="btn btn-secondary mr-2 float-right">Cancelar</button>
-            </a>
+            <button id="editarBtn" type="button" class="btn btn-primary float-right">Editar dados</button>
+            <button type="submit" class="btn btn-primary float-right d-none">Salvar</button>
+            <button id="cancelarBtn" type="button" class="btn btn-secondary mr-2 float-right d-none">Cancelar</button>
+            <button id="excluirBtn" type="button" class="btn btn-outline-primary mr-2 float-right d-none">Excluir livro</button>
             </fieldset>
           </form>
         </div>
@@ -160,7 +162,7 @@
         crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-      <script src="<c:url value="/js/app.js "/>"></script>
+      <script src="<c:url value=" /js/app.js "/>"></script>
 
   </body>
 

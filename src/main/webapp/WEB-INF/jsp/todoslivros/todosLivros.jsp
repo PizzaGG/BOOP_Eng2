@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BOOP: Perfil</title>
+    <title>BOOP: Todos os livros</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
       crossorigin="anonymous">
@@ -38,7 +38,7 @@
           <ul class="nav nav-pills">
             <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
               <!-- <h5 class="m-0">F</h5> -->
-              <img src="<c:url value="/img/perfil.jpg"/>" class="navbar-profile-pic">
+              <img src="<c:url value="/img/perfil.jpg "/>" class="navbar-profile-pic">
             </div>
             <li class="nav-item dropdown">
               <button type="button" class="btn btn-link text-black">
@@ -89,50 +89,99 @@
         <li class="breadcrumb-item">
           <a href="../BOOP_Eng2/home">Inicio</a>
         </li>
-        <li class="breadcrumb-item active">Perfil</li>
+        <li class="breadcrumb-item active">Todos os livros</li>
       </ol>
       <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Perfil</h4>
-
-          <form class="mt-4" action="editarPerfil">
-            <div class="row">
-              <div class="col-md-3">
-                <img src="<c:url value="/img/perfil.jpg"/>" class="img-fluid rounded" alt="Joao Silva">
-              </div>
-              <div class="col-md-9">
-                <fieldset>
-                  <div class="row">
-                    <div class="form-group col-md-6">
-                      <label class="col-form-label" for="usuario">Usuario</label>
-                      <input type="text" class="form-control" value="${usuarioLog.getUsuario().username}" id="usuario">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label class="col-form-label" for="matricula">Matricula</label>
-                      <input type="text" class="form-control" value="${usuarioLog.getUsuario().matricula}" id="matricula">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-form-label" for="nome">Nome</label>
-                    <input type="text" class="form-control" value="${usuarioLog.getUsuario().nome}" id="nome">
-                  </div>
-                  <div class="form-group">
-                    <label class="col-form-label" for="email">Email</label>
-                    <input type="text" class="form-control" value="${usuarioLog.getUsuario().email}" id="email">
-                  </div>
-                  <div class="form-group">
-                    <label class="col-form-label" for="senha">Senha</label>
-                    <input type="password" class="form-control" placeholder="********" id="senha">
-                  </div>
-                </fieldset>
-              </div>
-            </div>
-            <button id="editarBtn" type="button" class="btn btn-primary float-right">Editar dados</button>
-            <button type="submit" class="btn btn-primary float-right d-none">Salvar</button>
-            <button id="cancelarBtn" type="button" class="btn btn-secondary mr-2 float-right d-none">Cancelar</button>
-            </fieldset>
-          </form>
-        </div>
+        <table class="table table-hover">
+          <thead>
+            <tr class="bg-primary text-light">
+              <th scope="col">Nome do livro</th>
+              <th scope="col">Autor</th>
+              <th scope="col">ISBN</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Visualizar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link pt-0 pb-1">
+                  <i class="fas fa-external-link-alt"></i>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link pt-0 pb-1">
+                  <i class="fas fa-external-link-alt"></i>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link pt-0 pb-1">
+                  <i class="fas fa-external-link-alt"></i>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link pt-0 pb-1">
+                  <i class="fas fa-external-link-alt"></i>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link pt-0 pb-1">
+                  <i class="fas fa-external-link-alt"></i>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link pt-0 pb-1">
+                  <i class="fas fa-external-link-alt"></i>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-secondary">
+              <th scope="row">Nome</th>
+              <td>Nome do autor</td>
+              <td>Numero ISBN</td>
+              <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link pt-0 pb-1">
+                  <i class="fas fa-external-link-alt"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -144,7 +193,7 @@
       crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
       crossorigin="anonymous"></script>
-    <script src="<c:url value="/js/app.js "/>"></script>
+    <script src="<c:url value="/js/app.js"/>"></script>
 
   </body>
 

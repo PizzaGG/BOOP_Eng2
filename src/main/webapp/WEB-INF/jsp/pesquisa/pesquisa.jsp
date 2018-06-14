@@ -17,30 +17,17 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <!-- <a class="navbar-brand" href="#">Boop</a> -->
-        <img src="<c:url value="/img/boop.svg "/>" class="nav-logo my-1 mr-3" alt="">
+        <a href="../BOOP_Eng2/home">
+          <img src="<c:url value="/img/boop.svg "/>" class="nav-logo my-1 mr-3" alt="Boop">
+        </a>
 
-        <div class="col-8 pesquisa-grande">
+        <div class="col-7 pesquisa-grande">
           <form>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Digite o nome de um livro">
+              <input type="text" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit">
-                  <i class="fas fa-search mr-1"></i> Pesquisar</a>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="col-7 pesquisa-medio">
-          <form>
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Digite o nome de um livro">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit">
-                  <i class="fas fa-search mr-1"></i>
-                  </a>
+                <button class="btn btn-outline-secondary d-flex align-items-center" type="submit">
+                  <i class="fas fa-search"></i> <span class="pesquisa-nome ml-2">Pesquisar</span></a>
                 </button>
               </div>
             </div>
@@ -50,25 +37,24 @@
         <div class="navbar-profile d-flex">
           <ul class="nav nav-pills">
             <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
-              <!-- <h5 class="m-0">F</h5> -->
-              <img src="<c:url value="/img/perfil.jpg "/>" class="navbar-profile-pic" alt="João Silva">
+              <img src="<c:url value="/img/perfil.jpg "/>" class="navbar-profile-pic">
             </div>
             <li class="nav-item dropdown">
               <button type="button" class="btn btn-link text-black">
-                João Silva
+                ${usuarioLog.getUsuario().nome}
               </button>
               <a class="text-black" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-caret-down"></i>
               </a>
               <div class="dropdown-menu mt-2">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="../BOOP_Eng2/user">
                   <i class="fas fa-user mr-2"></i> Meu perfil</a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="../BOOP_Eng2/home">
                   <i class="fas fa-book mr-2"></i> Livros</a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-exchange-alt mr-2"></i> Trocas</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="../BOOP_Eng2/sair">
                   <i class="fas fa-sign-out-alt mr-2"></i> Sair</a>
               </div>
             </li>
@@ -82,7 +68,7 @@
         <div class="py-2 w-100">
           <form>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Digite o nome de um livro">
+              <input type="text" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="submit">
                   <i class="fas fa-search mr-1"></i>
@@ -100,7 +86,7 @@
     <div class="container">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Início</a>
+          <a href="../BOOP_Eng2/home">Inicio</a>
         </li>
         <li class="breadcrumb-item active">Resultado da pesquisa</li>
       </ol>
@@ -230,7 +216,7 @@
       crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
       crossorigin="anonymous"></script>
-    <script src="<c:url value="/js/app.js "/>"></script>
+    <script src="<c:url value="/js/app.js"/>"></script>
 
   </body>
 

@@ -23,7 +23,7 @@
           <div class="d-flex align-items-center">
             <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
               <!-- <h5 class="m-0">F</h5> -->
-              <img src="<c:url value="/img/perfil.jpg "/>" class="navbar-profile-pic rounded-circle" alt="Jo�o Silva">
+              <img src="<c:url value="/img/perfil.jpg "/>" class="navbar-profile-pic rounded-circle">
             </div>
             <a class="navbar-brand ml-3" href="#">Joao Silva</a>
           </div>
@@ -39,7 +39,7 @@
                   <i class="fas fa-user mr-2"></i> Meu perfil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-primary" href="#">
+                <a class="nav-link text-primary" href="../BOOP_Eng2/home">
                   <i class="fas fa-book mr-2"></i> Livros</a>
               </li>
               <li class="nav-item">
@@ -60,7 +60,7 @@
           <div class="py-2 w-100">
             <form>
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Digite o nome de um livro">
+                <input type="text" class="form-control" placeholder="Digite algo">
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" type="submit">
                     <i class="fas fa-search mr-1"></i>
@@ -154,19 +154,18 @@
               <div class="card-body w-100 pt-3 d-flex flex-column align-items-center">
                 <!-- SIDEBAR PROFILE PIC -->
                 <div class="sidebar-profile-pic-div rounded-circle mb-4 bg-dark- d-flex justify-content-center">
-                  <!-- <h5 class="m-0">F</h5> -->
-                  <img src="<c:url value="/img/perfil.jpg "/>" class="sidebar-profile-pic" alt="João Silva">
+                  <img src="<c:url value="/img/perfil.jpg "/>" class="sidebar-profile-pic">
                 </div>
 
                 <!-- SIDEBAR PROFILE NAME -->
                 <h3>
-                  <strong>${usuarioLog.getUsuario().nome} </strong>
+                  <strong>${usuarioLog.getUsuario().nome}</strong>
                 </h3>
-                <h6 class="text-muted text-uppercase">asdasdasd</h6>
+                <h6 class="text-muted text-uppercase">Trocador</h6>
 
                 <form class="mt-3">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Digite o nome de um livro">
+                    <input type="text" class="form-control" placeholder="Digite algo">
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary" type="submit">
                         <i class="fas fa-search mr-1"></i> Pesquisar</a>
@@ -182,7 +181,7 @@
                       <i class="fas fa-user mr-2"></i> Meu perfil</a>
                   </li>
                   <li class="nav-item side-item rounded">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="../BOOP_Eng2/home">
                       <i class="fas fa-book mr-2"></i> Livros</a>
                   </li>
                   <li class="nav-item side-item rounded">
