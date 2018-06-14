@@ -30,7 +30,7 @@ public class AuthorizationInterceptor {
 	@Accepts
 	public boolean accepts(ControllerMethod method) {
 		t = method.getMethod().toString();
-		if (t.contains("login") || t.contains("cadast") || info.getUsuario() != null)
+		if (t.contains("login") || t.contains("cadastrarUsuario") || info.getUsuario() != null || t.contains("autentica"))
 			return false;
 
 		System.out.println(method.getMethod());
@@ -43,7 +43,7 @@ public class AuthorizationInterceptor {
 		Usuario current = info.getUsuario();
 		if (current == null) {
 			if (!t.contains("cadastro")) {
-				MessagesController.addMessage(new BoopMessage("error", "user.is.not.logged.in", Severity.ERROR));
+				MessagesController.addMessage(new BoopMessage("error.title", "user.is.not.logged.in", Severity.ERROR));
 				result.redirectTo(LoginController.class).login();
 				return;
 			} else {
