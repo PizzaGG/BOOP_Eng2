@@ -61,4 +61,10 @@ public class LoginController {
 	@Get("/")
 	public void login() {
 	}
+	
+	@Get("/logout")
+	public void sair() {
+		usuarioLogado.setUsuario(null);
+		result.redirectTo(this).login();
+	}
 }

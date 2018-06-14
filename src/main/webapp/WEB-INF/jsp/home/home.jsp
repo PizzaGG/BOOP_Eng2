@@ -162,7 +162,7 @@
                 <h3>
                   <strong>${usuarioLog.getUsuario().nome} </strong>
                 </h3>
-                <h6 class="text-muted text-uppercase">${usuarioLog.tipoUsuario}</h6>
+                <h6 class="text-muted text-uppercase">asdasdasd</h6>
 
                 <form class="mt-3">
                   <div class="input-group">
@@ -191,7 +191,7 @@
                   </li>
                   <div class="dropdown-divider"></div>
                   <li class="nav-item side-item rounded">
-                    <a class="nav-link" href="../BOOP_Eng2/sair">
+                    <a class="nav-link" href="../BOOP_Eng2/logout">
                       <i class="fas fa-sign-out-alt mr-2"></i> Sair</a>
                   </li>
                 </ul>
