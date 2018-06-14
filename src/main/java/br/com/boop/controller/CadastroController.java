@@ -40,11 +40,11 @@ public class CadastroController {
 		this.usuarioDao = _usuarioDao;
 	}
 	
-	@Get("/cadastro")
+	@Get("/cadbook")
 	public void cadastrarLivro() {
 	}
 	
-	@Get("/cadastroUsuario")
+	@Get("/caduser")
 	public void cadastrarUsuario() {
 	}
 	
