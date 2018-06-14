@@ -34,3 +34,31 @@ jQuery('img.svg').each(function(){
     }, 'xml');
 
 });
+
+const editarBtn = document.getElementById('editarBtn');
+const cancelarBtn = document.getElementById('cancelarBtn');
+const inputEdit = document.querySelectorAll('.inputEdit');
+
+editarBtn.addEventListener('click', () => {
+    editarBtn.classList.add('d-none');
+    editarBtn.classList.remove('d-block');
+    cancelarBtn.classList.remove('d-none');
+    cancelarBtn.classList.add('d-block');
+    cancelarBtn.previousElementSibling.classList.remove('d-none');
+    cancelarBtn.previousElementSibling.classList.add('d-block');
+    inputEdit.forEach((input) => {
+        input.disabled = false;
+    }); 
+});
+
+cancelarBtn.addEventListener('click', () => {
+    editarBtn.classList.remove('d-none');
+    editarBtn.classList.add('d-block');
+    cancelarBtn.classList.remove('d-block');
+    cancelarBtn.classList.add('d-none');
+    cancelarBtn.previousElementSibling.classList.remove('d-block');
+    cancelarBtn.previousElementSibling.classList.add('d-none');
+    inputEdit.forEach((input) => {
+        input.disabled = true;
+    });
+});

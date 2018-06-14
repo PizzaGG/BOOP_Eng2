@@ -107,11 +107,12 @@
       <div class="card">
         <table class="table table-hover">
           <thead>
-            <tr class="table-primary">
+            <tr class="bg-primary text-light">
               <th scope="col">Nome do livro</th>
               <th scope="col">Autor</th>
               <th scope="col">ISBN</th>
               <th scope="col">Usuario</th>
+              <th scope="col">Trocar</th>
             </tr>
           </thead>
           <tbody>
@@ -120,45 +121,104 @@
               <td>Nome do autor</td>
               <td>Numero ISBN</td>
               <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
+                  <i class="fas fa-exchange-alt"></i>
+                </button>
+              </td>
             </tr>
             <tr class="table-secondary">
               <th scope="row">Nome</th>
               <td>Nome do autor</td>
               <td>Numero ISBN</td>
               <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
+                  <i class="fas fa-exchange-alt"></i>
+                </button>
+              </td>
             </tr>
             <tr class="table-secondary">
               <th scope="row">Nome</th>
               <td>Nome do autor</td>
               <td>Numero ISBN</td>
               <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
+                  <i class="fas fa-exchange-alt"></i>
+                </button>
+              </td>
             </tr>
             <tr class="table-secondary">
               <th scope="row">Nome</th>
               <td>Nome do autor</td>
               <td>Numero ISBN</td>
               <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
+                  <i class="fas fa-exchange-alt"></i>
+                </button>
+              </td>
             </tr>
             <tr class="table-secondary">
               <th scope="row">Nome</th>
               <td>Nome do autor</td>
               <td>Numero ISBN</td>
               <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
+                  <i class="fas fa-exchange-alt"></i>
+                </button>
+              </td>
             </tr>
             <tr class="table-secondary">
               <th scope="row">Nome</th>
               <td>Nome do autor</td>
               <td>Numero ISBN</td>
               <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
+                  <i class="fas fa-exchange-alt"></i>
+                </button>
+              </td>
             </tr>
             <tr class="table-secondary">
               <th scope="row">Nome</th>
               <td>Nome do autor</td>
               <td>Numero ISBN</td>
               <td>Usuário trocador</td>
+              <td>
+                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
+                  <i class="fas fa-exchange-alt"></i>
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="confirmacaoModal" tabindex="-1" role="dialog" aria-labelledby="confirmacaoModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmacaoModalLabel">Solicitação de troca</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <strong><span>Nome do livro: </span></strong> <span>Nome do livro</span> <br />
+            <strong><span>Autor: </span></strong> <span>Autor</span> <br />
+            <strong><span>ISBN: </span></strong> <span>ISBN</span> <br />
+            <strong><span>Usuário: </span></strong> <span>Usuário</span> <br />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Confirmar</button>
+          </div>
+        </div>
       </div>
     </div>
 
