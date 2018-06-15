@@ -32,8 +32,8 @@ public class LivroController {
 		this(null, null, null);
 	}
 	
-	@Get("/livro")
-	public void livro(){
+	@Get("/change")
+	public void trocar(){
 	}
 	
 	@Post("/atualizar")

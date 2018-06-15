@@ -58,7 +58,7 @@ public class Autor {
 	public Autor () {
 		
 	}
-	public Autor(long id, String nome, List<Livro> lista) {
+	public Autor(Long id, String nome, List<Livro> lista) {
 		this.id = id;
 		this.nome = nome;
 		this.producoes = lista;

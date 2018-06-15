@@ -70,7 +70,7 @@
 					</div>
 				</div>
 				<hr>
-				<a href="../BOOP_Eng2/cadastroUsuario"><button type="button"
+				<a href="../BOOP_Eng2/caduser"><button type="button"
 						class="btn btn-outline-primary btn-lg btn-block">Cadastrar</button></a>
 			</div>
 		</div>
