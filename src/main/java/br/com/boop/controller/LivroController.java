@@ -56,5 +56,4 @@ public class LivroController {
 		MessagesController.addMessage(new BoopMessage("book.register.sucess.title", "book.register.sucess.message", Severity.INFO));
 		result.redirectTo(HomeController.class).home();
 	}
-	
 }

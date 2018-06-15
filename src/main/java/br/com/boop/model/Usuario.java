@@ -1,6 +1,8 @@
 package br.com.boop.model;
 
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -48,17 +50,19 @@ public class Usuario {
 	
 	@OneToOne
 	private Boopoint booPoint;
+	private ArrayList<Livro> livros;
 	
 	public Usuario() {
 	}
 
-	public Usuario(String _nome, long _matricula, String _hashSenha, String _email, String _username, Boopoint _boopoint) {
+	public Usuario(String _nome, long _matricula, String _hashSenha, String _email, String _username) {
 		this.nome = _nome;
 		this.matricula = _matricula;
 		this.hashSenha = _hashSenha;
 		this.email = _email;
 		this.username = _username;
-		this.booPoint = _boopoint;
+		this.booPoint = new Boopoint(this,0);
+		livros = new ArrayList<Livro>();
 	}	
 	
 	public String getUsername() {
@@ -109,4 +113,12 @@ public class Usuario {
 		this.hashSenha = _hashSenha;
 	}
 
+	public Boopoint getBooPoint() {
+		return booPoint;
+	}
+
+	public ArrayList<Livro> getLivros() {
+		return livros;
+	}
+	
 }

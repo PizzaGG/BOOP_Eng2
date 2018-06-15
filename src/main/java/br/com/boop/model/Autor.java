@@ -26,7 +26,6 @@ public class Autor {
 	@Size(min = 10, max = 100, message = "{invalid.size}")
 	private String nome;
 
-	@NotNull(message = "{not.null.attribute}")
 	@OneToMany
 	private List<Livro> producoes;
 
