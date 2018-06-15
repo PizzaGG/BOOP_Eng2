@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -45,15 +46,19 @@ public class Usuario {
 	@NotBlank(message = "{not.blank.attribute}")
 	private String username;
 	
+	@OneToOne
+	private Boopoint booPoint;
+	
 	public Usuario() {
 	}
 
-	public Usuario(String _nome, long _matricula, String _hashSenha, String _email, String _username) {
+	public Usuario(String _nome, long _matricula, String _hashSenha, String _email, String _username, Boopoint _boopoint) {
 		this.nome = _nome;
 		this.matricula = _matricula;
 		this.hashSenha = _hashSenha;
 		this.email = _email;
 		this.username = _username;
+		this.booPoint = _boopoint;
 	}	
 	
 	public String getUsername() {
