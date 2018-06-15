@@ -47,7 +47,7 @@ public class LoginController {
 				 result.redirectTo(this).login();
 				 return;
 			 } else {
-				 MessagesController.addMessage(new BoopMessage("sucess.title","sucess.login.title",Severity.SUCCESS));
+				 MessagesController.addMessage(new BoopMessage("success.login.tittle","sucess.login.message",Severity.SUCCESS));
 				 result.redirectTo(HomeController.class).home();
 				 return;
 			 }
