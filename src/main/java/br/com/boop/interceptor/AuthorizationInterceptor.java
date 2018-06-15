@@ -30,7 +30,7 @@ public class AuthorizationInterceptor {
 	@Accepts
 	public boolean accepts(ControllerMethod method) {
 		t = method.getMethod().toString();
-		if (t.contains("login") || t.contains("cadastrarUsuario") || info.getUsuario() != null || t.contains("autentica"))
+		if (t.contains("cadastroUsuario")|| t.contains("login") || t.contains("cadastrarUsuario") || info.getUsuario() != null || t.contains("autentica"))
 			return false;
 
 		System.out.println(method.getMethod());
