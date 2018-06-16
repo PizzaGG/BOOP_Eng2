@@ -26,7 +26,6 @@ public class CadastroController {
 	private final Validator validator;
 	private final Result result;
 	
-	@SuppressWarnings("unused")
 	@Deprecated
 	public CadastroController() {
 		this(null, null, null, null);
