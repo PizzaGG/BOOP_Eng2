@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -22,9 +22,9 @@
         </a>
 
         <div class="col-7 pesquisa-grande">
-          <form>
+          <form action="../pesquisar" method="post">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Digite algo">
+              <input type="text" name="termo" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary d-flex align-items-center" type="submit">
                   <i class="fas fa-search"></i> <span class="pesquisa-nome ml-2">Pesquisar</span></a>
@@ -67,9 +67,9 @@
     <nav class="navbar navbar-light bg-light pesquisa-pequeno">
       <div class="container w-100 p-0">
         <div class="py-2 w-100">
-          <form>
+          <form action="../pesquisar" method="post">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Digite algo">
+              <input type="text" name="termo" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="submit">
                   <i class="fas fa-search mr-1"></i>
@@ -91,6 +91,7 @@
         </li>
         <li class="breadcrumb-item active">Todos os livros</li>
       </ol>
+      <h3>Seus livros</h3>
       <div class="card">
         <table class="table table-hover">
           <thead>
@@ -103,83 +104,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link pt-0 pb-1">
-                  <i class="fas fa-external-link-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link pt-0 pb-1">
-                  <i class="fas fa-external-link-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link pt-0 pb-1">
-                  <i class="fas fa-external-link-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link pt-0 pb-1">
-                  <i class="fas fa-external-link-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link pt-0 pb-1">
-                  <i class="fas fa-external-link-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link pt-0 pb-1">
-                  <i class="fas fa-external-link-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link pt-0 pb-1">
-                  <i class="fas fa-external-link-alt"></i>
-                </button>
-              </td>
-            </tr>
+          	<c:forEach var="livro" items="${livros}">
+                <tr class="table-secondary">
+	              <th scope="row">${livro.titulo}</th>
+	              <td>${livro.autor}</td>
+	              <td>${livro.isbn}</td>
+	              <td>${livro.proprietario}</td>
+	              <td>
+	                <button type="button" class="btn btn-link pt-0 pb-1">
+	                  <i class="fas fa-external-link-alt"></i>
+	                </button>
+	              </td>
+	            </tr>
+            </c:forEach>
           </tbody>
         </table>
       </div>
