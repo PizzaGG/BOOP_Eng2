@@ -43,7 +43,7 @@ public class Livro {
 	@NotBlank(message = "{not.blank.attribute}")
 	private String isbn;
 
-	@OneToOne
+	//@OneToOne
 	@NotNull(message = "{not.null.attribute}")
 	private String proprietario;
 
