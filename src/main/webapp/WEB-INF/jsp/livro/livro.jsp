@@ -22,9 +22,9 @@
         </a>
 
         <div class="col-7 pesquisa-grande">
-          <form>
+          <form action="../BOOP_Eng2/pesquisar" method="post">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Digite algo">
+              <input type="text" name="termo" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary d-flex align-items-center" type="submit">
                   <i class="fas fa-search"></i>
@@ -68,9 +68,9 @@
     <nav class="navbar navbar-light bg-light pesquisa-pequeno">
       <div class="container w-100 p-0">
         <div class="py-2 w-100">
-          <form>
+          <form action="../BOOP_Eng2/pesquisar" method="post">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Digite algo">
+              <input type="text" name="termo" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="submit">
                   <i class="fas fa-search mr-1"></i>
