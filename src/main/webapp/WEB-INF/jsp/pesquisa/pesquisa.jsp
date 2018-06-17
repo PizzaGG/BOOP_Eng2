@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BOOP: Perfil</title>
+    <title>BOOP: Pesquisa</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
       crossorigin="anonymous">
@@ -104,17 +104,21 @@
           </thead>
           <tbody>
             <c:forEach var="livro" items="${livros}">
-                <tr class="table-secondary">
-	              <th scope="row">${livro.titulo}</th>
-	              <td>${livro.autor}</td>
-	              <td>${livro.isbn}</td>
-	              <td>${livro.proprietario}</td>
-	              <td>
-	                <button type="button" class="btn btn-link pt-0 pb-1">
-	                  <i class="fas fa-external-link-alt"></i>
-	                </button>
-	              </td>
-	            </tr>
+            	<form action="../BOOP_Eng2/livro">
+            		<tr class="table-secondary">
+		              <th scope="row">${livro.titulo}</th>
+		              <td>${livro.autor}</td>
+		              <td>${livro.isbn}</td>
+		              <td>${livro.proprietario}</td>
+		              <td>
+		              <input type="hidden" name="livro" value="${livro}">
+		              <button type="submit" class="btn btn-link pt-0 pb-1">               
+		                <i class="fas fa-external-link-alt"></i>
+		              </button>
+		              </td>
+		            </tr>
+            	</form>
+	            	
             </c:forEach>
           </tbody>
         </table>

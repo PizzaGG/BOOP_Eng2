@@ -62,7 +62,7 @@
 						perfil
 				</a></li>
 				<li class="nav-item"><a class="nav-link text-primary"
-					href="../BOOP_Eng2/home"> <i class="fas fa-book mr-2"></i>
+					href="../BOOP_Eng2/mybooks"> <i class="fas fa-book mr-2"></i>
 						Livros
 				</a></li>
 				<li class="nav-item"><a class="nav-link text-primary" href="#">
@@ -70,7 +70,7 @@
 				</a></li>
 				<div class="dropdown-divider"></div>
 				<li class="nav-item"><a class="nav-link text-primary"
-					href="../BOOP_Eng2/sair"> <i class="fas fa-sign-out-alt mr-2"></i>
+					href="../BOOP_Eng2/logout"> <i class="fas fa-sign-out-alt mr-2"></i>
 						Sair
 				</a></li>
 			</ul>
@@ -80,9 +80,9 @@
 	<nav class="navbar navbar-light bg-light pesquisa-pequeno">
 	<div class="container w-100 p-0">
 		<div class="py-2 w-100">
-			<form>
+			<form action="../BOOP_Eng2/pesquisar" method="post">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Digite algo">
+					<input type="text" name="termo" class="form-control" placeholder="Digite algo">
 					<div class="input-group-append">
 						<button class="btn btn-outline-secondary" type="submit">
 							<i class="fas fa-search mr-1"></i> </a>
@@ -166,8 +166,10 @@
 								<button type="button" class="btn btn-secondary mr-2">Cadastrar
 									livro</button>
 							</a>
-							<button type="button" class="btn btn-primary">Todos os
-								livros</button>
+							<a href="../BOOP_Eng2/mybooks">
+								<button type="button" class="btn btn-primary">Todos os
+									livros</button>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -189,9 +191,9 @@
 						</h3>
 						<h6 class="text-muted text-uppercase">Trocador</h6>
 
-						<form class="mt-3">
+						<form class="mt-3" action="../BOOP_Eng2/pesquisar" method="post">
 							<div class="input-group">
-								<input type="text" class="form-control"
+								<input type="text" name="termo" class="form-control"
 									placeholder="Digite algo">
 								<div class="input-group-append">
 									<button class="btn btn-outline-secondary" type="submit">
@@ -208,7 +210,7 @@
 									Meu perfil
 							</a></li>
 							<li class="nav-item side-item rounded"><a class="nav-link"
-								href="../BOOP_Eng2/home"> <i class="fas fa-book mr-2"></i>
+								href="../BOOP_Eng2/mybooks"> <i class="fas fa-book mr-2"></i>
 									Livros
 							</a></li>
 							<li class="nav-item side-item rounded"><a class="nav-link"
