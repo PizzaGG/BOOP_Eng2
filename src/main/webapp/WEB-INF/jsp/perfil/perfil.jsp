@@ -22,9 +22,9 @@
         </a>
 
         <div class="col-7 pesquisa-grande">
-          <form>
+          <form action="../BOOP_Eng2/pesquisar" method="post">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Digite algo">
+              <input type="text" name="termo" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary d-flex align-items-center" type="submit">
                   <i class="fas fa-search"></i> <span class="pesquisa-nome ml-2">Pesquisar</span></a>
@@ -67,9 +67,9 @@
     <nav class="navbar navbar-light bg-light pesquisa-pequeno">
       <div class="container w-100 p-0">
         <div class="py-2 w-100">
-          <form>
+          <form action="../BOOP_Eng2/pesquisar" method="post">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Digite algo">
+              <input type="text" name="termo" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="submit">
                   <i class="fas fa-search mr-1"></i>
@@ -95,7 +95,7 @@
         <div class="card-body">
           <h4 class="card-title">Perfil</h4>
 
-          <form class="mt-4" action="editarPerfil">
+          <form class="mt-4" action="editarPerfil" method="post">
             <div class="row">
               <div class="col-md-3">
                 <img src="<c:url value="/img/perfil.jpg"/>" class="img-fluid rounded" alt="Joao Silva">
@@ -127,9 +127,10 @@
                 </fieldset>
               </div>
             </div>
-            <button id="editarBtn" type="button" class="btn btn-primary float-right">Editar dados</button>
-            <button type="submit" class="btn btn-primary float-right d-none">Salvar</button>
-            <button id="cancelarBtn" type="button" class="btn btn-secondary mr-2 float-right d-none">Cancelar</button>
+            <button type="submit" class="btn btn-primary float-right">Salvar</button>
+            <a href="../BOOP_Eng2/home">
+            	<button id="cancelarBtn" type="button" class="btn btn-secondary mr-2 float-right">Cancelar</button>
+        	</a>
             </fieldset>
           </form>
         </div>
