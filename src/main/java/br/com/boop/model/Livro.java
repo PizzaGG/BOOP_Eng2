@@ -33,13 +33,9 @@ public class Livro {
 	private String subtitulo;
 
 	@NotNull(message = "{not.null.attribute}")
-	@NotEmpty(message = "{not.empty.attribute}")
-	@NotBlank(message = "{not.blank.attribute}")
 	private Integer ano;
 
 	@NotNull(message = "{not.null.attribute}")
-	@NotEmpty(message = "{not.empty.attribute}")
-	@NotBlank(message = "{not.blank.attribute}")
 	private Short edicao;
 
 	@NotNull(message = "{not.null.attribute}")
@@ -49,7 +45,7 @@ public class Livro {
 
 	@OneToOne
 	@NotNull(message = "{not.null.attribute}")
-	private Usuario proprietario;
+	private String proprietario;
 
 	@NotNull(message = "{not.null.attribute}")
 	private String autor;
@@ -63,7 +59,7 @@ public class Livro {
 
 	}
 
-	public Livro(Long id, String titulo, String subtitulo, Integer ano, Short edicao, String isbn, Usuario proprietario,
+	public Livro(Long id, String titulo, String subtitulo, Integer ano, Short edicao, String isbn, String proprietario,
 			String autor) {
 		super();
 		this.id = id;
@@ -104,7 +100,7 @@ public class Livro {
 		this.isbn = isbn;
 	}
 
-	public void setProprietario(Usuario proprietario) {
+	public void setProprietario(String proprietario) {
 		this.proprietario = proprietario;
 	}
 
@@ -136,7 +132,7 @@ public class Livro {
 		return autor;
 	}
 
-	public Usuario getProprietario() {
+	public String getProprietario() {
 		return proprietario;
 	}
 
