@@ -6,7 +6,6 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 
 import br.com.boop.model.Livro;
 
@@ -48,9 +47,20 @@ public class LivroDao {
 		em.remove(busca(idLivro));
 	}
 
+	public List<Livro> listarLivrosUsuario(String nome) {
+		List<Livro> lista = em.createQuery("select l from Livro l where l.proprietario = :proprietario", Livro.class)
+				.setParameter("proprietario", nome).getResultList();
+		return lista;
+	}
+	
+	public List<Livro> pesquisar(String termo) {
+		List<Livro> lista = em.createQuery("select l from Livro l where l.titulo like :termo", Livro.class)
+				.setParameter("termo", "%"+termo+"%").getResultList();
+		return lista;
+	}
+	
 	public List<Livro> listarLivros() {
-		TypedQuery<Livro> array = em.createQuery("SELECT * FROM livro",Livro.class);
-		List<Livro> lista = array.getResultList();
+		List<Livro> lista = em.createQuery("select l from Livro l", Livro.class).getResultList();
 		return lista;
 	}
 	
