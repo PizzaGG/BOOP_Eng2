@@ -22,9 +22,9 @@
         </a>
 
         <div class="col-7 pesquisa-grande">
-          <form>
+          <form action="../BOOP_Eng2/pesquisar" method="post">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Digite algo">
+              <input type="text" name="termo" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary d-flex align-items-center" type="submit">
                   <i class="fas fa-search"></i> <span class="pesquisa-nome ml-2">Pesquisar</span></a>
@@ -54,7 +54,7 @@
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-exchange-alt mr-2"></i> Trocas</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../BOOP_Eng2/sair">
+                <a class="dropdown-item" href="../BOOP_Eng2/logout">
                   <i class="fas fa-sign-out-alt mr-2"></i> Sair</a>
               </div>
             </li>
@@ -66,9 +66,9 @@
     <nav class="navbar navbar-light bg-light pesquisa-pequeno">
       <div class="container w-100 p-0">
         <div class="py-2 w-100">
-          <form>
+          <form action="../BOOP_Eng2/pesquisar" method="post">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Digite algo">
+              <input type="text" name="termo" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="submit">
                   <i class="fas fa-search mr-1"></i>
@@ -90,6 +90,7 @@
         </li>
         <li class="breadcrumb-item active">Resultado da pesquisa</li>
       </ol>
+      <h3>Resultados da pesquisa</h3>
       <div class="card">
         <table class="table table-hover">
           <thead>
@@ -102,83 +103,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
-                  <i class="fas fa-exchange-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
-                  <i class="fas fa-exchange-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
-                  <i class="fas fa-exchange-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
-                  <i class="fas fa-exchange-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
-                  <i class="fas fa-exchange-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
-                  <i class="fas fa-exchange-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr class="table-secondary">
-              <th scope="row">Nome</th>
-              <td>Nome do autor</td>
-              <td>Numero ISBN</td>
-              <td>Usuário trocador</td>
-              <td>
-                <button type="button" class="btn btn-link py-0" data-toggle="modal" data-target="#confirmacaoModal">
-                  <i class="fas fa-exchange-alt"></i>
-                </button>
-              </td>
-            </tr>
+            <c:forEach var="livro" items="${livros}">
+                <tr class="table-secondary">
+	              <th scope="row">${livro.titulo}</th>
+	              <td>${livro.autor}</td>
+	              <td>${livro.isbn}</td>
+	              <td>${livro.proprietario}</td>
+	              <td>
+	                <button type="button" class="btn btn-link pt-0 pb-1">
+	                  <i class="fas fa-external-link-alt"></i>
+	                </button>
+	              </td>
+	            </tr>
+            </c:forEach>
           </tbody>
         </table>
       </div>
