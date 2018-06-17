@@ -1,6 +1,5 @@
 package br.com.boop.controller;
 
-
 import javax.inject.Inject;
 
 import br.com.boop.dao.LivroDao;
@@ -21,19 +20,23 @@ public class LivroController {
 	private Result result;
 
 	@Inject
-	private LivroController(Result result, Validator validator, LivroDao livroDao) {
+	public LivroController(Result result, Validator validator, LivroDao livroDao) {
 		this.validator = validator;
 		this.result = result;
 		this.livroDao = livroDao;
 	}
 	
 	@Deprecated
-	private LivroController() {
+	public LivroController() {
 		this(null, null, null);
 	}
 	
 	@Get("/change")
-	public void trocar(){
+	public void trocar() {
+	}
+	
+	@Get("/livro")
+	public void livro() {
 	}
 	
 	@Post("/atualizar")
