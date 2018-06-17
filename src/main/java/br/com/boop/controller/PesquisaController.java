@@ -31,34 +31,30 @@ public class PesquisaController {
 		this(null,null,null);
 	}
 	
-	/**
-	 * Carrega a pagina inicial da pesquisa. Já passa para a request os livros do banco.
-	 */
 	@Get("/pesq")
 	public void pesquisa() {
-		List<Livro> lista = livroDao.listarLivros();
-		result.include("lista",lista);
+	}
+
+	public void todosLivros() {
 	}
 	
-	/**
-	 * Metodo que retorna todos os livros do usuario da seção;
-	 */
-	@Post("/mybooks")
+	@Get("/mybooks")
 	public void listarLivrosDoUsuario() {
+		List<Livro> lista = livroDao.listarLivrosUsuario(UsuarioLogado.getUsername());
+		result.include("livros", lista);
+		result.redirectTo(this).todosLivros();
 	}
-	
-	/**
-	 * Metodo que retorna os livros disponiveis para troca no sistema;
-	 */
+
 	@Post("/listar")
 	public void listarLivrosDoSistema() {
+		result.include("livros", livroDao.listarLivros());
+		result.redirectTo(this).todosLivros();
 	}
 	
-	/**
-	 * Metodo que retorna os livros encontrados que fazem parte do termo de pesquisa inserido.
-	 */
 	@Post("/pesquisar")
-	public void pesquisarLivros() {
+	public void pesquisarLivros(String termo) {
+		result.include("livros", livroDao.pesquisar(termo));
+		result.redirectTo(this).pesquisa();
 	}
 	
 }
