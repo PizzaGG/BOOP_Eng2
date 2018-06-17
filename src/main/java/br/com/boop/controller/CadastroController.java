@@ -13,6 +13,8 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.observer.upload.UploadSizeLimit;
+import br.com.caelum.vraptor.observer.upload.UploadedFile;
 import br.com.caelum.vraptor.validator.Message;
 import br.com.caelum.vraptor.validator.Severity;
 import br.com.caelum.vraptor.validator.Validator;
@@ -48,7 +50,8 @@ public class CadastroController {
 	}
 	
 	@Post("/cadastrar")
-	public void cadastrar(Livro livro) {
+	@UploadSizeLimit(sizeLimit=5 * 1024 * 1024, fileSizeLimit = 5 * 1024 * 1024)
+	public void cadastrar(Livro livro, UploadedFile foto) {
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(this).cadastrarLivro();
 			for (Message msg : validator.getErrors()) {
@@ -57,6 +60,9 @@ public class CadastroController {
 			}
 			return;
 		}
+		System.out.println(foto.getContentType());
+
+//		livro.setSetImagem(foto);
 		livroDao.salvar(livro);
 		MessagesController.addMessage(new BoopMessage("sucess.title", "book.register.sucess.message", Severity.SUCCESS));
 		result.redirectTo(HomeController.class).home();

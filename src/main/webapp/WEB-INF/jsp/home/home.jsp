@@ -162,7 +162,7 @@
 							</div>
 						</div>
 						<div class="card-body d-flex justify-content-end">
-							<a href="../BOOP_Eng2/cadastro">
+							<a href="../BOOP_Eng2/cadbook">
 								<button type="button" class="btn btn-secondary mr-2">Cadastrar
 									livro</button>
 							</a>
