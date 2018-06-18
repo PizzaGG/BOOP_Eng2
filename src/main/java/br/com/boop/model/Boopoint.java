@@ -19,9 +19,10 @@ public class Boopoint {
 	private Integer quantidade;
 	private Integer blocked;
 
-	public Boopoint(Usuario _titular, Integer _quantidade) {
+	public Boopoint(Usuario _titular, Integer _quantidade, Integer _blocked) {
 		this.titular = _titular;
 		this.quantidade = _quantidade;
+		this.blocked = _blocked;
 	}
 
 	public Boopoint() {
@@ -33,6 +34,7 @@ public class Boopoint {
 
 	/**
 	 * Metodo de retorno do usuario titular dos boopoints;
+	 * 
 	 * @return - Usuario proprietario dos boopoints.
 	 */
 	public Usuario getTitular() {
@@ -41,6 +43,7 @@ public class Boopoint {
 
 	/**
 	 * Metodo de retorno da quantidade de boopoints do usuario;
+	 * 
 	 * @return - Quantidade de boopoints do usuario.
 	 */
 	public Integer getQuantidade() {
@@ -48,7 +51,8 @@ public class Boopoint {
 	}
 
 	/**
-	 * Metodo chamado quando um usuario confirmar a entrega de um livro para outro usuario;
+	 * Metodo chamado quando um usuario confirmar a entrega de um livro para outro
+	 * usuario;
 	 */
 	public void addBoopoint() {
 		this.quantidade += 1;
@@ -63,7 +67,8 @@ public class Boopoint {
 	}
 
 	/**
-	 * Metodo chamado quando a troca dos livros for confirmada por ambos os usuarios;
+	 * Metodo chamado quando a troca dos livros for confirmada por ambos os
+	 * usuarios;
 	 */
 	public void eraseBoopoint() {
 		this.blocked -= 1;
