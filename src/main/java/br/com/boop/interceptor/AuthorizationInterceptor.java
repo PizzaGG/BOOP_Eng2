@@ -32,9 +32,6 @@ public class AuthorizationInterceptor {
 		t = method.getMethod().toString();
 		if (t.contains("cadastroUsuario")|| t.contains("login") || t.contains("cadastrarUsuario") || info.getUsuario() != null || t.contains("autentica"))
 			return false;
-
-		System.out.println(method.getMethod());
-		System.out.println(!method.containsAnnotation(Public.class));
 		return !method.containsAnnotation(Public.class);
 	}
 

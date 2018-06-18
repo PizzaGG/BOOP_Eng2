@@ -3,7 +3,9 @@ package br.com.boop.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,6 +30,14 @@ public class Usuario {
 	@Size(min = 1, max = 100, message = "{invalid.size}")
 	private String nome;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setBooPoint(Boopoint booPoint) {
+		this.booPoint = booPoint;
+	}
+
 	@NotNull(message = "{not.null.attribute}")
 	private Long matricula;
 	
@@ -49,10 +59,10 @@ public class Usuario {
 	@NotBlank(message = "{not.blank.attribute}")
 	private String username;
 	
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
 	private Boopoint booPoint;
 	
-	@OneToMany
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
 	private List<Livro> livros;
 	
 	public Usuario() {
@@ -64,7 +74,7 @@ public class Usuario {
 		this.hashSenha = _hashSenha;
 		this.email = _email;
 		this.username = _username;
-		this.booPoint = new Boopoint(this,0);
+		this.booPoint = new Boopoint(this,0,0);
 	}	
 	
 	public String getUsername() {

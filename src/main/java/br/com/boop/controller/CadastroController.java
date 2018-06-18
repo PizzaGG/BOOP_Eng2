@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import br.com.boop.dao.LivroDao;
 import br.com.boop.dao.UsuarioDao;
 import br.com.boop.model.BoopMessage;
+import br.com.boop.model.Boopoint;
 import br.com.boop.model.Livro;
 import br.com.boop.model.Usuario;
 import br.com.boop.model.UsuarioLogado;
@@ -77,6 +78,7 @@ public class CadastroController {
 			return;
 		}
 		usuario.setHashSenha(HashPasswordGenerator.getHashSha256(usuario.getHashSenha()));
+		usuario.setBooPoint(new Boopoint(usuario,0,0));
 		usuarioDao.salvar(usuario);
 		MessagesController.addMessage(new BoopMessage("success.title", "user.create.sucess.message", Severity.SUCCESS));
 		result.redirectTo(LoginController.class).login();
