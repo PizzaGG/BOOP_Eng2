@@ -33,6 +33,7 @@ public class PesquisaController {
 	
 	@Get("/pesq")
 	public void pesquisa() {
+		result.include("livros", livroDao.listarLivros());
 	}
 
 	public void todosLivros() {

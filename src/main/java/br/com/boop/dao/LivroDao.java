@@ -48,7 +48,7 @@ public class LivroDao {
 	}
 
 	public List<Livro> listarLivrosUsuario(String nome) {
-		List<Livro> lista = em.createQuery("select l from Livro l where l.proprietario = :proprietario", Livro.class)
+		List<Livro> lista = em.createQuery("select l from Livro l where l.proprietario.nome = :proprietario", Livro.class)
 				.setParameter("proprietario", nome).getResultList();
 		return lista;
 	}

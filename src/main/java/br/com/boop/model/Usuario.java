@@ -1,12 +1,13 @@
 package br.com.boop.model;
 
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -50,7 +51,9 @@ public class Usuario {
 	
 	@OneToOne
 	private Boopoint booPoint;
-	private ArrayList<Livro> livros;
+	
+	@OneToMany
+	private List<Livro> livros;
 	
 	public Usuario() {
 	}
@@ -62,7 +65,6 @@ public class Usuario {
 		this.email = _email;
 		this.username = _username;
 		this.booPoint = new Boopoint(this,0);
-		livros = new ArrayList<Livro>();
 	}	
 	
 	public String getUsername() {
@@ -117,7 +119,7 @@ public class Usuario {
 		return booPoint;
 	}
 
-	public ArrayList<Livro> getLivros() {
+	public List<Livro> getLivros() {
 		return livros;
 	}
 	

@@ -4,15 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
-
-import br.com.caelum.vraptor.observer.upload.UploadedFile;
 
 @Entity
 public class Livro {
@@ -29,7 +25,6 @@ public class Livro {
 	@NotNull(message = "{not.null.attribute}")
 	@NotEmpty(message = "{not.empty.attribute}")
 	@NotBlank(message = "{not.blank.attribute}")
-	@Size(min = 10, max = 100, message = "{invalid.size.attribute}")
 	private String subtitulo;
 
 	@NotNull(message = "{not.null.attribute}")
@@ -43,15 +38,15 @@ public class Livro {
 	@NotBlank(message = "{not.blank.attribute}")
 	private String isbn;
 
-	//@OneToOne
+	@ManyToOne
 	@NotNull(message = "{not.null.attribute}")
-	private String proprietario;
+	private Usuario proprietario;
 
 	@NotNull(message = "{not.null.attribute}")
 	private String autor;
 
-	@Lob
-	private byte[] imagem;
+//	@Lob
+//	private byte[] imagem;
 
 //	private UploadedFile setImagem;
 
@@ -59,7 +54,7 @@ public class Livro {
 
 	}
 
-	public Livro(Long id, String titulo, String subtitulo, Integer ano, Short edicao, String isbn, String proprietario,
+	public Livro(Long id, String titulo, String subtitulo, Integer ano, Short edicao, String isbn, Usuario proprietario,
 			String autor) {
 		super();
 		this.id = id;
@@ -100,7 +95,7 @@ public class Livro {
 		this.isbn = isbn;
 	}
 
-	public void setProprietario(String proprietario) {
+	public void setProprietario(Usuario proprietario) {
 		this.proprietario = proprietario;
 	}
 
@@ -132,7 +127,7 @@ public class Livro {
 		return autor;
 	}
 
-	public String getProprietario() {
+	public Usuario getProprietario() {
 		return proprietario;
 	}
 

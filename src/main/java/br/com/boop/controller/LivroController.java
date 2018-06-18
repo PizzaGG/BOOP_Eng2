@@ -54,8 +54,8 @@ public class LivroController {
 	}
 	
 	@Get("/delete")
-	public void deletar(Long idLivro) {
-		livroDao.deletar(idLivro);
+	public void deletar(Livro livro) {
+		livroDao.deletar(livro.getId());
 		MessagesController.addMessage(new BoopMessage("book.register.sucess.title", "book.register.sucess.message", Severity.INFO));
 		result.redirectTo(HomeController.class).home();
 	}
