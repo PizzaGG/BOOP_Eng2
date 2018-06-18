@@ -20,7 +20,6 @@ public class PerfilController {
 	private final Validator validator;
 	private final Result result;
 	
-	@SuppressWarnings("unused")
 	@Deprecated
 	public PerfilController() {
 		this(null, null, null);
@@ -37,13 +36,14 @@ public class PerfilController {
 	public void perfil() {
 	}
 	
-	@Post("/atualizar")
+	//TODO: Fazer correção nos parâmetros
+	@Post("/editarPerfil")
 	public void atualizar(@Valid Usuario usuario) {
 		if (validator.hasErrors()) {
-			validator.onErrorForwardTo(this).perfil();
 			for (Message msg : validator.getErrors()) {
 				MessagesController.addMessage(new BoopMessage("user.update.error.title", msg.getMessage(), msg.getSeverity()));
 			}
+			validator.onErrorForwardTo(this).perfil();
 			return;
 		}
 		usuarioDao.atualizar(usuario);

@@ -16,19 +16,16 @@ import br.com.caelum.vraptor.Result;
 public class PesquisaController {
 
 	private final Result result;
-	@SuppressWarnings("unused")
-	private final UsuarioLogado usuarioLogado;
 	private final LivroDao livroDao;
 	
 	@Inject
-	public PesquisaController(Result _result, UsuarioLogado _usuarioLogado, LivroDao _livroDao) {
+	public PesquisaController(Result _result, LivroDao _livroDao) {
 		this.result=_result;
-		this.usuarioLogado = _usuarioLogado;
 		this.livroDao = _livroDao;
 	}
 	@Deprecated
 	public PesquisaController() {
-		this(null,null,null);
+		this(null,null);
 	}
 	
 	@Get("/pesq")
