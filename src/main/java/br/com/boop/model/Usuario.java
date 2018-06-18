@@ -1,6 +1,5 @@
 package br.com.boop.model;
 
-
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -68,7 +67,7 @@ public class Usuario {
 	public Usuario() {
 	}
 
-	public Usuario(String _nome, long _matricula, String _hashSenha, String _email, String _username) {
+	public Usuario(String _nome, Long _matricula, String _hashSenha, String _email, String _username) {
 		this.nome = _nome;
 		this.matricula = _matricula;
 		this.hashSenha = _hashSenha;

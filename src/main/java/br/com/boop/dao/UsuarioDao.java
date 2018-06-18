@@ -24,10 +24,10 @@ public class UsuarioDao  {
 		this(null);
 	}
 
-	public boolean existe(String usuario) {
+	public boolean existe(String username) {
 		  return !manager
-				.createQuery("select u from Usuario u where u.username = :usuario",
-						Usuario.class).setParameter("usuario", usuario)
+				.createQuery("select u from Usuario u where u.username = :username",
+						Usuario.class).setParameter("username", username)
 				.getResultList().isEmpty();
 	}
 
