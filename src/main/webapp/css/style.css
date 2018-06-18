@@ -26,9 +26,9 @@
   height: 35px;
 }
 
-
 .nav-logo {
   max-height: 35px;
+  max-width: 55px;
 }
 
 .logo {
@@ -53,11 +53,8 @@
 }
 
 @media (max-width: 767px) {
-  .pesquisa-grande {
+  .pesquisa-nome {
     display: none;
-  }
-  .pesquisa-medio {
-    display: block;
   }
   .pesquisa-pequeno {
     display: none;
@@ -65,8 +62,8 @@
 }
 
 @media (min-width: 766px) {
-  .pesquisa-medio {
-    display: none;
+  .pesquisa-nome {
+    display: block;
   }
   .pesquisa-pequeno {
     display: none;
@@ -74,7 +71,10 @@
 }
 
 @media (max-width: 550px) {
-  .pesquisa-medio {
+  .pesquisa-grande {
+    display: none;
+  }
+  .pesquisa-nome {
     display: none;
   }
   .pesquisa-pequeno {
