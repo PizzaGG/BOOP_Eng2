@@ -109,7 +109,7 @@
 		              <th scope="row">${livro.titulo}</th>
 		              <td>${livro.autor}</td>
 		              <td>${livro.isbn}</td>
-		              <td>${livro.proprietario}</td>
+		              <td>${livro.proprietario.username}</td>
 		              <td>
 		              <input type="hidden" name="livro" value="${livro}">
 		              <button type="submit" class="btn btn-link pt-0 pb-1">               

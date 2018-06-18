@@ -109,7 +109,7 @@
 	              <th scope="row">${livro.titulo}</th>
 	              <td>${livro.autor}</td>
 	              <td>${livro.isbn}</td>
-	              <td>${livro.proprietario}</td>
+	              <td>${livro.proprietario.username}</td>
 	              <td>
 	                <button type="button" class="btn btn-link pt-0 pb-1">
 	                  <i class="fas fa-external-link-alt"></i>
