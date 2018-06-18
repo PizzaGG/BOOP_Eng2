@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
       crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
-    <link rel="stylesheet" href="<c:url value="/css/style.css "/>">
+    <link rel="stylesheet" href="<c:url value="/css/style.css"/>">
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a href="../BOOP_Eng2/home">
-          <img src="<c:url value="/img/boop.svg "/>" class="nav-logo my-1 mr-3" alt="Boop">
+          <div class="nav-logo logo bg-dark my-1"></div>
         </a>
 
         <div class="col-7 pesquisa-grande">
@@ -37,7 +37,7 @@
         <div class="navbar-profile d-flex">
           <ul class="nav nav-pills">
             <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
-              <img src="<c:url value="/img/perfil.jpg "/>" class="navbar-profile-pic">
+              <img src="<c:url value="/img/perfil.jpg"/>" class="navbar-profile-pic">
             </div>
             <li class="nav-item dropdown">
               <button type="button" class="btn btn-link text-black">
