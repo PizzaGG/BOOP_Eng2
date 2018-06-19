@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
       crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
-    <link rel="stylesheet" href="<c:url value=" /css/style.css "/>">
+    <link rel="stylesheet" href="<c:url value="/css/style.css "/>">
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a href="../BOOP_Eng2/home">
-          <img src="<c:url value=" /img/boop.svg "/>" class="nav-logo my-1 mr-3" alt="Boop">
+          <div class="nav-logo logo bg-dark my-1"></div>
         </a>
 
         <div class="col-7 pesquisa-grande">
@@ -39,7 +39,7 @@
         <div class="navbar-profile d-flex">
           <ul class="nav nav-pills">
             <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
-              <img src="<c:url value=" /img/perfil.jpg "/>" class="navbar-profile-pic" alt="João Silva">
+              <img src="<c:url value="/img/perfil.jpg "/>" class="navbar-profile-pic" alt="João Silva">
             </div>
             <li class="nav-item dropdown">
               <button type="button" class="btn btn-link text-black">
@@ -48,17 +48,20 @@
               <a class="text-black" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-caret-down"></i>
               </a>
-              <div class="dropdown-menu mt-2">
-                <a class="dropdown-item" href="../BOOP_Eng2/user">
-                  <i class="fas fa-user mr-2"></i> Meu perfil</a>
-                <a class="dropdown-item" href="../BOOP_Eng2/home">
-                  <i class="fas fa-book mr-2"></i> Livros</a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-exchange-alt mr-2"></i> Trocas</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../BOOP_Eng2/sair">
-                  <i class="fas fa-sign-out-alt mr-2"></i> Sair</a>
-              </div>
+                <div class="dropdown-menu mt-2">
+                    <a class="dropdown-item" href="../BOOP_Eng2/user"> <i
+                            class="fas fa-user mr-2"></i> Meu perfil
+                    </a> <a class="dropdown-item"
+                            href="../BOOP_Eng2/mybooks"> <i
+                            class="fas fa-book mr-2"></i> Livros
+                    </a> <a class="dropdown-item" href="#"> <i
+                            class="fas fa-exchange-alt mr-2"></i> Trocas
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="../BOOP_Eng2/sair"> <i
+                            class="fas fa-sign-out-alt mr-2"></i> Sair
+                    </a>
+                </div>
             </li>
           </ul>
         </div>
@@ -162,7 +165,7 @@
         crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-      <script src="<c:url value=" /js/app.js "/>"></script>
+      <script src="<c:url value="/js/app.js "/>"></script>
 
   </body>
 

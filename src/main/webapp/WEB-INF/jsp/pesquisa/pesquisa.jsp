@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a href="../BOOP_Eng2/home">
-          <img src="<c:url value="/img/boop.svg "/>" class="nav-logo my-1 mr-3" alt="Boop">
+          <div class="nav-logo logo bg-dark my-1"></div>
         </a>
 
         <div class="col-7 pesquisa-grande">
@@ -49,12 +49,12 @@
               <div class="dropdown-menu mt-2">
                 <a class="dropdown-item" href="../BOOP_Eng2/user">
                   <i class="fas fa-user mr-2"></i> Meu perfil</a>
-                <a class="dropdown-item" href="../BOOP_Eng2/home">
+                <a class="dropdown-item" href="../BOOP_Eng2/mybooks">
                   <i class="fas fa-book mr-2"></i> Livros</a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-exchange-alt mr-2"></i> Trocas</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../BOOP_Eng2/logout">
+                <a class="dropdown-item" href="../BOOP_Eng2/sair">
                   <i class="fas fa-sign-out-alt mr-2"></i> Sair</a>
               </div>
             </li>
@@ -90,7 +90,7 @@
         </li>
         <li class="breadcrumb-item active">Resultado da pesquisa</li>
       </ol>
-      <h3>Resultados da pesquisa</h3>
+      <h4 class="py-2">Resultado da pesquisa</h4>
       <div class="card">
         <table class="table table-hover">
           <thead>
@@ -104,7 +104,7 @@
           </thead>
           <tbody>
             <c:forEach var="livro" items="${livros}">
-            	<form action="../BOOP_Eng2/livro">
+            	<form>
             		<tr class="table-secondary">
 		              <th scope="row">${livro.titulo}</th>
 		              <td>${livro.autor}</td>
@@ -112,13 +112,12 @@
 		              <td>${livro.proprietario.username}</td>
 		              <td>
 		              <input type="hidden" name="livro" value="${livro}">
-		              <button type="submit" class="btn btn-link pt-0 pb-1">               
-		                <i class="fas fa-external-link-alt"></i>
-		              </button>
+		              <button type="button" class="btn btn-link pt-0 pb-1" data-toggle="modal" data-target="#confirmacaoModal">               
+		                <i class="fas fa-exchange-alt"></i>
+		              </button>   
 		              </td>
 		            </tr>
-            	</form>
-	            	
+            	</form>	            	
             </c:forEach>
           </tbody>
         </table>
@@ -130,16 +129,10 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="confirmacaoModalLabel">Solicitação de troca</h5>
+            <h5 class="modal-title" id="confirmacaoModalLabel">Deseja confirmar troca?</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-          </div>
-          <div class="modal-body">
-            <strong><span>Nome do livro: </span></strong> <span>Nome do livro</span> <br />
-            <strong><span>Autor: </span></strong> <span>Autor</span> <br />
-            <strong><span>ISBN: </span></strong> <span>ISBN</span> <br />
-            <strong><span>Usuário: </span></strong> <span>Usuário</span> <br />
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

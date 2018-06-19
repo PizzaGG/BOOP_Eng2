@@ -144,7 +144,7 @@
               </div>
             </div>
             <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
-            <a href="../BOOP_Eng2/index">
+            <a href="../BOOP_Eng2/home">
               <button type="button" class="btn btn-secondary mr-2 float-right">Cancelar</button>
             </a>
             </fieldset>

@@ -17,8 +17,8 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a href="../BOOP_Eng2/home">
-          <img src="<c:url value="/img/boop.svg "/>" class="nav-logo my-1 mr-3" alt="Boop">
+        <a href="../home">
+          <div class="nav-logo logo bg-dark my-1"></div>
         </a>
 
         <div class="col-7 pesquisa-grande">
@@ -48,14 +48,14 @@
                 <i class="fas fa-caret-down"></i>
               </a>
               <div class="dropdown-menu mt-2">
-                <a class="dropdown-item" href="../BOOP_Eng2/user">
+                <a class="dropdown-item" href="../user">
                   <i class="fas fa-user mr-2"></i> Meu perfil</a>
-                <a class="dropdown-item" href="../BOOP_Eng2/home">
+                <a class="dropdown-item" href="../mybooks">
                   <i class="fas fa-book mr-2"></i> Livros</a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-exchange-alt mr-2"></i> Trocas</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../BOOP_Eng2/sair">
+                <a class="dropdown-item" href="../sair">
                   <i class="fas fa-sign-out-alt mr-2"></i> Sair</a>
               </div>
             </li>
@@ -63,7 +63,7 @@
         </div>
       </div>
     </nav>
-
+    
     <nav class="navbar navbar-light bg-light pesquisa-pequeno">
       <div class="container w-100 p-0">
         <div class="py-2 w-100">
@@ -91,7 +91,7 @@
         </li>
         <li class="breadcrumb-item active">Todos os livros</li>
       </ol>
-      <h3>Seus livros</h3>
+      <h4 class="py-2">Meus livros</h4>
       <div class="card">
         <table class="table table-hover">
           <thead>
