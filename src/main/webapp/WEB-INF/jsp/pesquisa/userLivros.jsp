@@ -99,7 +99,6 @@
               <th scope="col">Nome do livro</th>
               <th scope="col">Autor</th>
               <th scope="col">ISBN</th>
-              <th scope="col">Usuario</th>
               <th scope="col">Visualizar</th>
             </tr>
           </thead>
@@ -110,7 +109,6 @@
                       <th scope="row">${livro.titulo}</th>
                       <td>${livro.autor}</td>
                       <td>${livro.isbn}</td>
-                      <td>${livro.proprietario.username}</td>
                       <td>
                         <button type="submit" class="btn btn-link pt-0 pb-1">
                           <i class="fas fa-external-link-alt"></i>

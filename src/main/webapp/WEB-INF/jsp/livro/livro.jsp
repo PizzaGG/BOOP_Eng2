@@ -94,7 +94,7 @@
           <a href="../BOOP_Eng2/home">Inicio</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="#">Todos os livros</a>
+          <a href="../BOOP_Eng2/mybooks">Todos os livros</a>
         </li>
         <li class="breadcrumb-item active">Livro</li>
       </ol>

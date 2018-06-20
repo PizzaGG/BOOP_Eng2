@@ -121,66 +121,28 @@
 
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-4 col-sm-6 py-2">
-                                    <div class="card shadow-sm">
-                                        <div class="capa-livro-card">
-                                            <img
-                                                class="card-img-top capa-livro-card-img"
-                                                src="<c:url value="/img/book1.jpg "/>"
-                                                alt="Card image cap">
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Livro
-                                                Um</h5>
-                                            <p class="card-text">
-                                                Autor: Fulano de tal <br>
-                                                ISBN: 0000000000000
-                                            </p>
-                                            <a href="#"
-                                                class="card-link float-right">Editar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 py-2">
-                                    <div class="card shadow-sm">
-                                        <div class="capa-livro-card">
-                                            <img
-                                                class="card-img-top capa-livro-card-img"
-                                                src="<c:url value="/img/book2.jpg "/>"
-                                                alt="Card image cap">
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Livro
-                                                Dois</h5>
-                                            <p class="card-text">
-                                                Autor: Aquele Beltrano <br>
-                                                ISBN: 0000000000000
-                                            </p>
-                                            <a href="#"
-                                                class="card-link float-right">Editar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 py-2">
-                                    <div class="card shadow-sm">
-                                        <div class="capa-livro-card">
-                                            <img
-                                                class="card-img-top capa-livro-card-img"
-                                                src="<c:url value="/img/book3.jpg "/>"
-                                                alt="Card image cap">
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Livro
-                                                Tres</h5>
-                                            <p class="card-text">
-                                                Autor: Sicraninho <br>
-                                                ISBN: 0000000000000
-                                            </p>
-                                            <a href="#"
-                                                class="card-link float-right">Editar</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <c:forEach var="livro" items="${livros}">
+                                    <div class="col-md-4 col-sm-6 py-2">
+                                        <form action="../BOOP_Eng2/livro">
+                                            <div class="card shadow-sm">
+                                                <div class="capa-livro-card">
+                                                    <img
+                                                        class="card-img-top capa-livro-card-img"
+                                                        src="<c:url value="/img/book1.jpg "/>"
+                                                        alt="Card image cap">
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${livro.titulo}</h5>
+                                                    <p class="card-text">
+                                                        Autor: ${livro.autor}<br>
+                                                        ISBN: ${livro.isbn}
+                                                    </p>
+                                                    <button type="submit" class="btn float-right btn-link p-0">Editar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                   </div>
+                                </c:forEach>
                             </div>
                         </div>
                         <div
