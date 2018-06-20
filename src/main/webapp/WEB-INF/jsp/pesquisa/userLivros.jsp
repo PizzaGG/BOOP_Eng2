@@ -104,12 +104,13 @@
           </thead>
           <tbody>
           	<c:forEach var="livro" items="${livros}">
-                <form action="../livro">
+                <form action="../livro" method="post">
                     <tr class="table-secondary">
                       <th scope="row">${livro.titulo}</th>
                       <td>${livro.autor}</td>
                       <td>${livro.isbn}</td>
                       <td>
+                      	<input type="hidden" name="isbn" value="${livro.isbn}">
                         <button type="submit" class="btn btn-link pt-0 pb-1">
                           <i class="fas fa-external-link-alt"></i>
                         </button>
