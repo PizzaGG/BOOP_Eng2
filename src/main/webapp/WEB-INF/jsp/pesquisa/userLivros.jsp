@@ -52,7 +52,7 @@
                   <i class="fas fa-user mr-2"></i> Meu perfil</a>
                 <a class="dropdown-item" href="../mybooks">
                   <i class="fas fa-book mr-2"></i> Livros</a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="../troca">
                   <i class="fas fa-exchange-alt mr-2"></i> Trocas</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../sair">

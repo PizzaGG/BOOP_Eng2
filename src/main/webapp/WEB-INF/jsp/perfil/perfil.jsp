@@ -65,7 +65,7 @@
                         </a> <a class="dropdown-item"
                             href="../BOOP_Eng2/mybooks"> <i
                             class="fas fa-book mr-2"></i> Livros
-                        </a> <a class="dropdown-item" href="#"> <i
+                        </a> <a class="dropdown-item" href="../BOOP_Eng2/troca"> <i
                             class="fas fa-exchange-alt mr-2"></i> Trocas
                         </a>
                         <div class="dropdown-divider"></div>

@@ -51,7 +51,7 @@
                   <i class="fas fa-user mr-2"></i> Meu perfil</a>
                 <a class="dropdown-item" href="../BOOP_Eng2/mybooks">
                   <i class="fas fa-book mr-2"></i> Livros</a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="../BOOP_Eng2/troca">
                   <i class="fas fa-exchange-alt mr-2"></i> Trocas</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../BOOP_Eng2/sair">
@@ -112,9 +112,11 @@
 		              <td>${livro.proprietario.username}</td>
 		              <td>
 		              <input type="hidden" name="livro" value="${livro}">
-		              <button type="button" class="btn btn-link pt-0 pb-1" data-toggle="modal" data-target="#confirmacaoModal">               
-		                <i class="fas fa-exchange-alt"></i>
-		              </button>   
+		              <c:if test="${livro.proprietario.username != usuarioLog.getUsuario().username}">
+                          <button type="button" class="btn btn-link pt-0 pb-1" data-toggle="modal" data-target="#trocaModal">               
+    		                <i class="fas fa-exchange-alt"></i>
+    		              </button>
+                      </c:if>
 		              </td>
 		            </tr>
             	</form>	            	
@@ -125,18 +127,18 @@
     </div>
   
     <!-- Modal -->
-    <div class="modal fade" id="confirmacaoModal" tabindex="-1" role="dialog" aria-labelledby="confirmacaoModalLabel" aria-hidden="true">
+    <div class="modal fade" id="trocaModal" tabindex="-1" role="dialog" aria-labelledby="trocaModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="confirmacaoModalLabel">Deseja confirmar troca?</h5>
+            <h5 class="modal-title" id="trocaModalLabel">Deseja solicitar troca?</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Confirmar</button>
+            <button type="button" class="btn btn-primary">Solicitar</button>
           </div>
         </div>
       </div>

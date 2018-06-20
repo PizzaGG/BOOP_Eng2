@@ -38,7 +38,8 @@
 
         <div class="collapse navbar-collapse" id="hidden-menu">
             <ul class="navbar-nav mt-1">
-                <li class="nav-item"><a class="nav-link text-primary"
+                <li class="nav-item"><a
+                    class="nav-link text-primary"
                     href="../BOOP_Eng2/user"> <i
                         class="fas fa-user mr-2"></i> Meu perfil
                 </a></li>
@@ -87,27 +88,6 @@
                 <!-- LOGO -->
                 <div class="logo bg-dark"></div>
             </div>
-            <div class="row w-100 justify-content-center mt-4">
-                <div class="col-md-6">
-                    <c:if test="${msg.getMessagesList().size() > 0}">
-                        <c:forEach var="mensagem"
-                            items="${msg.getMessagesList()}">
-                            <div class="alert alert-warning"
-                                role="alert">
-                                <button type="button" class="close"
-                                    data-dismiss="alert"
-                                    aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <strong> <fmt:message
-                                        key="${mensagem.category}" /></strong>
-                                <fmt:message key="${mensagem.message}" />
-                            </div>
-                        </c:forEach>
-                    </c:if>
-                    ${msg.clear()}
-                </div>
-            </div>
         </div>
     </div>
 
@@ -117,41 +97,94 @@
                 <div class="card py-1 px-3">
                     <div class="card-body">
                         <!-- BOOK SECTION -->
-                        <h2 class="card-title py-3">Meus livros</h2>
+                        <h2 class="card-title py-3">Minhas trocas</h2>
 
                         <div class="container">
                             <div class="row">
-                                <c:forEach var="livro" items="${livros}">
-                                    <div class="col-md-4 col-sm-6 py-2">
-                                        <form action="../BOOP_Eng2/livro">
-                                            <div class="card shadow-sm">
-                                                <div class="capa-livro-card">
-                                                    <img
-                                                        class="card-img-top capa-livro-card-img"
-                                                        src="<c:url value="/img/book1.jpg "/>"
-                                                        alt="Card image cap">
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">${livro.titulo}</h5>
-                                                    <p class="card-text">
-                                                        Autor: ${livro.autor}<br>
-                                                        ISBN: ${livro.isbn}
-                                                    </p>
-                                                    <button type="submit" class="btn float-right btn-link p-0">Editar</button>
-                                                </div>
+                                <div class="col-12 py-2">
+                                    <form>
+                                        <div class="card shadow-sm mb-3">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-warning ml-2">Em andamento</span></h5>
+                                                <p class="card-text">
+                                                    <strong>Solicitante:</strong> Fulano <br/>
+                                                    <strong>Livro de fulano:</strong> A escolher <br/>
+                                                    <strong>Meu livro:</strong> Nome Livro
+                                                    <br />
+                                                </p>
+                                                <button type="submit"
+                                                    class="btn float-right btn-primary">Continuar
+                                                    troca</button>
+                                                <button type="submit"
+                                                    class="btn float-right btn-outline-primary mr-2">Recusar troca</button>
                                             </div>
-                                        </form>
-                                   </div>
-                                </c:forEach>
+                                        </div>
+                                        <div class="card shadow-sm mb-3">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-info ml-2">Aguardando solicitante</span></h5>
+                                                <p class="card-text">
+                                                    <strong>Solicitante:</strong> Fulano <br/>
+                                                    <strong>Livro de fulano:</strong> NomeLivro <br/>
+                                                    <strong>Meu livro:</strong> NomeLivro
+                                                </p>
+                                                <button type="submit"
+                                                    class="btn float-right btn-outline-primary">Recusar troca</button>
+                                            </div>
+                                        </div>
+                                        <div class="card shadow-sm mb-3">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-info ml-2">Aguardando solicitante</span></h5>
+                                                <p class="card-text">
+                                                    <strong>Solicitante:</strong> Eu <br/>
+                                                    <strong>Livro de fulano:</strong> Nome livro <br/>
+                                                    <strong>Meu livro:</strong> A escolher
+                                                    <br />
+                                                </p>
+                                               <button type="submit"
+                                                    class="btn float-right btn-outline-primary">Recusar troca</button>
+                                            </div>
+                                        </div>
+                                        <div class="card shadow-sm mb-3">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-warning ml-2">Em andamento</span></h5>
+                                                <p class="card-text">
+                                                    <strong>Solicitante:</strong> Fulano <br/>
+                                                    <strong>Livro de fulano:</strong> Nome livro <br/>
+                                                    <strong>Meu livro:</strong> Nome Livro
+                                                    <br />
+                                                </p>
+                                                <button type="submit"
+                                                    class="btn float-right btn-primary">Realizar
+                                                    troca</button>
+                                                <button type="submit"
+                                                    class="btn float-right btn-outline-primary mr-2">Recusar troca</button>
+                                            </div>
+                                        </div>
+                                        <div class="card shadow-sm mb-3">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-success ml-2">Troca realizada</span><span class="badge badge-danger ml-2">A confirmar recebimento</span></h5>
+                                                <p class="card-text">
+                                                    <strong>Solicitante:</strong> Fulano <br/>
+                                                    <strong>Livro de fulano:</strong> NomeLivro <br/>
+                                                    <strong>Meu livro:</strong> NomeLivro
+                                                </p>
+                                                <button type="submit"
+                                                    class="btn float-right btn-primary">Confirmar recebimento</button>
+                                            </div>
+                                        </div>
+                                        <div class="card shadow-sm mb-3">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-success ml-2">Troca finalizada</span></h5>
+                                                <p class="card-text">
+                                                    <strong>Solicitante:</strong> Fulano <br/>
+                                                    <strong>Livro de fulano:</strong> NomeLivro <br/>
+                                                    <strong>Meu livro:</strong> NomeLivro
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                        <div
-                            class="card-body d-flex justify-content-end">
-                            <a href="../BOOP_Eng2/cadbook">
-                                <button type="button"
-                                    class="btn btn-primary">Cadastrar
-                                    livro</button>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -171,7 +204,8 @@
                         <h3>
                             <strong>${usuarioLog.getUsuario().nome}</strong>
                         </h3>
-                        <h6 class="text-muted text-uppercase">${usuarioLog.getUsuario().booPoint.getQuantidade()} Boopoints</h6>
+                        <h6 class="text-muted text-uppercase">${usuarioLog.getUsuario().booPoint.getQuantidade()}
+                            Boopoints</h6>
 
                         <form class="mt-3"
                             action="../BOOP_Eng2/pesquisar"

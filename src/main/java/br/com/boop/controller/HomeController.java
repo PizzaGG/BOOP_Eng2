@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import br.com.boop.dao.LivroDao;
 import br.com.boop.model.Livro;
+import br.com.boop.model.UsuarioLogado;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Result;
@@ -29,13 +30,13 @@ public class HomeController {
 	
 	@Get("/home")
 	public void home(){
-		List<Livro> lista = livroDao.listarLivros();
+		List<Livro> lista = livroDao.listarLivrosUsuario(UsuarioLogado.getUsername());
+		// List<Livro> lista = livroDao.listarLivros();
 
-		for(int i=0; i<lista.size()-3; i++) {
-			lista.remove(lista.get(i));
+		while(lista.size() > 3) {
+			lista.remove(lista.get(0));
 		}
 		
 		result.include("livros", lista);
-	}
-	
+	}	
 }
