@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import br.com.boop.dao.LivroDao;
 import br.com.boop.model.BoopMessage;
 import br.com.boop.model.Livro;
+import br.com.boop.model.UsuarioLogado;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
@@ -35,12 +36,18 @@ public class LivroController {
 	public void trocar() {
 	}
 	
-	@Get("/livro")
 	public void livro() {
 	}
 	
-	@Post("/atualizar")
-	public void atualizar(Livro livro) {
+	@Post("/livro")
+	public void verLivro(String isbn){
+		Livro livro = livroDao.busca(isbn);
+		result.include("livro", livro);
+		result.redirectTo(this).livro();
+	}
+	
+	@Post("/editarLivro")
+	public void editarLivro(Livro livro, String isbnOld) {
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(HomeController.class).home();
 			for (Message msg : validator.getErrors()) {
@@ -48,15 +55,17 @@ public class LivroController {
 			}
 			return;
 		}
-		livroDao.atualizar(livro);
-		MessagesController.addMessage(new BoopMessage("book.register.sucess.title", "book.register.sucess.message", Severity.INFO));
-		result.redirectTo(HomeController.class).home();
+		livro.setProprietario(UsuarioLogado.getUsuarioStatic());
+		livroDao.atualizar(livro, isbnOld);
+		MessagesController.addMessage(new BoopMessage("success.title", "book.update.success.message", Severity.INFO));
+		result.include("livro", livro);
+		result.redirectTo(this).livro();
 	}
 	
 	@Get("/delete")
 	public void deletar(Livro livro) {
 		livroDao.deletar(livro.getId());
-		MessagesController.addMessage(new BoopMessage("book.register.sucess.title", "book.register.sucess.message", Severity.INFO));
+		MessagesController.addMessage(new BoopMessage("success.title", "book.delete.success.message", Severity.INFO));
 		result.redirectTo(HomeController.class).home();
 	}
 }
