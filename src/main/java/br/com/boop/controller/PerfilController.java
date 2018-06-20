@@ -1,11 +1,12 @@
 package br.com.boop.controller;
 
 import javax.inject.Inject;
-import javax.validation.Valid;
 
 import br.com.boop.dao.UsuarioDao;
 import br.com.boop.model.BoopMessage;
 import br.com.boop.model.Usuario;
+import br.com.boop.model.UsuarioLogado;
+import br.com.boop.util.HashPasswordGenerator;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
@@ -38,7 +39,7 @@ public class PerfilController {
 	
 	//TODO: Fazer correção nos parâmetros
 	@Post("/editarPerfil")
-	public void atualizar(@Valid Usuario usuario) {
+	public void atualizar(String username, Long matricula, String nome, String email, String senha) {
 		if (validator.hasErrors()) {
 			for (Message msg : validator.getErrors()) {
 				MessagesController.addMessage(new BoopMessage("user.update.error.title", msg.getMessage(), msg.getSeverity()));
@@ -46,7 +47,14 @@ public class PerfilController {
 			validator.onErrorForwardTo(this).perfil();
 			return;
 		}
-		usuarioDao.atualizar(usuario);
+		Usuario usu = UsuarioLogado.getUsuarioStatic();
+		usu.setUsername(username);
+		usu.setEmail(email);
+		if(senha!=null)
+			usu.setHashSenha(HashPasswordGenerator.getHashSha256(senha));
+		usu.setMatricula(matricula);
+		usu.setNome(nome);
+		usuarioDao.atualizar(usu);
 		MessagesController.addMessage(new BoopMessage("user.update.sucess.title", "user.update.sucess.message", Severity.INFO));
 		result.redirectTo(this).perfil();
 	}
