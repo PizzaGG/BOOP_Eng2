@@ -38,8 +38,16 @@ public class LivroDao {
 	public Livro busca(Long id) {
 		return em.find(Livro.class, id);
 	}
+	
+	public Livro busca(String isbn) {
+		Livro livro = em.createQuery("select l from Livro l where l.isbn = :isbnLivro", Livro.class)
+				.setParameter("isbnLivro", isbn).getResultList().get(0);
+		return livro;
+	}
 
-	public void atualizar(Livro livro) {
+	public void atualizar(Livro livro, String isbnOld) {
+		Livro old = busca(isbnOld);
+		livro.setId(old.getId());
 		em.merge(livro);
 	}
 	
