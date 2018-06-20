@@ -105,7 +105,7 @@
                                     <form>
                                         <div class="card shadow-sm mb-3">
                                             <div class="card-body">
-                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-warning ml-2">Em andamento</span></h5>
+                                                <h5 class="card-title">Pedido de troca <span class="badge badge-warning ml-2">Em andamento</span></h5>
                                                 <p class="card-text">
                                                     <strong>Solicitante:</strong> Fulano <br/>
                                                     <strong>Livro de fulano:</strong> A escolher <br/>
@@ -121,7 +121,7 @@
                                         </div>
                                         <div class="card shadow-sm mb-3">
                                             <div class="card-body">
-                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-info ml-2">Aguardando solicitante</span></h5>
+                                                <h5 class="card-title">Pedido de troca <span class="badge badge-info ml-2">Aguardando solicitante</span></h5>
                                                 <p class="card-text">
                                                     <strong>Solicitante:</strong> Fulano <br/>
                                                     <strong>Livro de fulano:</strong> NomeLivro <br/>
@@ -133,7 +133,7 @@
                                         </div>
                                         <div class="card shadow-sm mb-3">
                                             <div class="card-body">
-                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-info ml-2">Aguardando solicitante</span></h5>
+                                                <h5 class="card-title">Solicitação ou Pedido de troca <span class="badge badge-info ml-2">Aguardando solicitante</span></h5>
                                                 <p class="card-text">
                                                     <strong>Solicitante:</strong> Eu <br/>
                                                     <strong>Livro de fulano:</strong> Nome livro <br/>
@@ -162,7 +162,7 @@
                                         </div>
                                         <div class="card shadow-sm mb-3">
                                             <div class="card-body">
-                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-success ml-2">Troca realizada</span><span class="badge badge-danger ml-2">A confirmar recebimento</span></h5>
+                                                <h5 class="card-title">Solicitação ou Pedido de troca <span class="badge badge-success ml-2">Troca realizada</span><span class="badge badge-danger ml-2">A confirmar recebimento</span></h5>
                                                 <p class="card-text">
                                                     <strong>Solicitante:</strong> Fulano <br/>
                                                     <strong>Livro de fulano:</strong> NomeLivro <br/>
@@ -174,7 +174,7 @@
                                         </div>
                                         <div class="card shadow-sm mb-3">
                                             <div class="card-body">
-                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-success ml-2">Troca finalizada</span></h5>
+                                                <h5 class="card-title">Solicitação ou Pedido de troca <span class="badge badge-success ml-2">Troca finalizada</span></h5>
                                                 <p class="card-text">
                                                     <strong>Solicitante:</strong> Fulano <br/>
                                                     <strong>Livro de fulano:</strong> NomeLivro <br/>

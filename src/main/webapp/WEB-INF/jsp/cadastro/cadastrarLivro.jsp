@@ -102,7 +102,7 @@
                     <div class="mr-auto bg-dark-1 capa mb-3 rounded "></div>
                     <label for="capaLivro">Capa do livro</label>
                     <div class="input-group mb-3">
-                      <input type="file" class="custom-file-input" id="capaLivro">
+                      <input type="file" class="custom-file-input" id="capaLivro" name="imagem">
                       <label class="custom-file-label" for="capaLivro">Escolher arquivo</label>
                     </div>
                   </div>

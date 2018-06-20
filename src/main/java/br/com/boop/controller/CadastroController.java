@@ -15,6 +15,7 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.observer.upload.UploadedFile;
 import br.com.caelum.vraptor.validator.Message;
 import br.com.caelum.vraptor.validator.Severity;
 import br.com.caelum.vraptor.validator.Validator;
@@ -52,6 +53,7 @@ public class CadastroController {
 	
 	@Post("/cadastrar")
 	public void cadastrar(Livro livro) {
+		
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(this).cadastrarLivro();
 			for (Message msg : validator.getErrors()) {
