@@ -54,7 +54,7 @@
                 <a class="dropdown-item" href="../BOOP_Eng2/troca">
                   <i class="fas fa-exchange-alt mr-2"></i> Trocas</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../BOOP_Eng2/sair">
+                <a class="dropdown-item" href="../BOOP_Eng2/logout">
                   <i class="fas fa-sign-out-alt mr-2"></i> Sair</a>
               </div>
             </li>
@@ -104,7 +104,7 @@
           </thead>
           <tbody>
             <c:forEach var="livro" items="${livros}">
-            	<form action="novaTroca" method="post">
+            	<form>
             		<tr class="table-secondary">
 		              <th scope="row">${livro.titulo}</th>
 		              <td>${livro.autor}</td>
@@ -115,7 +115,7 @@
 		              <c:if test="${livro.proprietario.username != usuarioLog.getUsuario().username}">
 		              	  <input type="hidden" name="userDest" value="${usuarioLog.getUsuario().id}">
 		              	  <input type="hidden" name="userOrig" value="${livro.getProprietario().id}">
-                          <button type="submit" class="btn btn-link pt-0 pb-1" data-toggle="modal" data-target="#trocaModal">               
+                          <button type="button" class="submitTroca btn btn-link pt-0 pb-1" data-toggle="modal" data-target="#trocaModal">               
     		                <i class="fas fa-exchange-alt"></i>
     		              </button>
                       </c:if>
@@ -132,16 +132,15 @@
     <div class="modal fade" id="trocaModal" tabindex="-1" role="dialog" aria-labelledby="trocaModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="trocaModalLabel">Deseja solicitar troca?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Solicitar</button>
-          </div>
+          <form action="novaTroca" method="post">
+            <div class="modal-header">
+                <h5 class="modal-title" id="trocaModalLabel">Deseja solicitar troca?</h5>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" id="submitModal" class="btn btn-primary">Solicitar</button>
+              </div>
+          </form>
         </div>
       </div>
     </div>

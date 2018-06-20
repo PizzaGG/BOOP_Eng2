@@ -41,47 +41,69 @@ const excluirBtn = document.getElementById('excluirBtn');
 const inputFile = document.querySelector('.inputFile');
 const inputEdit = document.querySelectorAll('.inputEdit');
 
-editarBtn.addEventListener('click', () => {
-    editarBtn.classList.add('d-none');
-    editarBtn.classList.remove('d-block');
-    cancelarBtn.classList.remove('d-none');
-    cancelarBtn.classList.add('d-block');
-    cancelarBtn.previousElementSibling.classList.remove('d-none');
-    cancelarBtn.previousElementSibling.classList.add('d-block');
-    inputEdit.forEach((input) => {
-        input.disabled = false;
+if(editarBtn) {
+    editarBtn.addEventListener('click', () => {
+        editarBtn.classList.add('d-none');
+        editarBtn.classList.remove('d-block');
+        cancelarBtn.classList.remove('d-none');
+        cancelarBtn.classList.add('d-block');
+        cancelarBtn.previousElementSibling.classList.remove('d-none');
+        cancelarBtn.previousElementSibling.classList.add('d-block');
+        inputEdit.forEach((input) => {
+            input.disabled = false;
+        });
+        
+        if(excluirBtn) {
+            excluirBtn.classList.remove('d-none');
+            excluirBtn.classList.add('d-block');
+        }
+        
+        if(inputFile) {
+            inputFile.classList.add('d-block');
+            inputFile.classList.remove('d-none');
+        }
+        
     });
-    
-    if(excluirBtn) {
-    	excluirBtn.classList.remove('d-none');
-        excluirBtn.classList.add('d-block');
-    }
-    
-    if(inputFile) {
-    	inputFile.classList.add('d-block');
-        inputFile.classList.remove('d-none');
-    }
-    
-});
+}
 
-cancelarBtn.addEventListener('click', () => {
-    editarBtn.classList.remove('d-none');
-    editarBtn.classList.add('d-block');
-    cancelarBtn.classList.remove('d-block');
-    cancelarBtn.classList.add('d-none');
-    cancelarBtn.previousElementSibling.classList.remove('d-block');
-    cancelarBtn.previousElementSibling.classList.add('d-none');
-    inputEdit.forEach((input) => {
-        input.disabled = true;
+if(cancelarBtn) {
+    cancelarBtn.addEventListener('click', () => {
+        editarBtn.classList.remove('d-none');
+        editarBtn.classList.add('d-block');
+        cancelarBtn.classList.remove('d-block');
+        cancelarBtn.classList.add('d-none');
+        cancelarBtn.previousElementSibling.classList.remove('d-block');
+        cancelarBtn.previousElementSibling.classList.add('d-none');
+        inputEdit.forEach((input) => {
+            input.disabled = true;
+        });
+        
+        if(excluirBtn) {
+            excluirBtn.classList.remove('d-block');
+            excluirBtn.classList.add('d-none');
+        }
+        
+        if(inputFile) {
+            inputFile.classList.add('d-none');
+            inputFile.classList.remove('d-block');
+        }
     });
-    
-    if(excluirBtn) {
-    	excluirBtn.classList.remove('d-block');
-        excluirBtn.classList.add('d-none');
-    }
-    
-    if(inputFile) {
-    	inputFile.classList.add('d-none');
-        inputFile.classList.remove('d-block');
-    }
-});
+}
+
+const submitTroca = document.querySelectorAll('.submitTroca');
+const submitModal = document.getElementById('submitModal');
+
+if(submitTroca) {
+    submitTroca.forEach((button) => {
+        button.addEventListener('click', () => {
+            submitModal.parentElement.appendChild(button.previousElementSibling.previousElementSibling.previousElementSibling);
+            submitModal.parentElement.appendChild(button.previousElementSibling.previousElementSibling);
+            submitModal.parentElement.appendChild(button.previousElementSibling);
+        });
+    });
+
+    submitModal.previousElementSibling.addEventListener('click', () => {
+        submitModal.nextElementSibling.remove();
+        submitModal.nextElementSibling.remove();
+    });
+}
