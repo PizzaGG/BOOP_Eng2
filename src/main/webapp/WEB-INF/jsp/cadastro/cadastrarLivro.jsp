@@ -94,7 +94,7 @@
         <div class="card-body">
           <h4 class="card-title">Cadastrar livro</h4>
 
-          <form action="../BOOP_Eng2/cadastrar" method="post" class="mt-4">
+          <form action="../BOOP_Eng2/cadastrar" method="post" class="mt-4" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-3">
                 <fieldset>

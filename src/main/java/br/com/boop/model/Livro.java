@@ -4,11 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
+
+import br.com.caelum.vraptor.observer.upload.UploadedFile;
 
 @Entity
 public class Livro {
@@ -134,7 +137,7 @@ public class Livro {
 //	public UploadedFile getSetImagem() {
 //		return setImagem;
 //	}
-//
+
 //	public void setSetImagem(UploadedFile imagem) {
 //		this.setImagem = imagem;
 //	}
