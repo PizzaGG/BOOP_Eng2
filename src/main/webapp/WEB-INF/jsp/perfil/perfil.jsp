@@ -139,7 +139,7 @@
                                         <label class="col-form-label"
                                             for="usuario">Usuario</label>
                                         <input type="text"
-                                            class="form-control inputEdit"
+                                            class="form-control inputEdit" name="username"
                                             value="${usuarioLog.getUsuario().username}"
                                             id="usuario" disabled>
                                     </div>
@@ -147,7 +147,7 @@
                                         <label class="col-form-label"
                                             for="matricula">Matricula</label>
                                         <input type="text"
-                                            class="form-control inputEdit"
+                                            class="form-control inputEdit" name="matricula"
                                             value="${usuarioLog.getUsuario().matricula}"
                                             id="matricula" disabled>
                                     </div>
@@ -156,7 +156,7 @@
                                     <label class="col-form-label"
                                         for="nome">Nome</label> <input
                                         type="text"
-                                        class="form-control inputEdit"
+                                        class="form-control inputEdit" name="nome"
                                         value="${usuarioLog.getUsuario().nome}"
                                         id="nome" disabled>
                                 </div>
@@ -164,7 +164,7 @@
                                     <label class="col-form-label"
                                         for="email">Email</label> <input
                                         type="text"
-                                        class="form-control inputEdit"
+                                        class="form-control inputEdit" name="email"
                                         value="${usuarioLog.getUsuario().email}"
                                         id="email" disabled>
                                 </div>
@@ -172,7 +172,7 @@
                                     <label class="col-form-label"
                                         for="senha">Senha</label> <input
                                         type="password"
-                                        class="form-control inputEdit"
+                                        class="form-control inputEdit" name="senha"
                                         placeholder="********"
                                         id="senha" disabled>
                                 </div>
