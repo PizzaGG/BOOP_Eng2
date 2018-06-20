@@ -38,6 +38,10 @@ public class UsuarioDao  {
 	public void atualizar(Usuario usuario) {
 		manager.merge(usuario);
 	}
+	
+	public Usuario busca(Long id){
+		return manager.find(Usuario.class, id);
+	}
 
 	public boolean hasUser(String user) {
 		// TODO Auto-generated method stub
