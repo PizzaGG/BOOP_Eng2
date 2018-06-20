@@ -17,12 +17,12 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a href="../BOOP_Eng2/home">
+        <a href="../home">
           <div class="nav-logo logo bg-dark my-1"></div>
         </a>
 
         <div class="col-7 pesquisa-grande">
-          <form action="../BOOP_Eng2/pesquisar" method="post">
+          <form action="../pesquisar" method="post">
             <div class="input-group">
               <input type="text" name="termo" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
@@ -49,16 +49,16 @@
                 <i class="fas fa-caret-down"></i>
               </a>
                 <div class="dropdown-menu mt-2">
-                    <a class="dropdown-item" href="../BOOP_Eng2/user"> <i
+                    <a class="dropdown-item" href="../user"> <i
                             class="fas fa-user mr-2"></i> Meu perfil
                     </a> <a class="dropdown-item"
-                            href="../BOOP_Eng2/mybooks"> <i
+                            href="../mybooks"> <i
                             class="fas fa-book mr-2"></i> Livros
-                    </a> <a class="dropdown-item" href="../BOOP_Eng2/troca"> <i
+                    </a> <a class="dropdown-item" href="../troca"> <i
                             class="fas fa-exchange-alt mr-2"></i> Trocas
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="../BOOP_Eng2/sair"> <i
+                    <a class="dropdown-item" href="../sair"> <i
                             class="fas fa-sign-out-alt mr-2"></i> Sair
                     </a>
                 </div>
@@ -71,7 +71,7 @@
     <nav class="navbar navbar-light bg-light pesquisa-pequeno">
       <div class="container w-100 p-0">
         <div class="py-2 w-100">
-          <form action="../BOOP_Eng2/pesquisar" method="post">
+          <form action="../pesquisar" method="post">
             <div class="input-group">
               <input type="text" name="termo" class="form-control" placeholder="Digite algo">
               <div class="input-group-append">
@@ -91,17 +91,17 @@
     <div class="container">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="../BOOP_Eng2/home">Inicio</a>
+          <a href="../home">Inicio</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="../BOOP_Eng2/mybooks">Todos os livros</a>
+          <a href="../mybooks">Todos os livros</a>
         </li>
         <li class="breadcrumb-item active">Livro</li>
       </ol>
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">Livro</h4>
-          <form class="mt-4">
+          <form class="mt-4" action="../editarLivro" method="post">
             <div class="row">
               <div class="col-md-3">
                 <fieldset>
@@ -120,34 +120,35 @@
                   <div class="row">
                     <div class="form-group col-md-6">
                       <label class="col-form-label" for="tituloLivro">Titulo do livro</label>
-                      <input type="text" class="form-control inputEdit" placeholder="Titulo do livro" id="tituloLivro" disabled>
+                      <input type="text" class="form-control inputEdit" name="livro.titulo" value="${livro.titulo}" id="tituloLivro" disabled>
                     </div>
                     <div class="form-group col-md-6">
                       <label class="col-form-label" for="subtituloLivro">Subtitulo do livro</label>
-                      <input type="text" class="form-control inputEdit" placeholder="Subtitulo do livro" id="subtituloLivro" disabled>
+                      <input type="text" class="form-control inputEdit" name="livro.subtitulo" value="${livro.subtitulo}" id="subtituloLivro" disabled>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-form-label" for="autorLivro">Autor</label>
-                    <input type="text" class="form-control inputEdit" placeholder="Autor" id="autorLivro" disabled>
+                    <input type="text" class="form-control inputEdit" name="livro.autor" value="${livro.autor}" id="autorLivro" disabled>
                   </div>
                   <div class="row">
                     <div class="form-group col-md-4">
                       <label class="col-form-label" for="anoLivro">Ano</label>
-                      <input type="text" class="form-control inputEdit" placeholder="Ano" id="anoLivro" disabled>
+                      <input type="text" class="form-control inputEdit" name="livro.ano" value="${livro.ano}" id="anoLivro" disabled>
                     </div>
                     <div class="form-group col-md-4">
                       <label class="col-form-label" for="edicaoLivro">Edicao</label>
-                      <input type="text" class="form-control inputEdit" placeholder="Edicao" id="edicaoLivro" disabled>
+                      <input type="text" class="form-control inputEdit" name="livro.edicao" value="${livro.edicao}" id="edicaoLivro" disabled>
                     </div>
                     <div class="form-group col-md-4">
                       <label class="col-form-label" for="isbnLivro">ISBN</label>
-                      <input type="text" class="form-control inputEdit" placeholder="ISBN" id="isbnLivro" disabled>
+                      <input type="text" class="form-control inputEdit" name="livro.isbn" value="${livro.isbn}" id="isbnLivro" disabled>
                     </div>
                   </div>
                 </fieldset>
               </div>
             </div>
+            <input type="hidden" name="isbnOld" value="${livro.isbn}">
             <button id="editarBtn" type="button" class="btn btn-primary float-right">Editar dados</button>
             <button type="submit" class="btn btn-primary float-right d-none">Salvar</button>
             <button id="cancelarBtn" type="button" class="btn btn-secondary mr-2 float-right d-none">Cancelar</button>
