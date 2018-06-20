@@ -121,18 +121,6 @@
                                         </div>
                                         <div class="card shadow-sm mb-3">
                                             <div class="card-body">
-                                                <h5 class="card-title">Pedido de troca <span class="badge badge-info ml-2">Aguardando solicitante</span></h5>
-                                                <p class="card-text">
-                                                    <strong>Solicitante:</strong> Fulano <br/>
-                                                    <strong>Livro de fulano:</strong> NomeLivro <br/>
-                                                    <strong>Meu livro:</strong> NomeLivro
-                                                </p>
-                                                <button type="submit"
-                                                    class="btn float-right btn-outline-primary">Recusar troca</button>
-                                            </div>
-                                        </div>
-                                        <div class="card shadow-sm mb-3">
-                                            <div class="card-body">
                                                 <h5 class="card-title">Solicitação ou Pedido de troca <span class="badge badge-info ml-2">Aguardando solicitante</span></h5>
                                                 <p class="card-text">
                                                     <strong>Solicitante:</strong> Eu <br/>
@@ -142,22 +130,6 @@
                                                 </p>
                                                <button type="submit"
                                                     class="btn float-right btn-outline-primary">Recusar troca</button>
-                                            </div>
-                                        </div>
-                                        <div class="card shadow-sm mb-3">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Solicitação de troca <span class="badge badge-warning ml-2">Em andamento</span></h5>
-                                                <p class="card-text">
-                                                    <strong>Solicitante:</strong> Fulano <br/>
-                                                    <strong>Livro de fulano:</strong> Nome livro <br/>
-                                                    <strong>Meu livro:</strong> Nome Livro
-                                                    <br />
-                                                </p>
-                                                <button type="submit"
-                                                    class="btn float-right btn-primary">Realizar
-                                                    troca</button>
-                                                <button type="submit"
-                                                    class="btn float-right btn-outline-primary mr-2">Recusar troca</button>
                                             </div>
                                         </div>
                                         <div class="card shadow-sm mb-3">
