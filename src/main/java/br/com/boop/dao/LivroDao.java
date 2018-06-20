@@ -47,9 +47,9 @@ public class LivroDao {
 		em.remove(busca(idLivro));
 	}
 
-	public List<Livro> listarLivrosUsuario(String nome) {
-		List<Livro> lista = em.createQuery("select l from Livro l where l.proprietario.nome = :proprietario", Livro.class)
-				.setParameter("proprietario", nome).getResultList();
+	public List<Livro> listarLivrosUsuario(String username) {
+		List<Livro> lista = em.createQuery("select l from Livro l where l.proprietario.username = :proprietario", Livro.class)
+				.setParameter("proprietario", username).getResultList();
 		return lista;
 	}
 	

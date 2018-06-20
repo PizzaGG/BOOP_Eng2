@@ -33,20 +33,20 @@ public class PesquisaController {
 		result.include("livros", livroDao.listarLivros());
 	}
 
-	public void todosLivros() {
+	public void userLivros() {
 	}
 	
 	@Get("/mybooks")
 	public void listarLivrosDoUsuario() {
 		List<Livro> lista = livroDao.listarLivrosUsuario(UsuarioLogado.getUsername());
 		result.include("livros", lista);
-		result.redirectTo(this).todosLivros();
+		result.redirectTo(this).userLivros();
 	}
 
 	@Post("/listar")
 	public void listarLivrosDoSistema() {
 		result.include("livros", livroDao.listarLivros());
-		result.redirectTo(this).todosLivros();
+		result.redirectTo(this).userLivros();
 	}
 	
 	@Post("/pesquisar")

@@ -31,7 +31,6 @@ public class HomeController {
 	@Get("/home")
 	public void home(){
 		List<Livro> lista = livroDao.listarLivrosUsuario(UsuarioLogado.getUsername());
-		// List<Livro> lista = livroDao.listarLivros();
 
 		while(lista.size() > 3) {
 			lista.remove(lista.get(0));
