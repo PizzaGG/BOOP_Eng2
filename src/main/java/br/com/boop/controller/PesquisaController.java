@@ -30,7 +30,6 @@ public class PesquisaController {
 	
 	@Get("/pesq")
 	public void pesquisa() {
-		result.include("livros", livroDao.listarLivros());
 	}
 
 	public void userLivros() {
@@ -51,7 +50,10 @@ public class PesquisaController {
 	
 	@Post("/pesquisar")
 	public void pesquisarLivros(String termo) {
-		result.include("livros", livroDao.pesquisar(termo));
+		if(termo!=null)
+			result.include("livros", livroDao.pesquisar(termo));
+		else
+			result.include("livros", livroDao.listarLivros());
 		result.redirectTo(this).pesquisa();
 	}
 	
