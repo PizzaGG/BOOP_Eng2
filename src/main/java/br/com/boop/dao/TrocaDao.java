@@ -26,6 +26,14 @@ private final EntityManager em;
 		em.persist(troca);
 	}
 	
+	public void remover (Troca troca) {
+		em.remove(troca);
+	}
+	
+	public void atualizar (Troca troca) {
+		em.merge(troca);
+	}
+	
 	public List<Troca> listarTrocasUsuario (String username){
 		List<Troca> lista = em.createQuery("select t from Troca t where t.originario = :username", Troca.class)
 				.setParameter("username", username).getResultList();
