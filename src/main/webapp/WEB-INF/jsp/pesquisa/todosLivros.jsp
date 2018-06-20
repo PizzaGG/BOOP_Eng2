@@ -105,17 +105,19 @@
           </thead>
           <tbody>
           	<c:forEach var="livro" items="${livros}">
-                <tr class="table-secondary">
-	              <th scope="row">${livro.titulo}</th>
-	              <td>${livro.autor}</td>
-	              <td>${livro.isbn}</td>
-	              <td>${livro.proprietario.username}</td>
-	              <td>
-	                <button type="button" class="btn btn-link pt-0 pb-1">
-	                  <i class="fas fa-external-link-alt"></i>
-	                </button>
-	              </td>
-	            </tr>
+                <form action="../livro">
+                    <tr class="table-secondary">
+                      <th scope="row">${livro.titulo}</th>
+                      <td>${livro.autor}</td>
+                      <td>${livro.isbn}</td>
+                      <td>${livro.proprietario.username}</td>
+                      <td>
+                        <button type="submit" class="btn btn-link pt-0 pb-1">
+                          <i class="fas fa-external-link-alt"></i>
+                        </button>
+                      </td>
+                    </tr>
+                </form>
             </c:forEach>
           </tbody>
         </table>
