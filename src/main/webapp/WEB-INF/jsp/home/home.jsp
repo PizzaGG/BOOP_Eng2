@@ -123,7 +123,7 @@
                             <div class="row">
                                 <c:forEach var="livro" items="${livros}">
                                     <div class="col-md-4 col-sm-6 py-2">
-                                        <form action="../BOOP_Eng2/livro">
+                                        <form action="../BOOP_Eng2/livro" method="post">
                                             <div class="card shadow-sm">
                                                 <div class="capa-livro-card">
                                                     <img
@@ -137,6 +137,7 @@
                                                         Autor: ${livro.autor}<br>
                                                         ISBN: ${livro.isbn}
                                                     </p>
+                                                    <input type="hidden" name="isbn" value="${livro.isbn}">
                                                     <button type="submit" class="btn float-right btn-link p-0">Editar</button>
                                                 </div>
                                             </div>
