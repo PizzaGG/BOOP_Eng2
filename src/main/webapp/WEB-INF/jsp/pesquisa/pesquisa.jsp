@@ -104,16 +104,18 @@
           </thead>
           <tbody>
             <c:forEach var="livro" items="${livros}">
-            	<form>
+            	<form action="novaTroca" method="post">
             		<tr class="table-secondary">
 		              <th scope="row">${livro.titulo}</th>
 		              <td>${livro.autor}</td>
 		              <td>${livro.isbn}</td>
 		              <td>${livro.proprietario.username}</td>
 		              <td>
-		              <input type="hidden" name="livro" value="${livro}">
+		              <input type="hidden" name="livro" value="${livro.id}">
 		              <c:if test="${livro.proprietario.username != usuarioLog.getUsuario().username}">
-                          <button type="button" class="btn btn-link pt-0 pb-1" data-toggle="modal" data-target="#trocaModal">               
+		              	  <input type="hidden" name="userDest" value="${usuarioLog.getUsuario().id}">
+		              	  <input type="hidden" name="userOrig" value="${livro.getProprietario().id}">
+                          <button type="submit" class="btn btn-link pt-0 pb-1" data-toggle="modal" data-target="#trocaModal">               
     		                <i class="fas fa-exchange-alt"></i>
     		              </button>
                       </c:if>
