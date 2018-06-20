@@ -64,7 +64,7 @@ public class CadastroController {
 		}
 		livro.setProprietario(usuarioLogado.getUsuario());
 		livroDao.salvar(livro);
-		MessagesController.addMessage(new BoopMessage("sucess.title", "book.register.sucess.message", Severity.SUCCESS));
+		MessagesController.addMessage(new BoopMessage("success.title", "book.register.sucess.message", Severity.SUCCESS));
 		result.redirectTo(HomeController.class).home();
 		return;
 	}
@@ -82,7 +82,7 @@ public class CadastroController {
 		usuario.setHashSenha(HashPasswordGenerator.getHashSha256(usuario.getHashSenha()));
 		usuario.setBooPoint(new Boopoint(usuario,0,0));
 		usuarioDao.salvar(usuario);
-		MessagesController.addMessage(new BoopMessage("success.title", "user.create.sucess.message", Severity.SUCCESS));
+		MessagesController.addMessage(new BoopMessage("success.title", "user.create.success.message", Severity.SUCCESS));
 		result.redirectTo(LoginController.class).login();
 		return;
 	}
