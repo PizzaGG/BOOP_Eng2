@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.boop.model.Troca;
+import br.com.boop.model.Usuario;
 
 @RequestScoped
 public class TrocaDao {
@@ -34,9 +35,19 @@ private final EntityManager em;
 		em.merge(troca);
 	}
 	
-	public List<Troca> listarTrocasUsuario (String username){
-		List<Troca> lista = em.createQuery("select t from Troca t where t.originario = :username", Troca.class)
-				.setParameter("username", username).getResultList();
+	public Troca busca (Long id) {
+		return em.find(Troca.class, id);
+	}
+	
+	public List<Troca> listarTrocasUsuario (Usuario user){
+		List<Troca> lista = em.createQuery("select t from Troca t where t.destinatario = :user", Troca.class)
+				.setParameter("user", user).getResultList();
+		return lista;
+	}
+	
+	public List<Troca> listarTrocasUsuarioOrig (Usuario user){
+		List<Troca> lista = em.createQuery("select t from Troca t where t.originario = :user", Troca.class)
+				.setParameter("user", user).getResultList();
 		return lista;
 	}
 	

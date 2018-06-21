@@ -102,8 +102,171 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-12 py-2">
-                                    <form>
-                                        <div class="card shadow-sm mb-3">
+                                    	<c:if test="${!trocasOrig.isEmpty()}">
+									    	PEDIDOS PARA MIM
+							            </c:if>
+                                    	<c:forEach var="troca" items="${trocasOrig}">
+									    	<c:if test="${troca.statusDoPedido == 'SOLICITADO'}">
+									    		<form action="aceitarTroca" method="post">
+								            		<div class="card shadow-sm mb-3">
+			                                            <div class="card-body">
+			                                                <h5 class="card-title">Pedido de troca <span class="badge badge-warning ml-2">Em andamento</span></h5>
+			                                                <p class="card-text">
+			                                                    <strong>Solicitante:</strong> ${troca.getDestinatario().nome} <br/>
+			                                                    <strong>Proprietário do livro:</strong> Eu <br/>
+			                                                    <strong>Livro solicitado:</strong> ${troca.getLivroSolicitado().titulo} <br/>
+			                                                </p>
+			                                                <input type="hidden" name="troca" value="${troca.id}">
+			                                                <button type="submit"
+			                                                    class="btn float-right btn-primary">Aceitar
+			                                                    troca</button>
+			                                    </form>
+			                                    <form action="cancelarTroca" method="post">
+			                                    	<input type="hidden" name="troca" value="${troca.id}">
+			                                    	<button type="submit"
+			                                                class="btn float-right btn-outline-primary mr-2">Recusar troca</button>
+			                                    </form>
+			                                            </div>
+			                                        </div>
+							            	</c:if>
+							            	<c:if test="${troca.statusDoPedido == 'AGUARDANDO_CONFIRMACAO_AMBOS' || troca.statusDoPedido == 'AGUARDANDO_CONFIRMACAO_ORIG'}">
+							            	<form action="confirmarTroca" method="post">
+								            		<div class="card shadow-sm mb-3">
+			                                            <div class="card-body">
+			                                                <h5 class="card-title">Pedido de troca <span class="badge badge-success ml-2">Troca realizada</span><span class="badge badge-danger ml-2">A confirmar recebimento</span></h5>
+			                                                <p class="card-text">
+			                                                    <strong>Solicitante:</strong> ${troca.getDestinatario().nome} <br/>
+			                                                    <strong>Proprietário do livro:</strong> Eu <br/>
+			                                                    <strong>Livro solicitado:</strong> ${troca.getLivroSolicitado().titulo} <br/>
+			                                                </p>
+			                                    			<input type="hidden" name="troca" value="${troca.id}">
+			                                                <button type="submit"
+			                                                    class="btn float-right btn-primary">Confirmar recebimento</button>
+			                                            </div>
+			                                        </div>
+							            	</form>
+							            	</c:if>
+							            	<c:if test="${troca.statusDoPedido == 'AGUARDANDO_CONFIRMACAO_DEST'}">
+								            		<div class="card shadow-sm mb-3">
+			                                            <div class="card-body">
+			                                                <h5 class="card-title">Pedido de troca <span class="badge badge-success ml-2">Troca realizada</span><span class="badge badge-danger ml-2">A confirmar recebimento</span></h5>
+			                                                <p class="card-text">
+			                                                    <strong>Solicitante:</strong> ${troca.getDestinatario().nome} <br/>
+			                                                    <strong>Proprietário do livro:</strong> Eu <br/>
+			                                                    <strong>Livro solicitado:</strong> ${troca.getLivroSolicitado().titulo} <br/>
+			                                                </p>
+			                                    			<input type="hidden" name="troca" value="${troca.id}">
+			                                                <button type="button"
+			                                                    class="btn float-right btn-primary" disabled>Aguardando confirmação</button>
+			                                            </div>
+			                                        </div>
+							            	</c:if>
+							            	<c:if test="${troca.statusDoPedido == 'APROVADO'}">
+								            	<div class="card shadow-sm mb-3">
+		                                            <div class="card-body">
+		                                                <h5 class="card-title">Pedido de troca <span class="badge badge-success ml-2">Troca finalizada</span></h5>
+		                                                <p class="card-text">
+		                                                    <strong>Solicitante:</strong> ${troca.getDestinatario().nome} <br/>
+			                                                <strong>Proprietário do livro:</strong> Eu <br/>
+			                                                <strong>Livro solicitado:</strong> ${troca.getLivroSolicitado().titulo} <br/>
+		                                                </p>
+		                                            </div>
+		                                        </div>
+							            	</c:if>
+							            	<c:if test="${troca.statusDoPedido == 'CANCELADO'}">
+								            	<div class="card shadow-sm mb-3">
+		                                            <div class="card-body">
+		                                                <h5 class="card-title">Pedido de troca <span class="badge badge-danger ml-2">Troca cancelada</span></h5>
+		                                                <p class="card-text">
+		                                                    <strong>Solicitante:</strong> ${troca.getDestinatario().nome} <br/>
+			                                                <strong>Proprietário do livro:</strong> Eu <br/>
+			                                                <strong>Livro solicitado:</strong> ${troca.getLivroSolicitado().titulo} <br/>
+		                                                </p>
+		                                            </div>
+		                                        </div>
+							            	</c:if>
+							            </c:forEach>
+							            <c:if test="${!trocasDest.isEmpty()}">
+									    	MEUS PEDIDOS
+							            </c:if>
+							            <c:forEach var="troca" items="${trocasDest}">
+									    	<c:if test="${troca.statusDoPedido == 'SOLICITADO'}">
+									    	<form action="cancelarTroca" method="post">
+									            	<div class="card shadow-sm mb-3">
+			                                            <div class="card-body">
+			                                                <h5 class="card-title">Pedido de troca <span class="badge badge-info ml-2">Aguardando aceitação</span></h5>
+			                                                <p class="card-text">
+			                                                    <strong>Solicitante:</strong> ${troca.getDestinatario().nome} <br/>
+			                                                    <strong>Proprietário do livro:</strong> ${troca.getOriginario().nome} <br/>
+			                                                    <strong>Livro solicitado:</strong> ${troca.getLivroSolicitado().titulo} <br/>
+			                                                </p>
+			                                    		   <input type="hidden" name="troca" value="${troca.id}">
+			                                               <button type="submit"
+			                                                    class="btn float-right btn-outline-primary">Cancelar troca</button>
+			                                            </div>
+			                                        </div>
+									    	</form>
+	                                        </c:if>
+	                                        <c:if test="${troca.statusDoPedido == 'AGUARDANDO_CONFIRMACAO_AMBOS' || troca.statusDoPedido == 'AGUARDANDO_CONFIRMACAO_DEST'}">
+		                                        <form action="confirmarTroca" method="post">
+									            		<div class="card shadow-sm mb-3">
+				                                            <div class="card-body">
+				                                                <h5 class="card-title">Pedido de troca <span class="badge badge-success ml-2">Troca realizada</span><span class="badge badge-danger ml-2">A confirmar recebimento</span></h5>
+				                                                <p class="card-text">
+				                                                    <strong>Solicitante:</strong> ${troca.getDestinatario().nome} <br/>
+				                                                    <strong>Proprietário do livro:</strong> ${troca.getOriginario().nome} <br/>
+				                                                    <strong>Livro solicitado:</strong> ${troca.getLivroSolicitado().titulo} <br/><br/>
+				                                                    <strong>Contato para troca:</strong><br/>
+				                                                    <strong>Email:</strong> ${troca.getOriginario().email}
+				                                                </p>
+				                                    			<input type="hidden" name="troca" value="${troca.id}">
+				                                                <button type="submit"
+				                                                    class="btn float-right btn-primary">Confirmar recebimento</button>
+				                                            </div>
+				                                        </div>
+								            	</form>
+	                                        </c:if>
+							            	<c:if test="${troca.statusDoPedido == 'AGUARDANDO_CONFIRMACAO_ORIG'}">
+								            		<div class="card shadow-sm mb-3">
+			                                            <div class="card-body">
+			                                                <h5 class="card-title">Pedido de troca <span class="badge badge-success ml-2">Troca realizada</span><span class="badge badge-danger ml-2">A confirmar recebimento</span></h5>
+			                                                <p class="card-text">
+			                                                    <strong>Solicitante:</strong> ${troca.getDestinatario().nome} <br/>
+			                                                    <strong>Proprietário do livro:</strong> ${troca.getOriginario().nome} <br/>
+			                                                    <strong>Livro solicitado:</strong> ${troca.getLivroSolicitado().titulo} <br/>
+			                                                </p>
+			                                    			<input type="hidden" name="troca" value="${troca.id}">
+			                                                <button type="submit"
+			                                                    class="btn float-right btn-primary" disabled>Aguardando confirmação</button>
+			                                            </div>
+			                                        </div>
+							            	</c:if>
+	                                        <c:if test="${troca.statusDoPedido == 'APROVADO'}">
+								            	<div class="card shadow-sm mb-3">
+		                                            <div class="card-body">
+		                                                <h5 class="card-title">Pedido de troca <span class="badge badge-success ml-2">Troca finalizada</span></h5>
+		                                                <p class="card-text">
+		                                                    <strong>Solicitante:</strong> ${troca.getDestinatario().nome} <br/>
+			                                                <strong>Proprietário do livro:</strong> ${troca.getOriginario().nome} <br/>
+			                                                <strong>Livro solicitado:</strong> ${troca.getLivroSolicitado().titulo} <br/>
+		                                                </p>
+		                                            </div>
+		                                        </div>
+							            	</c:if>
+							            	<c:if test="${troca.statusDoPedido == 'CANCELADO'}">
+								            	<div class="card shadow-sm mb-3">
+		                                            <div class="card-body">
+		                                                <h5 class="card-title">Pedido de troca <span class="badge badge-danger ml-2">Troca cancelada</span></h5>
+		                                                <p class="card-text">
+		                                                    <strong>Solicitante:</strong> ${troca.getDestinatario().nome} <br/>
+			                                                <strong>Proprietário do livro:</strong> ${troca.getOriginario().nome} <br/>
+			                                                <strong>Livro solicitado:</strong> ${troca.getLivroSolicitado().titulo} <br/>
+		                                                </p>
+		                                            </div>
+		                                        </div>
+							            	</c:if>
+							            </c:forEach>
+                                        <!-- <div class="card shadow-sm mb-3">
                                             <div class="card-body">
                                                 <h5 class="card-title">Pedido de troca <span class="badge badge-warning ml-2">Em andamento</span></h5>
                                                 <p class="card-text">
@@ -153,8 +316,7 @@
                                                     <strong>Meu livro:</strong> NomeLivro
                                                 </p>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </div> -->
                                 </div>
                             </div>
                         </div>

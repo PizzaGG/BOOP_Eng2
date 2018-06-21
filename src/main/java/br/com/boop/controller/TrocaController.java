@@ -8,6 +8,7 @@ import br.com.boop.dao.UsuarioDao;
 import br.com.boop.model.Livro;
 import br.com.boop.model.Troca;
 import br.com.boop.model.Usuario;
+import br.com.boop.model.UsuarioLogado;
 import br.com.boop.model.enumerables.Status;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
@@ -40,6 +41,8 @@ public class TrocaController {
 	
 	@Get("/troca")
 	public void troca() {
+		result.include("trocasOrig", trocaDao.listarTrocasUsuarioOrig(UsuarioLogado.getUsuarioStatic()));
+		result.include("trocasDest", trocaDao.listarTrocasUsuario(UsuarioLogado.getUsuarioStatic()));
 	}
 	
 	@Post("/novaTroca")
@@ -53,23 +56,38 @@ public class TrocaController {
 		result.redirectTo(this).troca();
 	}
 	
-	public void cancelarTroca(Troca t) {
+	@Post("/cancelarTroca")
+	public void cancelarTroca(Long troca) {
+		Troca t = trocaDao.busca(troca);
+		System.out.println(t.getId());
 		t.setStatusDoPedido(Status.CANCELADO);
 		trocaDao.atualizar(t);
+		result.redirectTo(this).troca();
 	}
 	
-	public void aceitarTroca(Troca t) {
+	@Post("/aceitarTroca")
+	public void aceitarTroca(Long troca) {
+		Troca t = trocaDao.busca(troca);
+		System.out.println(t.getId());
 		t.setStatusDoPedido(Status.AGUARDANDO_CONFIRMACAO_AMBOS);
 		trocaDao.atualizar(t);
+		result.redirectTo(this).troca();
 	}
 	
-	public void confirmarTroca(Troca t) {
+	@Post("/confirmarTroca")
+	public void confirmarTroca(Long troca) {
+		Troca t = trocaDao.busca(troca);
+		System.out.println(t.getId());
 		if(t.getStatusDoPedido() == Status.AGUARDANDO_CONFIRMACAO_AMBOS) {
-			t.setStatusDoPedido(Status.AGUARDANDO_CONFIRMACAO_UNICA);
-		} else if(t.getStatusDoPedido() == Status.AGUARDANDO_CONFIRMACAO_UNICA) {
+			if(t.getDestinatario()==UsuarioLogado.getUsuarioStatic())
+				t.setStatusDoPedido(Status.AGUARDANDO_CONFIRMACAO_ORIG);
+			else
+				t.setStatusDoPedido(Status.AGUARDANDO_CONFIRMACAO_DEST);
+		} else if(t.getStatusDoPedido() == Status.AGUARDANDO_CONFIRMACAO_DEST || t.getStatusDoPedido() == Status.AGUARDANDO_CONFIRMACAO_ORIG) {
 			t.setStatusDoPedido(Status.APROVADO);
 		}
 		trocaDao.atualizar(t);
+		result.redirectTo(this).troca();
 	}
 	
 }
