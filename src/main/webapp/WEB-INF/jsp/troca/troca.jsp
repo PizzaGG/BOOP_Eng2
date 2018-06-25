@@ -141,7 +141,7 @@
 			                                                </p>
 			                                    			<input type="hidden" name="troca" value="${troca.id}">
 			                                                <button type="submit"
-			                                                    class="btn float-right btn-primary">Confirmar recebimento</button>
+			                                                    class="btn float-right btn-primary">Confirmar envio</button>
 			                                            </div>
 			                                        </div>
 							            	</form>

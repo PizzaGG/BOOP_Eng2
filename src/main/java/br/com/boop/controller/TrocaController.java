@@ -79,7 +79,8 @@ public class TrocaController {
 		Troca t = trocaDao.busca(troca);
 		System.out.println(t.getId());
 		if(t.getStatusDoPedido() == Status.AGUARDANDO_CONFIRMACAO_AMBOS) {
-			if(t.getDestinatario()==UsuarioLogado.getUsuarioStatic())
+			System.out.println(t.getDestinatario().getId()+" e "+UsuarioLogado.getUsuarioStatic().getId()+" | "+(t.getDestinatario().getId()==UsuarioLogado.getUsuarioStatic().getId()));
+			if(t.getDestinatario().getId()==UsuarioLogado.getUsuarioStatic().getId())
 				t.setStatusDoPedido(Status.AGUARDANDO_CONFIRMACAO_ORIG);
 			else
 				t.setStatusDoPedido(Status.AGUARDANDO_CONFIRMACAO_DEST);
