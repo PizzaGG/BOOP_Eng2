@@ -1,5 +1,7 @@
 package br.com.boop.controller;
 
+import java.io.File;
+
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
@@ -49,6 +51,16 @@ public class CadastroController {
 	
 	@Get("/caduser")
 	public void cadastrarUsuario() {
+	}
+	
+	@Get("/imgTeste")
+	public void imagemTeste() {
+	}
+	
+	@Post("/imgUp")
+	public void imgUp(UploadedFile imagem){
+		System.out.print(imagem);
+	    System.out.print(imagem.getFileName());
 	}
 	
 	@Post("/cadastrar")
