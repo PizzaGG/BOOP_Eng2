@@ -24,7 +24,7 @@
     <div class="container">
         <div class="d-flex align-items-center">
             <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
-                <img src="<c:url value="/img/perfil.jpg"/>"
+                <img src="<c:url value="/imagem/usuario/${usuarioLog.getUsuario().id}"/>"
                     class="navbar-profile-pic rounded-circle">
             </div>
             <a class="navbar-brand ml-3" href="#">Joao Silva</a>
@@ -121,6 +121,9 @@
 
                         <div class="container">
                             <div class="row">
+                            	<c:if test="${livros.isEmpty()}">
+                        			<h5>Você não tem livros cadastrados. <a href="../BOOP_Eng2/cadbook">Cadastre um agora!</a></h5>
+                    			</c:if>
                                 <c:forEach var="livro" items="${livros}">
                                     <div class="col-md-4 col-sm-6 py-2">
                                         <form action="../BOOP_Eng2/livro" method="post">
@@ -128,7 +131,7 @@
                                                 <div class="capa-livro-card">
                                                     <img
                                                         class="card-img-top capa-livro-card-img"
-                                                        src="<c:url value="/img/book1.jpg "/>"
+                                                        src="<c:url value="/imagem/livro/${livro.id}"/>"
                                                         alt="Card image cap">
                                                 </div>
                                                 <div class="card-body">
@@ -164,7 +167,7 @@
                         <!-- SIDEBAR PROFILE PIC -->
                         <div
                             class="sidebar-profile-pic-div rounded-circle mb-4 bg-dark- d-flex justify-content-center">
-                            <img src="<c:url value="/img/perfil.jpg "/>"
+                            <img src="<c:url value="/imagem/usuario/${usuarioLog.getUsuario().id} "/>"
                                 class="sidebar-profile-pic">
                         </div>
 
