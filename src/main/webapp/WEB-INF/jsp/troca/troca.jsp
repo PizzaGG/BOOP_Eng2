@@ -24,7 +24,7 @@
     <div class="container">
         <div class="d-flex align-items-center">
             <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
-                <img src="<c:url value="/img/perfil.jpg"/>"
+                <img src="<c:url value="/imagem/usuario/${usuarioLog.getUsuario().id}"/>"
                     class="navbar-profile-pic rounded-circle">
             </div>
             <a class="navbar-brand ml-3" href="#">Joao Silva</a>
@@ -330,7 +330,7 @@
                         <!-- SIDEBAR PROFILE PIC -->
                         <div
                             class="sidebar-profile-pic-div rounded-circle mb-4 bg-dark- d-flex justify-content-center">
-                            <img src="<c:url value="/img/perfil.jpg "/>"
+                            <img src="<c:url value="/imagem/usuario/${usuarioLog.getUsuario().id} "/>"
                                 class="sidebar-profile-pic">
                         </div>
 

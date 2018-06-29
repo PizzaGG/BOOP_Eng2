@@ -37,7 +37,7 @@
         <div class="navbar-profile d-flex">
           <ul class="nav nav-pills">
             <div class="navbar-profile-pic-div rounded-circle bg-dark-1">
-              <img src="<c:url value="/img/perfil.jpg "/>" class="navbar-profile-pic">
+              <img src="<c:url value="/imagem/usuario/${usuarioLog.getUsuario().id} "/>" class="navbar-profile-pic">
             </div>
             <li class="nav-item dropdown">
               <button type="button" class="btn btn-link text-black">
