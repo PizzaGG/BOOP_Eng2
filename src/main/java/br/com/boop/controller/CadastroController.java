@@ -1,10 +1,9 @@
 package br.com.boop.controller;
 
-import java.io.File;
-
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
+import br.com.boop.dao.ImagemDao;
 import br.com.boop.dao.LivroDao;
 import br.com.boop.dao.UsuarioDao;
 import br.com.boop.model.BoopMessage;
@@ -31,13 +30,15 @@ public class CadastroController {
 	private final Validator validator;
 	private final Result result;
 	private final UsuarioLogado usuarioLogado;
+	
 	@Deprecated
 	public CadastroController() {
 		this(null, null, null, null, null);
 	}
 	
 	@Inject
-	public CadastroController(Result _result, Validator _validator, LivroDao _livroDao, UsuarioDao _usuarioDao, UsuarioLogado _usuarioLogado) {
+	public CadastroController(Result _result, Validator _validator, LivroDao _livroDao, UsuarioDao _usuarioDao, 
+			UsuarioLogado _usuarioLogado) {
 		this.validator = _validator;
 		this.result = _result;
 		this.livroDao = _livroDao;
@@ -64,7 +65,7 @@ public class CadastroController {
 	}
 	
 	@Post("/cadastrar")
-	public void cadastrar(Livro livro) {
+	public void cadastrar(Livro livro, UploadedFile imagem) {
 		
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(this).cadastrarLivro();
@@ -76,7 +77,8 @@ public class CadastroController {
 		}
 		livro.setProprietario(usuarioLogado.getUsuario());
 		livroDao.salvar(livro);
-		MessagesController.addMessage(new BoopMessage("success.title", "book.register.sucess.message", Severity.SUCCESS));
+		ImagemDao.salva(imagem, livro);
+		MessagesController.addMessage(new BoopMessage("success.title", "book.register.success.message", Severity.SUCCESS));
 		result.redirectTo(HomeController.class).home();
 		return;
 	}
@@ -92,8 +94,9 @@ public class CadastroController {
 			return;
 		}
 		usuario.setHashSenha(HashPasswordGenerator.getHashSha256(usuario.getHashSenha()));
-		usuario.setBooPoint(new Boopoint(usuario,0,0));
+		usuario.setBooPoint(new Boopoint(usuario,1,0));
 		usuarioDao.salvar(usuario);
+		ImagemDao.salvaDefault(usuario);
 		MessagesController.addMessage(new BoopMessage("success.title", "user.create.success.message", Severity.SUCCESS));
 		result.redirectTo(LoginController.class).login();
 		return;

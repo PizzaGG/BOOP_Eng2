@@ -2,6 +2,7 @@ package br.com.boop.controller;
 
 import javax.inject.Inject;
 
+import br.com.boop.dao.ImagemDao;
 import br.com.boop.dao.LivroDao;
 import br.com.boop.model.BoopMessage;
 import br.com.boop.model.Livro;
@@ -10,6 +11,7 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.observer.upload.UploadedFile;
 import br.com.caelum.vraptor.validator.Message;
 import br.com.caelum.vraptor.validator.Severity;
 import br.com.caelum.vraptor.validator.Validator;
@@ -47,7 +49,7 @@ public class LivroController {
 	}
 	
 	@Post("/editarLivro")
-	public void editarLivro(Livro livro, String isbnOld) {
+	public void editarLivro(Livro livro, String isbnOld, UploadedFile imagem) {
 		if (validator.hasErrors()) {
 			validator.onErrorForwardTo(HomeController.class).home();
 			for (Message msg : validator.getErrors()) {
@@ -57,6 +59,7 @@ public class LivroController {
 		}
 		livro.setProprietario(UsuarioLogado.getUsuarioStatic());
 		livroDao.atualizar(livro, isbnOld);
+		ImagemDao.salva(imagem, livro);
 		MessagesController.addMessage(new BoopMessage("success.title", "book.update.success.message", Severity.INFO));
 		result.include("livro", livro);
 		result.redirectTo(this).livro();

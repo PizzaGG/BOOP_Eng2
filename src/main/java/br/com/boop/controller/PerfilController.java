@@ -2,6 +2,7 @@ package br.com.boop.controller;
 
 import javax.inject.Inject;
 
+import br.com.boop.dao.ImagemDao;
 import br.com.boop.dao.UsuarioDao;
 import br.com.boop.model.BoopMessage;
 import br.com.boop.model.Usuario;
@@ -11,6 +12,7 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.observer.upload.UploadedFile;
 import br.com.caelum.vraptor.validator.Message;
 import br.com.caelum.vraptor.validator.Severity;
 import br.com.caelum.vraptor.validator.Validator;
@@ -39,10 +41,10 @@ public class PerfilController {
 	
 	//TODO: Fazer correção nos parâmetros
 	@Post("/editarPerfil")
-	public void atualizar(String username, Long matricula, String nome, String email, String senha) {
+	public void atualizar(String username, Long matricula, String nome, String email, String senha, UploadedFile imagem) {
 		if (validator.hasErrors()) {
 			for (Message msg : validator.getErrors()) {
-				MessagesController.addMessage(new BoopMessage("user.update.error.title", msg.getMessage(), msg.getSeverity()));
+				MessagesController.addMessage(new BoopMessage("error.title", msg.getMessage(), msg.getSeverity()));
 			}
 			validator.onErrorForwardTo(this).perfil();
 			return;
@@ -55,7 +57,8 @@ public class PerfilController {
 		usu.setMatricula(matricula);
 		usu.setNome(nome);
 		usuarioDao.atualizar(usu);
-		MessagesController.addMessage(new BoopMessage("user.update.sucess.title", "user.update.sucess.message", Severity.INFO));
+		ImagemDao.salva(imagem, usu);
+		MessagesController.addMessage(new BoopMessage("success.title", "user.update.success.message", Severity.INFO));
 		result.redirectTo(this).perfil();
 	}
 }
