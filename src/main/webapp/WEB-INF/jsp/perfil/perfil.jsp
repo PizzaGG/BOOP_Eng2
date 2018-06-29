@@ -46,7 +46,7 @@
                 <div
                     class="navbar-profile-pic-div rounded-circle bg-dark-1">
                     <!-- <h5 class="m-0">F</h5> -->
-                    <img src="<c:url value="/img/perfil.jpg"/>"
+                    <img src="<c:url value="/imagem/usuario/${usuarioLog.getUsuario().id}"/>"
                         class="navbar-profile-pic">
                 </div>
                 <li class="nav-item dropdown">
@@ -111,23 +111,22 @@
             <div class="card-body">
                 <h4 class="card-title">Perfil</h4>
 
-                <form class="mt-4" action="editarPerfil" method="post">
+                <form class="mt-4" action="editarPerfil" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-3">
                             <fieldset>
                                 <div class="form-group">
                                     <img
-                                        src="<c:url value="/img/perfil.jpg"/>"
+                                        src="<c:url value="/imagem/usuario/${usuarioLog.getUsuario().id}"/>"
                                         class="img-fluid rounded"
                                         alt="Joao Silva">
                                     <div
                                         class="input-group my-3 inputFile d-none">
                                         <input type="file"
-                                            class="custom-file-input"
-                                            id="fotoPerfil"> <label
+                                            id="fotoPerfil" name="imagem"> <!--<label
                                             class="custom-file-label"
                                             for="fotoPerfil">Escolher
-                                            arquivo</label>
+                                            arquivo</label>-->
                                     </div>
                                 </div>
                             </fieldset>
